@@ -1,0 +1,36 @@
+<!-- -->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="userGroup" (ngSubmit)="submitRegistration(userGroup)">
+    <ion-list>
+  <ion-list formArrayName="members" no-lines>
+    <div *ngFor="let member of userGroup.controls.members.controls; let i=index">
+      <div [formGroupName]="i">
+          <ion-item>
+            <ion-label stacked>Member {{ i + 1 }}</ion-label>
+            <ion-input type="text" formControlName="name" placeholder="Tara"></ion-input>
+            <ion-input type="text" formControlName="email" placeholder="taradevlin8@gmail.com"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="member.controls.name.invalid && member.controls.name.dirty" no-lines>
+            <p>Please enter a valid name for this member.</p>
+          </ion-item>
+          <ion-item *ngIf="member.controls.email.invalid && member.controls.name.dirty" no-lines>
+              <p>Please enter a valid email for this member.</p>
+            </ion-item>
+          <button ion-button outline full (click)="removeMember(i)" color="danger" type="button">Remove Member</button>
+        </div>
+    </div>
+  </ion-list>
+  <button ion-button outline full (click)="addMember()" color="secondary" type="button">Add Member</button>
+</ion-list>
+  <button ion-button full type="submit" [disabled]="userGroup.invalid">Submit</button>
+  </form>
+</ion-content>
