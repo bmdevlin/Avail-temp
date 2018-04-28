@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TasksPage } from '../tasks/tasks/tasks';
-/**
- * Generated class for the MainpagePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ChatPage } from '../chat/chat';
 
 @IonicPage()
 @Component({
@@ -25,7 +20,11 @@ export class MainPage {
   goToTasks(event) {
   this.nav.push(TasksPage);
   }
-
+  
+  goToChatPage() {
+    this.nav.push(ChatPage);
+  }
+  
 
 
 }
