@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { OneSignal } from '@ionic-native/onesignal';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
@@ -54,7 +56,8 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     RestTasksProvider,
-    MySessionToken
+    MySessionToken,
+    OneSignal
   ]
 })
 export class AppModule {}
