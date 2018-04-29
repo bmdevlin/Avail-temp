@@ -12,6 +12,9 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
+import { ChatPage } from '../pages/chat/chat';
+import { AddChatPage } from '../pages/addchat/addchat';
+import { ConvoPage } from '../pages/convo/convo';
 import { MainPage } from '../pages/mainpage/mainpage';
 import { TasksPage } from '../pages/tasks/tasks/tasks';
 import { TaskDetailsPage } from '../pages/tasks/task-details/task-details';
@@ -30,7 +33,10 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     TaskDetailsPage,
     AddTaskPage,
     UpdateTaskPage,
-    RegisterPage
+    RegisterPage,
+    ChatPage,
+    AddChatPage,
+    ConvoPage
   ],
   imports: [
     BrowserModule,
@@ -44,6 +50,9 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     MyApp,
     HomePage,
     RegisterPage,
+    ChatPage,
+    AddChatPage,
+    ConvoPage,
     MainPage,
     TasksPage,
     TaskDetailsPage,
