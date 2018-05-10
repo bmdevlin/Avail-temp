@@ -10,9 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
-import { ChatPage } from '../pages/chat/chat';
+import { ChatsPage } from '../pages/chat/chat';
 import { AddChatPage } from '../pages/addchat/addchat';
-import { ConvoPage } from '../pages/convo/convo';
 import { MainPage } from '../pages/mainpage/mainpage';
 import { TasksPage } from '../pages/tasks/tasks/tasks';
 import { TaskDetailsPage } from '../pages/tasks/task-details/task-details';
@@ -21,6 +20,14 @@ import { UpdateTaskPage } from '../pages/tasks/update-task/update-task';
 import { RestProvider } from '../providers/rest/rest';
 import { MySessionToken } from '../providers/token';
 import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
+import { GroupsPage } from '../pages/groups/groups';
+
+import { ChatsProvider } from '../providers/chats/chats';
+import { UsersProvider } from '../providers/users/users';
+
+//import { AngularFireModule } from 'angularfire2';
+//import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+//import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
@@ -32,9 +39,9 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     AddTaskPage,
     UpdateTaskPage,
     RegisterPage,
-    ChatPage,
+    ChatsPage,
     AddChatPage,
-    ConvoPage
+    GroupsPage
   ],
   imports: [
     BrowserModule,
@@ -48,9 +55,9 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     MyApp,
     HomePage,
     RegisterPage,
-    ChatPage,
+    ChatsPage,
     AddChatPage,
-    ConvoPage,
+    GroupsPage,
     MainPage,
     TasksPage,
     TaskDetailsPage,
@@ -63,7 +70,10 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     RestTasksProvider,
-    MySessionToken
+    MySessionToken,
+    ChatsProvider,
+    UsersProvider
+    //AngularFireDatabase
   ]
 })
 export class AppModule {}
