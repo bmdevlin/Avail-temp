@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TasksPage } from '../tasks/tasks/tasks';
-import { ChatPage } from '../chat/chat';
+import { ChatsPage } from '../chat/chat';
 
 @IonicPage()
 @Component({
@@ -22,7 +22,7 @@ export class MainPage {
   }
   
   goToChatPage() {
-    this.nav.push(ChatPage);
+    this.nav.push(ChatsPage);
   }
   
 

@@ -34,14 +34,14 @@ export class ChatsPage {
     //this.data.type = 'message';
     //this.data.name = this.name;
 
-    this.messages = this.chatsProvider.getChatMessages(this.chatId);
+   // this.messages = this.chatsProvider.getChatMessages(this.chatId);
   }
 
   sendMessage() {
-    this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
-      this.message = '';
-      this.content.scrollToBottom();
-    });
+    // this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
+    //   this.message = '';
+    //   this.content.scrollToBottom();
+    // });
   }
 
 
@@ -51,9 +51,9 @@ export class ChatsPage {
     //exitData.name = this.name;
     this.message = ' has exited the conversation.';
 
-    this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
-      this.message = '';
-    });
+    // this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
+    //   this.message = '';
+    // });
   }
 
 

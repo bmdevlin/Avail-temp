@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { AddChatPage } from '../AddChat/AddChat';
-import { ChatsPage } from '../Chat/Chat';
+import { AddChatPage } from '../addchat/addchat';
+import { ChatsPage } from '../chat/chat';
 
 @IonicPage()
 @Component({

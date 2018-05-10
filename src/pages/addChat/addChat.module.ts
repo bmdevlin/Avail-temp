@@ -10,4 +10,4 @@ import { AddChatPage } from './addchat';
     IonicPageModule.forChild(AddChatPage),
   ],
 })
-export class AddchatPageModule {}
+export class AddChatPageModule {}

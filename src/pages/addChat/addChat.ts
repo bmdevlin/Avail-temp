@@ -1,29 +1,43 @@
+import { UsersProvider } from './../../providers/users/users';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ViewController } from 'ionic-angular';
 
-/**
- * Generated class for the AddchatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
-  selector: 'page-addchat',
-  templateUrl: 'addchat.html',
+  selector: 'page-group-start',
+  templateUrl: 'group-start.html',
 })
 export class AddChatPage {
-
-  //name: String;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  users: Observable<any[]>;
+  search = '';
+  filteredUsers: Observable<any[]>;
+  
+  constructor(public navCtrl: NavController, private viewCtrl: ViewController, private usersProvider: UsersProvider) {
   }
 
-  //TODO make this add chat to database (currently it is a back button)
-  addChat() {
-    //name: "Example";
-    this.navCtrl.pop();
+  ionViewDidLoad() {
+   // this.users = this.usersProvider.getAllUsers();
+    this.filterItems();
+  }
+
+  filterItems() {
+    this.filteredUsers = this.users.map(array => {
+      return array.filter(user => {
+        return user['nickname'].toLowerCase().indexOf(this.search.toLowerCase()) > -1;
+      })
+    });
+  }
+
+  startChat(userId) {
+    this.viewCtrl.dismiss({
+      startChatWith: userId
+    });
+  }
+
+  close() {
+    this.viewCtrl.dismiss();
   }
 
 }
