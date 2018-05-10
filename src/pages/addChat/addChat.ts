@@ -17,6 +17,7 @@ export class AddChatPage {
   constructor(public navCtrl: NavController, private viewCtrl: ViewController, private usersProvider: UsersProvider) {
   }
 
+  //TODO: database integration to get all users
   ionViewDidLoad() {
    // this.users = this.usersProvider.getAllUsers();
     this.filterItems();

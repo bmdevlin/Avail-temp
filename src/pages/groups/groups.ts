@@ -17,11 +17,11 @@ export class GroupsPage {
     this.Chats.push({name: 'Tara'});
   }
 
-  addGroups() {
+  addGroup() {
     this.navCtrl.push(AddChatPage);
   }
 
-  joinGroups(key) {
+  joinGroup(key) {
     this.navCtrl.push(ChatsPage);
   }
 
