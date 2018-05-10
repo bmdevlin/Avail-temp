@@ -5,8 +5,8 @@ import { ChatsPage } from '../chat/chat';
 
 @IonicPage()
 @Component({
-  selector: 'page-Groups',
-  templateUrl: 'Groups.html',
+  selector: 'page-groups',
+  templateUrl: 'groups.html',
 })
 export class GroupsPage {
 

@@ -14,7 +14,7 @@ import { UsersProvider } from '../../providers/users/users';
 @IonicPage()
 @Component({
   selector: 'page-chat',
-  templateUrl: 'chats.html',
+  templateUrl: 'chat.html',
 })
 export class ChatsPage {
 
