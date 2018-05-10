@@ -1,28 +1,24 @@
-<!--
-  Generated template for the AddchatPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>AddChat</ion-title>
+  <ion-navbar color="dark">
+    <ion-buttons left>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Start a Chat</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <form (ngSubmit)="addChat()">
-      <ion-list>
-        <ion-item>
-          <ion-label floating>Enter Chat Name</ion-label>
-          <ion-input type="text" name="name" required=""></ion-input>
-        </ion-item>
-        <ion-item>
-          <button ion-button full round color="secondary" type="submit">Add</button>
-        </ion-item>
-      </ion-list>
-    </form>
-  </ion-content>
+<ion-content>
+<ion-searchbar (ionInput)="filterItems()" [(ngModel)]="search"></ion-searchbar>
+
+<ion-list>
+  <ion-item *ngFor="let user of filteredUsers | async" (click)="startChat(user.id)" tappable>
+    {{ user.nickname }}
+    <ion-icon item-end name="arrow-forward"></ion-icon>
+  </ion-item>
+</ion-list>
+</ion-content>
