@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, ViewController } from 'ionic-angular';
 import { Task } from '../../../providers/rest-tasks/rest-tasks';
 import { FormGroup, FormBuilder } from '@angular/forms'
-
-/**
- * Generated class for the AddTaskPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+ 
 
 @IonicPage()
 @Component({

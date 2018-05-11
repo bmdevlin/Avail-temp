@@ -8,13 +8,6 @@ import { TaskDetailsPage } from '../task-details/task-details';
 import { AddTaskPage } from '../add-task/add-task';
 import { UpdateTaskPage } from '../update-task/update-task';
 
-/**
- * Generated class for the TasksPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-tasks',

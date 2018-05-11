@@ -21,6 +21,9 @@ import { UpdateTaskPage } from '../pages/tasks/update-task/update-task';
 import { RestProvider } from '../providers/rest/rest';
 import { MySessionToken } from '../providers/token';
 import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
+import { RestChatsProvider } from '../providers/rest-tasks/rest-chats';
+import { RestChatusersProvider } from '../providers/rest-tasks/rest-chatusers';
+import { RestPostsProvider } from '../providers/rest-tasks/rest-posts';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,9 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     RestTasksProvider,
+    RestChatsProvider,
+    RestChatusersProvider,
+    RestPostsProvider,
     MySessionToken
   ]
 })

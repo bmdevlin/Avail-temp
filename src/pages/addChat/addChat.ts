@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the AddchatPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, ViewController } from 'ionic-angular';
+import { Chat } from '../../providers/rest-tasks/rest-chats';
+import { FormGroup, FormBuilder } from '@angular/forms'
 
 @IonicPage()
 @Component({
@@ -14,16 +9,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'addchat.html',
 })
 export class AddChatPage {
+  private newChat: Chat;
+  private inChat: FormGroup;
 
-  //name: String;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  //TODO make this add chat to database (currently it is a back button)
-  addChat() {
-    //name: "Example";
-    this.navCtrl.pop();
+  constructor(public navCtrl: NavController, public view: ViewController, private fb: FormBuilder) {
+    this.newChat = new Chat();
+ 
+    this.inChat = this.fb.group({
+      description:  ['description'],
+      tag: ['tag']
+    })
   }
 
 }
