@@ -28,6 +28,9 @@ import { UsersProvider } from '../providers/users/users';
 //import { AngularFireModule } from 'angularfire2';
 //import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 //import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RestChatsProvider } from '../providers/rest-tasks/rest-chats';
+import { RestChatusersProvider } from '../providers/rest-tasks/rest-chatusers';
+import { RestPostsProvider } from '../providers/rest-tasks/rest-posts';
 
 @NgModule({
   declarations: [
@@ -72,8 +75,12 @@ import { UsersProvider } from '../providers/users/users';
     RestTasksProvider,
     MySessionToken,
     ChatsProvider,
-    UsersProvider
+    UsersProvider,
     //AngularFireDatabase
+    RestChatsProvider,
+    RestChatusersProvider,
+    RestPostsProvider,
+    MySessionToken
   ]
 })
 export class AppModule {}
