@@ -6,7 +6,7 @@
 // import * as firebase from 'firebase/app';
 
 // @Injectable()
-export class ChatsProvider {
+export class RestChatsProvider {
 //   chatsRef = this.db.list('chats');
 
 //   constructor(public http: HttpClient, private afAuth: AngularFireAuth, private db: AngularFireDatabase, private usersProvider: UsersProvider) {

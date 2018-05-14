@@ -1,4 +1,4 @@
-import { UsersProvider } from './../../providers/users/users';
+import { RestUsersProvider } from './../../providers/rest-users/rest-users';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ViewController } from 'ionic-angular';
 
@@ -14,7 +14,7 @@ export class AddChatPage {
   search = '';
   filteredUsers: Observable<any[]>;
   
-  constructor(public navCtrl: NavController, private viewCtrl: ViewController, private usersProvider: UsersProvider) {
+  constructor(public navCtrl: NavController, private viewCtrl: ViewController, private usersProvider: RestUsersProvider) {
   }
 
   //TODO: database integration to get all users

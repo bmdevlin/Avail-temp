@@ -10,7 +10,7 @@
 //}
 
 // @Injectable()
-export class UsersProvider {
+export class RestUsersProvider {
 //   usersRef = this.db.list('users');
 //   authState = this.afAuth.authState;
 

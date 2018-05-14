@@ -22,15 +22,11 @@ import { MySessionToken } from '../providers/token';
 import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
 import { GroupsPage } from '../pages/groups/groups';
 
-import { ChatsProvider } from '../providers/chats/chats';
-import { UsersProvider } from '../providers/users/users';
-
 //import { AngularFireModule } from 'angularfire2';
 //import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 //import { AngularFireAuthModule } from 'angularfire2/auth';
-import { RestChatsProvider } from '../providers/rest-tasks/rest-chats';
-import { RestChatusersProvider } from '../providers/rest-tasks/rest-chatusers';
-import { RestPostsProvider } from '../providers/rest-tasks/rest-posts';
+import { RestChatsProvider } from '../providers/rest-chats/rest-chats';
+import { RestUsersProvider } from '../providers/rest-users/rest-users';
 
 @NgModule({
   declarations: [
@@ -74,12 +70,8 @@ import { RestPostsProvider } from '../providers/rest-tasks/rest-posts';
     RestProvider,
     RestTasksProvider,
     MySessionToken,
-    ChatsProvider,
-    UsersProvider,
-    //AngularFireDatabase
     RestChatsProvider,
-    RestChatusersProvider,
-    RestPostsProvider,
+    RestUsersProvider,
     MySessionToken
   ]
 })

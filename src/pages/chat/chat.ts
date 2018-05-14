@@ -1,12 +1,10 @@
-import { ChatsProvider } from './../../providers/chats/chats';
 import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { IonicPage, NavController, NavParams, Content, ModalController } from 'ionic-angular';
-import { UsersProvider } from '../../providers/users/users';
+import { RestUsersProvider } from '../../providers/rest-users/rest-users';
 import { MySessionToken } from '../../providers/token';
 
-import { RestChatsProvider } from '../../providers/rest-tasks/rest-chats';
-import { Chat } from '../../providers/rest-tasks/rest-chats';
+import { RestChatsProvider } from '../../providers/rest-chats/rest-chats';
 import { AddChatPage } from '../addchat/addchat';
 
 @IonicPage()
@@ -25,7 +23,7 @@ export class ChatsPage {
   @ViewChild('content') content: Content;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private chatsProvider: ChatsProvider, private usersProvider: UsersProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private chatsProvider: RestChatsProvider, private usersProvider: RestUsersProvider) {
     this.chatId = this.navParams.get("chatId");
     this.chatTitle = this.navParams.get('users');
     //this.name = this.navParams.get("nickname") as string;
@@ -35,7 +33,16 @@ export class ChatsPage {
    // this.messages = this.chatsProvider.getChatMessages(this.chatId);
   }
 
+//   sendBubble() {
+//     this.restProvider.createPost(this.token, this.newPost).subscribe((post: Post)=>{
+//       this.posts.push(post); 
+//     });
+ 
+//     this.newPost.message = '';
+//   }
+
   sendMessage() {
+
     // this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
     //   this.message = '';
     //   this.content.scrollToBottom();
@@ -91,17 +98,4 @@ export class ChatsPage {
 
 //   }
 
-//   sendBubble() {
-//     this.restProvider.createPost(this.token, this.newPost).subscribe((post: Post)=>{
-//       this.posts.push(post); 
-//     });
- 
-//     this.newPost.message = '';
-//   }
-
-//   exitChat() {
-//     let exitData = this.data;
-//     exitData.type = 'exit';
-//     //exitData.name = this.name;
-//    // exitData.message = this.name + ' has exited the chat.';
 //   }
