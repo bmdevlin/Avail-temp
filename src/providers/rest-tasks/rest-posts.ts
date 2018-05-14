@@ -16,11 +16,11 @@ export class RestPostsProvider {
     console.log('Hello RestPostsProvider ');
   }
   /** GET posts from the server */
-  getPosts (sToken: string): Observable<Post[]> {
+  getPosts (chatId:number, sToken: string): Observable<Post[]> {
      
     let headers = new HttpHeaders().set('Authorization', sToken ); 
-
-    return this.httpClient.get<Post[]>(this.basePostUrl, {headers: headers})
+    var getUrl = `${this.basePostUrl}?chatid=${chatId}`;
+    return this.httpClient.get<Post[]>(getUrl, {headers: headers})
 
   }
 

@@ -14,7 +14,7 @@
  
 
 <ion-content padding>
-  <form [formGroup]="inChat" (ngsubmit)="addChat()">
+  <form [formGroup]="inChat" (ngsubmit)="saveChat()">
       <ion-list>
 
         <ion-item>
@@ -24,7 +24,7 @@
 
         
         <ion-item>
-          <button ion-button full round color="secondary" type="submit">Add</button>
+          <button ion-button full round color="secondary" (click)="saveChat()" type="submit">Add</button>
         </ion-item>
       </ion-list>
     </form>

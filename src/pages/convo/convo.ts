@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { RestPostsProvider } from  '../../providers/rest-tasks/rest-posts';
+import { Chat } from '../../providers/rest-tasks/rest-chats';
+import { Post } from '../../providers/rest-tasks/rest-posts';
+import { MySessionToken } from '../../providers/token';
 /**
  * Generated class for the ConvoPage page.
  *
@@ -14,42 +17,47 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'convo.html',
 })
 export class ConvoPage {
+  private posts: Post[] = [];
+  private token: string;
+  private chat: Chat;
+  private newPost: Post;
 
   data = { type:'', name:'', message:'' };
-  bubbles = [];
-  chatkey:string;
-  name:string;
-  offStatus:boolean = false;
+  //bubbles = [];
+  //chatkey:string;
+  //name:string;
+  //offStatus:boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.chatkey = this.navParams.get("key") as string;
-    this.name = this.navParams.get("nickname") as string;
-    this.data.type = 'message';
-    this.data.name = this.name;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+    public restProvider: RestPostsProvider,  public mySessionToken: MySessionToken) {
+ 
+    this.chat = this.navParams.get('chat');
+    this.newPost = new Post;
+    this.newPost.chatid = this.chat.id;
+
+    this.token = this.navParams.get('token');
+    this.restProvider.getPosts(this.chat.id, this.token).subscribe(
+      (posts: Post[])=>{
+      this.posts = posts;
+      }, error => {
+        console.log('get posts failed: ');
+    });
+
   }
 
   sendBubble() {
-    var newData = { type:'vv', name:'v', message:'vvvvv' }; //this.data it a placeholder, newdata should come from database or chat server get call
-    //newData.set({
-    //   type: this.data.type,
-    //   name: this.data.name,
-    //   message: this.data.message,
-    //   sendDate: Date();
-    // })
-    newData.type = this.data.type;
-    newData.name = this.data.name;
-    newData.message = this.data.message;
-    this.bubbles.push(newData);
-    console.log(this.bubbles);
-    console.log(this.data);
-    this.data.message = '';
+    this.restProvider.createPost(this.token, this.newPost).subscribe((post: Post)=>{
+      this.posts.push(post); 
+    });
+ 
+    this.newPost.message = '';
   }
 
   exitChat() {
     let exitData = this.data;
     exitData.type = 'exit';
-    exitData.name = this.name;
-    exitData.message = this.name + ' has exited the chat.';
+    //exitData.name = this.name;
+   // exitData.message = this.name + ' has exited the chat.';
   }
 
 

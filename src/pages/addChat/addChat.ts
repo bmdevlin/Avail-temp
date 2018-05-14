@@ -16,9 +16,17 @@ export class AddChatPage {
     this.newChat = new Chat();
  
     this.inChat = this.fb.group({
-      description:  ['description'],
-      tag: ['tag']
+      description:  ['description']
     })
+  }
+
+  saveChat(){
+    this.newChat.description = this.inChat.value.description; 
+    this.view.dismiss(this.newChat);
+  }
+
+  close(){
+    this.view.dismiss();
   }
 
 }

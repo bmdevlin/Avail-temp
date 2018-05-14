@@ -47,7 +47,9 @@ export class ChatPage {
   }
 
   joinChat(chat: Chat) {
-    this.navCtrl.push(ConvoPage);
+    this.navCtrl.push(ConvoPage, {
+      chat: chat, token: this.token
+    });
   }
 
 }
