@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestChatusersProvider {
 
-  baseChatuserUrl:string =  "http://localhost:3000/chatusers"; //"https://shrouded-harbor-31805.herokuapp.com/chatusers";  "http://localhost:3000/chatusers";
+  baseChatuserUrl:string =  "https://shrouded-harbor-31805.herokuapp.com/chatusers";//"https://shrouded-harbor-31805.herokuapp.com/chatusers";  "http://localhost:3000/chatusers";
 
 
   constructor(public httpClient: HttpClient) {
