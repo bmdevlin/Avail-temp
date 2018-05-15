@@ -36,7 +36,7 @@ export class RestChatsProvider {
     return this.httpClient.get<any>(chatURL, {headers: headers});
   }
 
-  createChatMessage(sToken: string, post: Post): Observable<Post> {
+  createPost(sToken: string, post: Post): Observable<Post> {
     let headers = new HttpHeaders().set('Authorization', sToken);
     return this.httpClient.post<Post>(this.baseChatUrl, post, {headers: headers})
   }

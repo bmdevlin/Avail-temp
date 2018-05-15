@@ -57,7 +57,7 @@ export class ChatsPage {
   }
 
   sendMessage() {
-    this.chatsProvider.createChatMessage(this.token, this.newPost).subscribe(post => {
+    this.chatsProvider.createPost(this.token, this.newPost).subscribe(post => {
         this.messages.push(post);
         this.newPost.message = '';
         this.content.scrollToBottom();

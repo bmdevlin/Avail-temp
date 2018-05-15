@@ -33,7 +33,7 @@ export class GroupsPage {
   }
 
   addGroup() {
-    this.navCtrl.push(AddChatPage);
+    this.navCtrl.push(AddChatPage, {token: this.token});
   }
 
   joinGroup(chat: Chat) {

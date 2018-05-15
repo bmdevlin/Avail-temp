@@ -1,7 +1,9 @@
-// import { AngularFireDatabase } from 'angularfire2/database';
-// import { AngularFireAuth } from 'angularfire2/auth';
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 //export class UserCredentials {
 //   nickname = '';
@@ -9,14 +11,25 @@
 //   password = '';
 //}
 
-// @Injectable()
+@Injectable()
 export class RestUsersProvider {
+
+    baseUsersUrl:string =  "http://shrouded-harbor-31805.herokuapp.com/users"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
+
+    constructor(public httpClient: HttpClient) {
+        console.log('Hello RestUsersProvider Provider');
+    }
+
+    getAllUsers (sToken: string): Observable<any[]> {
+
+        let headers = new HttpHeaders().set('Authorization', sToken );
+        var getUrl = `${this.baseUsersUrl}`;
+        return this.httpClient.get<any[]>(getUrl, {headers: headers})
+    
+    }
+
 //   usersRef = this.db.list('users');
 //   authState = this.afAuth.authState;
-
-//   constructor(public http: HttpClient, private afAuth: AngularFireAuth, private db: AngularFireDatabase) {
-
-//   }
 
 //   signUp(credentials: UserCredentials) {
 //     return this.afAuth.auth.createUserWithEmailAndPassword(credentials.email, credentials.password)

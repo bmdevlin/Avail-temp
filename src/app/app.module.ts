@@ -28,6 +28,7 @@ import { GroupsPage } from '../pages/groups/groups';
 import { RestChatsProvider } from '../providers/rest-chats/rest-chats';
 import { RestGroupsProvider } from '../providers/rest-groups/rest-groups';
 import { RestUsersProvider } from '../providers/rest-users/rest-users';
+import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatusers';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { RestUsersProvider } from '../providers/rest-users/rest-users';
     RestChatsProvider,
     RestGroupsProvider,
     RestUsersProvider,
+    RestChatUsersProvider,
     MySessionToken
   ]
 })
