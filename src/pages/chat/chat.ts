@@ -14,7 +14,9 @@ import { AddChatPage } from '../addchat/addchat';
 })
 export class ChatsPage {
 
-  messages: Observable<any[]>;
+  private messages: any[] = [];
+  private chats: Observable<any[]>;
+  private token: string;
   message = '';
   data = { type:'', name:'', text:'' };
   chatId = null;
@@ -23,7 +25,8 @@ export class ChatsPage {
   @ViewChild('content') content: Content;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private chatsProvider: RestChatsProvider, private usersProvider: RestUsersProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+    private chatsProvider: RestChatsProvider, private usersProvider: RestUsersProvider, public mySessionToken: MySessionToken) {
     this.chatId = this.navParams.get("chatId");
     this.chatTitle = this.navParams.get('users');
     //this.name = this.navParams.get("nickname") as string;
@@ -31,6 +34,15 @@ export class ChatsPage {
     //this.data.name = this.name;
 
    // this.messages = this.chatsProvider.getChatMessages(this.chatId);
+
+    this.mySessionToken.getMyAuthToken().then(stoken => {
+      this.token = stoken;
+      this.chatsProvider.getChatMessages(this.token).subscribe((messages: any[])=>{
+        this.messages = messages;
+      }, error => {
+        console.log('get chat messages failed: ');
+      });
+    });
   }
 
 //   sendBubble() {
@@ -42,6 +54,11 @@ export class ChatsPage {
 //   }
 
   sendMessage() {
+
+    // this.chatsProvider.createChatMessage(this.token, this.message).then(() => {
+    //   this.message = '';
+    //   this.content.scrollToBottom();
+    // })
 
     // this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
     //   this.message = '';
