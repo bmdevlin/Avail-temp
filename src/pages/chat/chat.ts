@@ -2,6 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { IonicPage, NavController, NavParams, Content, ModalController } from 'ionic-angular';
 import { RestUsersProvider } from '../../providers/rest-users/rest-users';
+
+import { Chat } from '../../providers/rest-groups/rest-groups';
+import { Post } from '../../providers/rest-chats/rest-chats';
 import { MySessionToken } from '../../providers/token';
 
 import { RestChatsProvider } from '../../providers/rest-chats/rest-chats';
@@ -14,35 +17,43 @@ import { AddChatPage } from '../addchat/addchat';
 })
 export class ChatsPage {
 
-  private messages: any[] = [];
+  private messages: Post[] = [];
+  private chat: Chat;
+  private newPost: Post;
+
   private chats: Observable<any[]>;
   private token: string;
   message = '';
   data = { type:'', name:'', text:'' };
   chatId = null;
   chatTitle = '';
+
+  currentUserId = 3;
   //currentUserId = this.usersProvider.getCurrentUserId();
   @ViewChild('content') content: Content;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
     private chatsProvider: RestChatsProvider, private usersProvider: RestUsersProvider, public mySessionToken: MySessionToken) {
-    this.chatId = this.navParams.get("chatId");
-    this.chatTitle = this.navParams.get('users');
+ 
+    //this.chatTitle = this.navParams.get('users');
     //this.name = this.navParams.get("nickname") as string;
     //this.data.type = 'message';
     //this.data.name = this.name;
 
    // this.messages = this.chatsProvider.getChatMessages(this.chatId);
 
-    this.mySessionToken.getMyAuthToken().then(stoken => {
-      this.token = stoken;
-      this.chatsProvider.getChatMessages(this.token).subscribe((messages: any[])=>{
-        this.messages = messages;
-      }, error => {
-        console.log('get chat messages failed: ');
-      });
-    });
+   this.chat = this.navParams.get('chat');
+   this.newPost = new Post;
+   this.newPost.chatid = this.chat.id;
+
+   this.token = this.navParams.get('token');
+   this.chatsProvider.getPosts(this.chat.id, this.token).subscribe(
+     (posts: Post[])=>{
+     this.messages = posts;
+     }, error => {
+       console.log('get posts failed: ');
+   });
   }
 
 //   sendBubble() {

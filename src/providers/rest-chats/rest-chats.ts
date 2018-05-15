@@ -8,12 +8,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestChatsProvider {
 
-  baseChatUrl:string =  "http://shrouded-harbor-31805.herokuapp.com/chats"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
+  baseChatUrl:string =  "http://shrouded-harbor-31805.herokuapp.com/posts"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
 
   constructor(public httpClient: HttpClient) {
     console.log('Hello RestChatsProvider Provider');
   }
+  
+  getPosts (chatId:number, sToken: string): Observable<Post[]> {
+     
+    let headers = new HttpHeaders().set('Authorization', sToken ); 
+    var getUrl = `${this.baseChatUrl}?chatid=${chatId}`;
+    return this.httpClient.get<Post[]>(getUrl, {headers: headers})
 
+  }
 
   getChatMessages(sToken: string): Observable<any[]> {
 
@@ -74,4 +81,15 @@ export class RestChatsProvider {
 //     });
 //   }
 
+}
+
+export class Post {
+  id: number;
+  customer: number;
+  chatid: number;
+  userid: number;
+  contentid: number;
+  message: string;
+  created_at: string;
+  updated_at: string;
 }

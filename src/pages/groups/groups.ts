@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { AddChatPage } from '../addchat/addchat';
 import { ChatsPage } from '../chat/chat';
+
+import { MySessionToken } from '../../providers/token';
+import { RestGroupsProvider } from '../../providers/rest-groups/rest-groups';
+import { Chat } from '../../providers/rest-groups/rest-groups';
 
 @IonicPage()
 @Component({
@@ -10,19 +14,32 @@ import { ChatsPage } from '../chat/chat';
 })
 export class GroupsPage {
 
-  Chats = [];
+  private chats: Chat[] = [];
+  private token: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    //this.Chats = navParams.get("Groupss"); //conversation list should come from database or server in the future, pushing a test conversation for now
-    this.Chats.push({name: 'Tara'});
+  constructor(public navCtrl: NavController,  public modalCtrl: ModalController,
+    public restProvider: RestGroupsProvider,  public mySessionToken: MySessionToken) {
+
+    this.mySessionToken.getMyAuthToken().then(stoken => {
+      this.token = stoken;
+      this.restProvider.getChats(this.token).subscribe((chats: Chat[])=>{
+        this.chats = chats;
+      }, error => {
+        console.log('get chatgroups failed: ');
+      });
+
+    });
+ 
   }
 
   addGroup() {
     this.navCtrl.push(AddChatPage);
   }
 
-  joinGroup(key) {
-    this.navCtrl.push(ChatsPage);
+  joinGroup(chat: Chat) {
+    this.navCtrl.push(ChatsPage, {
+      chat: chat, token: this.token
+    });
   }
 
 }

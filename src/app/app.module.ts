@@ -26,6 +26,7 @@ import { GroupsPage } from '../pages/groups/groups';
 //import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 //import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RestChatsProvider } from '../providers/rest-chats/rest-chats';
+import { RestGroupsProvider } from '../providers/rest-groups/rest-groups';
 import { RestUsersProvider } from '../providers/rest-users/rest-users';
 
 @NgModule({
@@ -71,6 +72,7 @@ import { RestUsersProvider } from '../providers/rest-users/rest-users';
     RestTasksProvider,
     MySessionToken,
     RestChatsProvider,
+    RestGroupsProvider,
     RestUsersProvider,
     MySessionToken
   ]
