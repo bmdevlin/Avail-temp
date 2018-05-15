@@ -13,10 +13,10 @@ export class RestChatsProvider {
   constructor(public httpClient: HttpClient) {
     console.log('Hello RestChatsProvider Provider');
   }
-  
+
   getPosts (chatId:number, sToken: string): Observable<Post[]> {
-     
-    let headers = new HttpHeaders().set('Authorization', sToken ); 
+
+    let headers = new HttpHeaders().set('Authorization', sToken );
     var getUrl = `${this.baseChatUrl}?chatid=${chatId}`;
     return this.httpClient.get<Post[]>(getUrl, {headers: headers})
 
@@ -36,9 +36,9 @@ export class RestChatsProvider {
     return this.httpClient.get<any>(chatURL, {headers: headers});
   }
 
-  createChatMessage(sToken: string, chat: any): Observable<any> {
+  createChatMessage(sToken: string, post: Post): Observable<Post> {
     let headers = new HttpHeaders().set('Authorization', sToken);
-    return this.httpClient.post<any>(this.baseChatUrl, chat, {headers: headers})
+    return this.httpClient.post<Post>(this.baseChatUrl, post, {headers: headers})
   }
 
 //   getUserChatgroups() {

@@ -20,22 +20,22 @@ export class ChatsPage {
   private messages: Post[] = [];
   private chat: Chat;
   private newPost: Post;
-
-  private chats: Observable<any[]>;
   private token: string;
-  message = '';
-  data = { type:'', name:'', text:'' };
-  chatId = null;
-  chatTitle = '';
+   message = '';
+   data = { type:'', name:'', text:'' };
+  //chatId = null;
+  //chatTitle = '';
 
+  // temporarily hard-coded value. 3 = Tara
   currentUserId = 3;
   //currentUserId = this.usersProvider.getCurrentUserId();
+
   @ViewChild('content') content: Content;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
     private chatsProvider: RestChatsProvider, private usersProvider: RestUsersProvider, public mySessionToken: MySessionToken) {
- 
+
     //this.chatTitle = this.navParams.get('users');
     //this.name = this.navParams.get("nickname") as string;
     //this.data.type = 'message';
@@ -56,27 +56,20 @@ export class ChatsPage {
    });
   }
 
-//   sendBubble() {
-//     this.restProvider.createPost(this.token, this.newPost).subscribe((post: Post)=>{
-//       this.posts.push(post); 
-//     });
- 
-//     this.newPost.message = '';
-//   }
-
   sendMessage() {
-
-    // this.chatsProvider.createChatMessage(this.token, this.message).then(() => {
-    //   this.message = '';
-    //   this.content.scrollToBottom();
-    // })
-
-    // this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
-    //   this.message = '';
-    //   this.content.scrollToBottom();
-    // });
+    this.chatsProvider.createChatMessage(this.token, this.newPost).subscribe(post => {
+        this.messages.push(post);
+        this.newPost.message = '';
+        this.content.scrollToBottom();
+    });
   }
 
+  // temporary workaround to get the user nicknames
+  public getUserName (userid: number){
+      if (userid == 3){return "Tara"};
+      if (userid == 4){return "Barry"};
+      if (userid == 5){return "Mala"};
+  }
 
   exitChat() {
     let exitData = this.data;
@@ -111,7 +104,7 @@ export class ChatsPage {
 
 //   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
 //     public restProvider: RestPostsProvider,  public mySessionToken: MySessionToken) {
- 
+
 //     this.chat = this.navParams.get('chat');
 //     this.newPost = new Post;
 //     this.newPost.chatid = this.chat.id;
