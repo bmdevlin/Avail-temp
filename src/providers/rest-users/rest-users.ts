@@ -4,29 +4,36 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { DateTime } from 'ionic-angular';
 
-//export class UserCredentials {
-//   nickname = '';
-//   email = '';
-//   password = '';
-//}
+export class UserCredentials {
+  name = '';
+  email = '';
+  password = '';
+  created: Date;
+  updated: Date;
+  customer: Number;
+}
 
 @Injectable()
 export class RestUsersProvider {
 
-    baseUsersUrl:string =  "http://shrouded-harbor-31805.herokuapp.com/users"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
+  baseUsersUrl:string =  "http://shrouded-harbor-31805.herokuapp.com/users"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
 
-    constructor(public httpClient: HttpClient) {
-        console.log('Hello RestUsersProvider Provider');
-    }
+  constructor(public httpClient: HttpClient) {
+    console.log('Hello RestUsersProvider Provider');
+  }
 
-    getAllUsers (sToken: string): Observable<any[]> {
+  getAllUsers (sToken: string): Observable<any[]> {
+    let headers = new HttpHeaders().set('Authorization', sToken );
+    var getUrl = `${this.baseUsersUrl}`;
+    return this.httpClient.get<any[]>(getUrl, {headers: headers})
+  }
 
-        let headers = new HttpHeaders().set('Authorization', sToken );
-        var getUrl = `${this.baseUsersUrl}`;
-        return this.httpClient.get<any[]>(getUrl, {headers: headers})
-    
-    }
+  createUser (sToken: string, userCreds: UserCredentials): Observable<any> {
+    let headers = new HttpHeaders().set('Authorization', sToken );
+    return this.httpClient.post<any>(this.baseUsersUrl, userCreds, {headers: headers})
+  }
 
 //   usersRef = this.db.list('users');
 //   authState = this.afAuth.authState;

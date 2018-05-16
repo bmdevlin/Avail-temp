@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'addChat.html',
 })
 export class AddChatPage {
-  private chatUsers: Observable<any[]> = [];
+  private chatUsers: Observable<any[]>;
   search = '';
   filteredUsers: Observable<any[]>;
   private token: string;
