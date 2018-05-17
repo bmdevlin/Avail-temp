@@ -18,8 +18,18 @@ export class RestChatUsersProvider {
 
         let headers = new HttpHeaders().set('Authorization', sToken );
         var getUrl = `${this.baseChatUsersUrl}`;
-        return this.httpClient.get<any[]>(getUrl, {headers: headers})
+        return this.httpClient.get<ChatUser[]>(getUrl, {headers: headers})
 
     }
 
 }
+
+export class ChatUser {
+    userid: number;
+    displayname: string;
+    photoid: number;
+    created_at: Date;
+    updated_at: Date;
+  }
+
+ 

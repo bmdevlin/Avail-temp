@@ -15,6 +15,7 @@ export class RegisterPage {
 
   userCreds = new UserCredentials();
   private token: string;
+  private registerTxt string; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, //private fb: FormBuilder,
               private usersProvider: RestUsersProvider) {
@@ -29,11 +30,15 @@ export class RegisterPage {
 
   submitRegistration() {
 
-    this.userCreds.created = new Date(); //creates date in local devices timezone
-    this.userCreds.updated = new Date();
+    // this.userCreds.created   -> rails fills in these two fields
+    // this.userCreds.updated  
     this.userCreds.customer = 9001; //dummy value
 
-    this.usersProvider.createUser(this.token, this.userCreds);
+    this.usersProvider.createUser(this.token, this.userCreds).subscribe( authToken => {
+              this.registerTxt = "You are now registered. Please log in."
+             }, error => {
+               console.log('registration failed: ', this.userCreds);
+             });
 
     this.navCtrl.pop();
   }
