@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, DateTime } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
 import { RestUsersProvider, UserCredentials } from '../../providers/rest-users/rest-users';
-import { MySessionToken } from '../../providers/token';
+import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,10 +15,9 @@ export class RegisterPage {
 
   userCreds = new UserCredentials();
   private token: string;
-  private registerTxt string; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, //private fb: FormBuilder,
-              private usersProvider: RestUsersProvider) {
+              private usersProvider: RestUsersProvider, public toastCtrl: ToastController) {
     // this.userGroup = this.fb.group({
     //   members: this.fb.array([
     //     this.getInitialMembers()
@@ -34,12 +33,19 @@ export class RegisterPage {
     // this.userCreds.updated  
     this.userCreds.customer = 9001; //dummy value
 
-    this.usersProvider.createUser(this.token, this.userCreds).subscribe( authToken => {
-              this.registerTxt = "You are now registered. Please log in."
-             }, error => {
-               console.log('registration failed: ', this.userCreds);
-             });
-
+    this.usersProvider.createUser(this.userCreds).subscribe( authToken => {
+      let toast = this.toastCtrl.create({
+        message: 'User was added successfully',
+        duration: 3000
+      });
+      toast.present();
+      this.navCtrl.pop();
+        }, error => {
+          console.log('registration failed: ', this.userCreds);
+        });
+      
+  }
+  gotologin(){
     this.navCtrl.pop();
   }
 

@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import { DateTime } from 'ionic-angular';
 
 export class UserCredentials {
   name: string;
@@ -19,7 +18,7 @@ export class UserCredentials {
 export class RestUsersProvider {
 
   baseUsersUrl:string =  "http://shrouded-harbor-31805.herokuapp.com/users"; //"https://shrouded-harbor-31805.herokuapp.com/users";  "http://localhost:3000/users";
-  baseRegUrl:string =  "http://localhost:3000/register"; //"https://shrouded-harbor-31805.herokuapp.com/register";  "http://localhost:3000/register";
+  baseRegUrl:string =   "https://shrouded-harbor-31805.herokuapp.com/register" //"https://shrouded-harbor-31805.herokuapp.com/register";  "http://localhost:3000/register";
 
   constructor(public httpClient: HttpClient) {
     console.log('Hello RestUsersProvider Provider');
@@ -31,8 +30,7 @@ export class RestUsersProvider {
     return this.httpClient.get<any[]>(getUrl, {headers: headers})
   }
 
-  createUser (sToken: string, userCreds: UserCredentials): Observable<any> {
-    //let headers = new HttpHeaders().set('Authorization', sToken );
+  createUser (userCreds: UserCredentials): Observable<any> {
     return this.httpClient.post<any>(this.baseRegUrl, userCreds)
   }
 

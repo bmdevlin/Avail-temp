@@ -15,7 +15,7 @@ import { AddChatPage } from '../addchat/addchat';
   selector: 'page-chat',
   templateUrl: 'chat.html',
 })
-export class ChatsPage {
+export class ChatPage {
 
   private messages: Post[] = [];
   private chat: Chat;
@@ -69,6 +69,8 @@ export class ChatsPage {
       if (userid == 3){return "Tara"};
       if (userid == 4){return "Barry"};
       if (userid == 5){return "Mala"};
+      if (userid == 6){return "Fred"};
+      if (userid == 7){return "Joe"};
   }
 
   exitChat() {
