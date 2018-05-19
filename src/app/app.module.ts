@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { OneSignal } from '@ionic-native/onesignal';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
@@ -71,7 +73,7 @@ import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatuser
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     RestTasksProvider,
-    MySessionToken,
+    OneSignal,
     RestChatsProvider,
     RestGroupsProvider,
     RestUsersProvider,
