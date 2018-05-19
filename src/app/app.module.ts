@@ -13,8 +13,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { ChatPage } from '../pages/chat/chat';
-import { AddChatPage } from '../pages/addchat/addchat';
-import { ConvoPage } from '../pages/convo/convo';
+import { AddChatPage } from '../pages/add-chat/add-chat';
 import { MainPage } from '../pages/mainpage/mainpage';
 import { TasksPage } from '../pages/tasks/tasks/tasks';
 import { TaskDetailsPage } from '../pages/tasks/task-details/task-details';
@@ -23,6 +22,15 @@ import { UpdateTaskPage } from '../pages/tasks/update-task/update-task';
 import { RestProvider } from '../providers/rest/rest';
 import { MySessionToken } from '../providers/token';
 import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
+import { GroupsPage } from '../pages/groups/groups';
+
+//import { AngularFireModule } from 'angularfire2';
+//import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+//import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RestChatsProvider } from '../providers/rest-chats/rest-chats';
+import { RestGroupsProvider } from '../providers/rest-groups/rest-groups';
+import { RestUsersProvider } from '../providers/rest-users/rest-users';
+import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatusers';
 
 @NgModule({
   declarations: [
@@ -36,7 +44,7 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     RegisterPage,
     ChatPage,
     AddChatPage,
-    ConvoPage
+    GroupsPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,7 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     RegisterPage,
     ChatPage,
     AddChatPage,
-    ConvoPage,
+    GroupsPage,
     MainPage,
     TasksPage,
     TaskDetailsPage,
@@ -65,8 +73,12 @@ import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     RestProvider,
     RestTasksProvider,
-    MySessionToken,
-    OneSignal
+    OneSignal,
+    RestChatsProvider,
+    RestGroupsProvider,
+    RestUsersProvider,
+    RestChatUsersProvider,
+    MySessionToken
   ]
 })
 export class AppModule {}

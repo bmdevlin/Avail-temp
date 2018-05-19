@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
+import { RestUsersProvider, UserCredentials } from '../../providers/rest-users/rest-users';
+import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -9,44 +11,66 @@ import { FormControl, FormGroup, FormBuilder, FormArray, Validators } from '@ang
 })
 export class RegisterPage {
 
-  userGroup: FormGroup;
-  changeLog: string[] = [];
+  //userGroup: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private fb: FormBuilder) {
-    this.userGroup = this.fb.group({
-      members: this.fb.array([
-        this.getInitialMembers()
-      ])
-    });
+  userCreds = new UserCredentials();
+  private token: string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, //private fb: FormBuilder,
+              private usersProvider: RestUsersProvider, public toastCtrl: ToastController) {
+    // this.userGroup = this.fb.group({
+    //   members: this.fb.array([
+    //     this.getInitialMembers()
+    //   ])
+    // });
+
+    this.token = navParams.get('token');
   }
 
-  getInitialMembers() {
-    return this.fb.group({
-      name: ['', [Validators.required, Validators.maxLength(214)]],
-      email: ['', [Validators.required, Validators.pattern(new RegExp('.*@.*\..*'))]]
-    });
+  submitRegistration() {
+
+    // this.userCreds.created   -> rails fills in these two fields
+    // this.userCreds.updated  
+    this.userCreds.customer = 9001; //dummy value
+
+    this.usersProvider.createUser(this.userCreds).subscribe( authToken => {
+      let toast = this.toastCtrl.create({
+        message: 'User was added successfully',
+        duration: 3000
+      });
+      toast.present();
+      this.navCtrl.pop();
+        }, error => {
+          console.log('registration failed: ', this.userCreds);
+        });
+      
+  }
+  gotologin(){
+    this.navCtrl.pop();
   }
 
-  addMember() {
-    const control = <FormArray>this.userGroup.controls['members'];
-    control.push(this.getInitialMembers());
-  }
+  // getInitialMembers() {
+  //   return this.fb.group({
+  //     name: ['', [Validators.required, Validators.maxLength(214)]],
+  //     email: ['', [Validators.required, Validators.pattern(new RegExp('.*@.*\..*'))]],
+  //     password: ['']
+  //   });
+  // }
 
-  removeMember(i: number) {
-    const control = <FormArray>this.userGroup.controls['members'];
-    control.removeAt(i);
-  }
+  // addMember() {
+  //   const control = <FormArray>this.userGroup.controls['members'];
+  //   control.push(this.getInitialMembers());
+  // }
 
-  submitRegistration({ value, valid }: {value: UserGroup, valid: boolean}) {
-    console.log('user: ', value);
-    console.log('valid: ', valid);
-  }
+  // removeMember(i: number) {
+  //   const control = <FormArray>this.userGroup.controls['members'];
+  //   control.removeAt(i);
+  // }
 
-  submitForm() {
-    console.log(this.userGroup);
-  }
 }
 
-export interface UserGroup {
-  name: string;
-}
+// export interface UserGroup {
+//   name: string;
+//   email: string;
+//   password: string;
+// }

@@ -38,7 +38,7 @@ export class HomePage {
               .subscribe( authToken => {
                      //this.savedToken = authToken.auth_token;
                      this.mySessionToken.setMyAuthToken(authToken.auth_token).then(
-                                 res => {this.nav.push(MainPage);} );
+                                 res => {this.nav.setRoot(MainPage, {});} );
                             }, error => {
                               console.log('auth failed: ', myData);
                             });
@@ -49,7 +49,7 @@ export class HomePage {
     this.nav.push(RegisterPage);
   }
   goToMain(event) {
-    this.nav.push(MainPage);
+    this.nav.setRoot(MainPage, {});
   }
 
 }
