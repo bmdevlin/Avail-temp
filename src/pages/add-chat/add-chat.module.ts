@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AddChatPage } from './addchat';
+import { AddChatPage } from './add-chat';
 
 @NgModule({
   declarations: [

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { AddChatPage } from '../addchat/addchat';
-import { ChatsPage } from '../chat/chat';
+import { AddChatPage } from '../add-chat/add-chat';
+import { ChatPage } from '../chat/chat';
 
 import { MySessionToken } from '../../providers/token';
 import { RestGroupsProvider } from '../../providers/rest-groups/rest-groups';
@@ -37,7 +37,7 @@ export class GroupsPage {
   }
 
   joinGroup(chat: Chat) {
-    this.navCtrl.push(ChatsPage, {
+    this.navCtrl.push(ChatPage, {
       chat: chat, token: this.token
     });
   }

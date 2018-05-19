@@ -6,8 +6,8 @@ import { Observable } from 'rxjs/Observable';
 
 @IonicPage()
 @Component({
-  selector: 'page-addChat',
-  templateUrl: 'addChat.html',
+  selector: 'page-add-chat',
+  templateUrl: 'add-chat.html',
 })
 export class AddChatPage {
   private chatUsers: Observable<any[]>;

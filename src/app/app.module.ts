@@ -10,8 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
-import { ChatsPage } from '../pages/chat/chat';
-import { AddChatPage } from '../pages/addchat/addchat';
+import { ChatPage } from '../pages/chat/chat';
+import { AddChatPage } from '../pages/add-chat/add-chat';
 import { MainPage } from '../pages/mainpage/mainpage';
 import { TasksPage } from '../pages/tasks/tasks/tasks';
 import { TaskDetailsPage } from '../pages/tasks/task-details/task-details';
@@ -40,7 +40,7 @@ import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatuser
     AddTaskPage,
     UpdateTaskPage,
     RegisterPage,
-    ChatsPage,
+    ChatPage,
     AddChatPage,
     GroupsPage
   ],
@@ -56,7 +56,7 @@ import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatuser
     MyApp,
     HomePage,
     RegisterPage,
-    ChatsPage,
+    ChatPage,
     AddChatPage,
     GroupsPage,
     MainPage,

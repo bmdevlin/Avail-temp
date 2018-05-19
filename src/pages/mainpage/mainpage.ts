@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TasksPage } from '../tasks/tasks/tasks';
-import { ChatsPage } from '../chat/chat';
+import { ChatPage } from '../chat/chat';
 import { GroupsPage } from '../groups/groups';
-import { AddChatPage } from '../addchat/addchat';
 
 @IonicPage()
 @Component({
@@ -24,7 +23,7 @@ export class MainPage {
   }
   
   goToChatPage() {
-    this.nav.push(ChatsPage);
+    this.nav.push(ChatPage);
   }
   
   goToGroupsPage() {
