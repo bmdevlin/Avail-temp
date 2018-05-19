@@ -26,9 +26,7 @@ export class ChatPage {
   //chatId = null;
   //chatTitle = '';
 
-  // temporarily hard-coded value. 3 = Tara
-  currentUserId = 3;
-  //currentUserId = this.usersProvider.getCurrentUserId();
+  private currentUserId = 0;
 
   @ViewChild('content') content: Content;
 
@@ -52,6 +50,7 @@ export class ChatPage {
   sendMessage() {
     this.chatsProvider.createPost(this.token, this.newPost).subscribe(post => {
         this.messages.push(post);
+        this.currentUserId = post.customer;
         this.newPost.message = '';
         this.content.scrollToBottom();
     });
