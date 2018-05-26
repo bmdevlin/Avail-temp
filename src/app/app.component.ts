@@ -24,8 +24,9 @@ export class MyApp {
   }
 
   setupPush(){
-    this.onesignal.startInit( '7d3751ec-95c7-4e71-a928-b3a7213775b7',
-                                                        '844760076384');
+    //changed to onesignal app id found on onesignal.com and project number from console.cloud.google.com (android only)
+    this.onesignal.startInit( '8437b527-c7fe-4d62-9edd-2cb0aee564b0',
+                                                        '475578412140');
     
     this.onesignal.handleNotificationOpened().subscribe(data => {
       console.log('We opened a push', data);
