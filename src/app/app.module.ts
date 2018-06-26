@@ -19,6 +19,11 @@ import { TasksPage } from '../pages/tasks/tasks/tasks';
 import { TaskDetailsPage } from '../pages/tasks/task-details/task-details';
 import { AddTaskPage } from '../pages/tasks/add-task/add-task';
 import { UpdateTaskPage } from '../pages/tasks/update-task/update-task';
+import { UserProfilesPage } from '../pages/userprofiles/user-profiles/user-profiles';
+import { UserProfileDetailsPage } from '../pages/userprofiles/user-profile-details/user-profile-details';
+import { AddUserProfilePage } from '../pages/userprofiles/add-user-profile/add-user-profile';
+import { UpdateUserProfilePage } from '../pages/userprofiles/update-user-profile/update-user-profile';
+import { TimelinesPage } from '../pages/timelines/timelines';
 import { RestProvider } from '../providers/rest/rest';
 import { MySessionToken } from '../providers/token';
 import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
@@ -30,7 +35,9 @@ import { GroupsPage } from '../pages/groups/groups';
 import { RestChatsProvider } from '../providers/rest-chats/rest-chats';
 import { RestGroupsProvider } from '../providers/rest-groups/rest-groups';
 import { RestUsersProvider } from '../providers/rest-users/rest-users';
-import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatusers';
+import { RestTimelinesProvider } from '../providers/rest-timelines/rest-timelines';
+import { RestUserProfilesProvider } from '../providers/rest-userprofiles/rest-userprofiles';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +48,11 @@ import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatuser
     TaskDetailsPage,
     AddTaskPage,
     UpdateTaskPage,
+    UserProfilesPage,
+    UserProfileDetailsPage,
+    AddUserProfilePage,
+    UpdateUserProfilePage,
+    TimelinesPage,
     RegisterPage,
     ChatPage,
     AddChatPage,
@@ -66,6 +78,11 @@ import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatuser
     TaskDetailsPage,
     AddTaskPage,
     UpdateTaskPage,
+    UserProfilesPage,
+    UserProfileDetailsPage,
+    AddUserProfilePage,
+    UpdateUserProfilePage,
+    TimelinesPage
   ],
   providers: [
     StatusBar,
@@ -77,7 +94,8 @@ import { RestChatUsersProvider } from '../providers/rest-chatusers/rest-chatuser
     RestChatsProvider,
     RestGroupsProvider,
     RestUsersProvider,
-    RestChatUsersProvider,
+    RestUserProfilesProvider,
+    RestTimelinesProvider,
     MySessionToken
   ]
 })

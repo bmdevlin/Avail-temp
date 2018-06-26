@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+      Update Family Address Book
+    </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newUserProfile.firstname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newUserProfile.lastname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Cell Number</ion-label>
+      <ion-input type="text" [(ngModel)]="newUserProfile.cellphone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="newUserProfile.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Birthday</ion-label>
+      <ion-input type="text" [(ngModel)]="newUserProfile.birthday"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button full ion-button color="secondary" (click)="saveUserProfile()">Save</button>
+
+</ion-content>

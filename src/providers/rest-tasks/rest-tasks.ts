@@ -5,17 +5,10 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the RestTasksProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class RestTasksProvider {
 
-  baseTaskUrl:string =  "http://shrouded-harbor-31805.herokuapp.com/tasks"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
-
+  baseTaskUrl:string =  "https://shrouded-harbor-31805.herokuapp.com/tasks"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
 
   constructor(public httpClient: HttpClient) {
     console.log('Hello RestTasksProvider Provider');

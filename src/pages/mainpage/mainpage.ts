@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TasksPage } from '../tasks/tasks/tasks';
-import { ChatPage } from '../chat/chat';
+import { UserProfilesPage } from '../userprofiles/user-profiles/user-profiles';
 import { GroupsPage } from '../groups/groups';
+import { TimelinesPage } from '../timelines/timelines';
 
 @IonicPage()
 @Component({
@@ -22,11 +23,15 @@ export class MainPage {
   this.nav.push(TasksPage);
   }
   
-  goToChatPage() {
-    this.nav.push(ChatPage);
+  goToUserProfilesPage() {
+    this.nav.push(UserProfilesPage);
   }
   
   goToGroupsPage() {
     this.nav.push(GroupsPage);
+  }
+
+  goToTimelinesPage() {
+    this.nav.push(TimelinesPage);
   }
 }

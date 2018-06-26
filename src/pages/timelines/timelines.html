@@ -1,0 +1,58 @@
+ 
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Your Family Timeline</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+     <ion-item *ngFor="let timeline of timelines"  >
+        <ion-row>
+            <ion-col   *ngIf="timeline.photoURL"> 
+              {{timeline.photoURL }}
+            </ion-col>
+
+            <ion-col   *ngIf="timeline.message">  
+                {{timeline.message }}
+            </ion-col>
+
+            <ion-col   *ngIf="timeline.videoid"> 
+                {{timeline.videoid }}
+            </ion-col>
+        </ion-row>
+     </ion-item> 
+  </ion-list>
+     
+
+  <button ion-button color="primary" (click)="addTimeline()">New timeline entry </button>
+
+  <ion-list>
+      <ion-item>
+        <ion-label floating>Photo Album</ion-label>
+        <ion-input type="text" [(ngModel)]="newTimeline.photoURL"></ion-input>
+        <button ion-button color="primary" (click)="addPhotoURL()">Add a Photo URL</button>
+  
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Message</ion-label>
+        <ion-input type="text" [(ngModel)]="newTimeline.message"></ion-input>
+        <button ion-button color="primary" (click)="addMessage()">Add a comment </button>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Video Id</ion-label>
+        <ion-input type="text" [(ngModel)]="newTimeline.videoid">Add a video </ion-input>
+      </ion-item>
+  
+    </ion-list>
+     <button ion-button color="primary" (click)="addPhotoURL()">Add Photo URL</button>
+  
+      
+
+</ion-content>

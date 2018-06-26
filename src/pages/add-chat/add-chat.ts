@@ -1,4 +1,4 @@
-import { RestChatUsersProvider } from './../../providers/rest-chatusers/rest-chatusers';
+import { RestUserProfilesProvider, UserProfile } from './../../providers/rest-userprofiles/rest-userprofiles';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, ViewController, NavParams } from 'ionic-angular';
 
@@ -10,28 +10,32 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'add-chat.html',
 })
 export class AddChatPage {
-  private chatUsers: Observable<any[]>;
-  search = '';
-  filteredUsers: Observable<any[]>;
+  private userProfiles: UserProfile[];
   private token: string;
 
-  constructor(public navCtrl: NavController, private viewCtrl: ViewController, private chatUsersProvider: RestChatUsersProvider, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, private viewCtrl: ViewController, private userProfileProvider: RestUserProfilesProvider, public navParams: NavParams) {
     this.token = this.navParams.get('token');
   
   }
 
   //TODO: database integration to get all users
   ionViewDidLoad() {
-    this.chatUsers = this.chatUsersProvider.getAllChatUsers(this.token);
-    this.filterItems();
+    this.token = this.navParams.get('token');
+    this.userProfileProvider.getUserProfiles(this.token).subscribe(
+     (userProfiles: UserProfile[])=>{
+            this.userProfiles = userProfiles;
+     }, error => {
+       console.log('get userProfiles failed: ');
+   });
+    //this.filterItems();
   }
 
   filterItems() {
-    this.filteredUsers = this.chatUsers.map(array => {
-      return array.filter(user => {
-        return user['nickname'].toLowerCase().indexOf(this.search.toLowerCase()) > -1;
-      })
-    });
+    //this.filteredUsers = this.chatUsers.map(array => {
+    //  return array.filter(user => {
+    //    return user['nickname'].toLowerCase().indexOf(this.search.toLowerCase()) > -1;
+   //  })
+   // });
   }
 
   startChat(chatUserId) {

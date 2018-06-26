@@ -8,13 +8,6 @@ import { TaskDetailsPage } from '../task-details/task-details';
 import { AddTaskPage } from '../add-task/add-task';
 import { UpdateTaskPage } from '../update-task/update-task';
 
-/**
- * Generated class for the TasksPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-tasks',
@@ -26,7 +19,7 @@ export class TasksPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,   public modalCtrl: ModalController,
                   public restProvider: RestTasksProvider,  public mySessionToken: MySessionToken) {
-    
+
     this.mySessionToken.getMyAuthToken().then(stoken => {
       this.token = stoken;
       this.restProvider.getTasks(this.token).subscribe((tasks: Task[])=>{
@@ -39,7 +32,7 @@ export class TasksPage {
   }
 
   ionViewDidLoad() {
-    
+
   }
 
 
@@ -48,7 +41,7 @@ export class TasksPage {
     addModal.onDidDismiss((task) => {
           if(task){
             this.restProvider.createTask(this.token, task)
-              .subscribe(task => this.tasks.push(task), 
+              .subscribe(task => this.tasks.push(task),
               error => { console.log('add task failed: ', task);
           });
           }
@@ -67,7 +60,7 @@ export class TasksPage {
     addModal.onDidDismiss((task) => {
           if(task){
             this.restProvider.updateTask(this.token, task)
-              .subscribe(task => this.tasks[task.id]==task, 
+              .subscribe(task => this.tasks[task.id]==task,
                 error => { console.log('update task failed: ', task);
             });
           }

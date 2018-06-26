@@ -40,6 +40,8 @@ export class MyApp {
             text: 'Close',
             role: 'cancel'
           }
+        
+        
         ]
       })
       alert.present();
