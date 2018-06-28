@@ -24,6 +24,11 @@ import { UserProfileDetailsPage } from '../pages/userprofiles/user-profile-detai
 import { AddUserProfilePage } from '../pages/userprofiles/add-user-profile/add-user-profile';
 import { UpdateUserProfilePage } from '../pages/userprofiles/update-user-profile/update-user-profile';
 import { TimelinesPage } from '../pages/timelines/timelines';
+import { CalentriesPage } from '../pages/calentries/calentries/calentries';
+import { CalentryDetailsPage } from '../pages/calentries/calentry-details/calentry-details';
+import { AddCalentryPage } from '../pages/calentries/add-calentry/add-calentry';
+import { UpdateCalentryPage } from '../pages/calentries/update-calentry/update-calentry';
+
 import { RestProvider } from '../providers/rest/rest';
 import { MySessionToken } from '../providers/token';
 import { RestTasksProvider } from '../providers/rest-tasks/rest-tasks';
@@ -37,6 +42,7 @@ import { RestGroupsProvider } from '../providers/rest-groups/rest-groups';
 import { RestUsersProvider } from '../providers/rest-users/rest-users';
 import { RestTimelinesProvider } from '../providers/rest-timelines/rest-timelines';
 import { RestUserProfilesProvider } from '../providers/rest-userprofiles/rest-userprofiles';
+import { RestCalentriesProvider } from '../providers/rest-calentries/rest-calentries';
 
 
 @NgModule({
@@ -48,6 +54,10 @@ import { RestUserProfilesProvider } from '../providers/rest-userprofiles/rest-us
     TaskDetailsPage,
     AddTaskPage,
     UpdateTaskPage,
+    CalentriesPage,
+    CalentryDetailsPage,
+    AddCalentryPage,
+    UpdateCalentryPage,
     UserProfilesPage,
     UserProfileDetailsPage,
     AddUserProfilePage,
@@ -56,7 +66,11 @@ import { RestUserProfilesProvider } from '../providers/rest-userprofiles/rest-us
     RegisterPage,
     ChatPage,
     AddChatPage,
-    GroupsPage
+    GroupsPage,
+    UserProfilesPage,
+    UserProfileDetailsPage,
+    AddUserProfilePage,
+    UpdateUserProfilePage
   ],
   imports: [
     BrowserModule,
@@ -78,6 +92,10 @@ import { RestUserProfilesProvider } from '../providers/rest-userprofiles/rest-us
     TaskDetailsPage,
     AddTaskPage,
     UpdateTaskPage,
+    CalentriesPage,
+    CalentryDetailsPage,
+    AddCalentryPage,
+    UpdateCalentryPage,
     UserProfilesPage,
     UserProfileDetailsPage,
     AddUserProfilePage,
@@ -96,6 +114,7 @@ import { RestUserProfilesProvider } from '../providers/rest-userprofiles/rest-us
     RestUsersProvider,
     RestUserProfilesProvider,
     RestTimelinesProvider,
+    RestCalentriesProvider,
     MySessionToken
   ]
 })

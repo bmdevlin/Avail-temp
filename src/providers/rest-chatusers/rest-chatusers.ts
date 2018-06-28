@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestChatUsersProvider {
 
-    baseUserInfoUrl:string =  "https://shrouded-harbor-31805.herokuapp.com/chatusers"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
+    baseUserInfoUrl:string =  "http://localhost:3000/chatusers"; //"https://shrouded-harbor-31805.herokuapp.com/tasks";  "http://localhost:3000/tasks";
 
     constructor(public httpClient: HttpClient) {
         console.log('Hello RestUsersProvider Provider');

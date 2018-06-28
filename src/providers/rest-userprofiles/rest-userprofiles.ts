@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestUserProfilesProvider {
 
-  baseUserProfileUrl:string =  "https://shrouded-harbor-31805.herokuapp.com/userinfos"; //"https://shrouded-harbor-31805.herokuapp.com/userinfos";  "http://localhost:3000/userinfos";
+  baseUserProfileUrl:string =  "http://localhost:3000/userinfos"; //"https://shrouded-harbor-31805.herokuapp.com/userinfos";  "http://localhost:3000/userinfos";
 
 
   constructor(public httpClient: HttpClient) {

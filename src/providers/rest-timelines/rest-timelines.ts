@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class RestTimelinesProvider {
 
-  baseTimelineUrl:string =    "https://shrouded-harbor-31805.herokuapp.com/timelines"; //"https://shrouded-harbor-31805.herokuapp.com/timelines";  "http://localhost:3000/timelines";
+  baseTimelineUrl:string =    "http://localhost:3000/timelines"; //"https://shrouded-harbor-31805.herokuapp.com/timelines";  "http://localhost:3000/timelines";
 
   constructor(public httpClient: HttpClient) {
     console.log('Hello RestTimelinesProvider Provider');

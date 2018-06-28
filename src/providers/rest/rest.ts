@@ -16,7 +16,7 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class RestProvider {
-  keztraAuthURL:string =  "https://shrouded-harbor-31805.herokuapp.com/authenticate";  // "https://shrouded-harbor-31805.herokuapp.com/authenticate";  "http://localhost:3000/authenticate";
+  keztraAuthURL:string =  "http://localhost:3000/authenticate";  // "https://shrouded-harbor-31805.herokuapp.com/authenticate";  "http://localhost:3000/authenticate";
 
  
   public myAuthToken: string;

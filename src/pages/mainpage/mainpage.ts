@@ -4,6 +4,8 @@ import { TasksPage } from '../tasks/tasks/tasks';
 import { UserProfilesPage } from '../userprofiles/user-profiles/user-profiles';
 import { GroupsPage } from '../groups/groups';
 import { TimelinesPage } from '../timelines/timelines';
+import { CalentriesPage } from '../calentries/calentries/calentries';
+
 
 @IonicPage()
 @Component({
@@ -19,9 +21,7 @@ export class MainPage {
     console.log('ionViewDidLoad MainPage');
   }
 
-  goToTasks(event) {
-  this.nav.push(TasksPage);
-  }
+
   
   goToUserProfilesPage() {
     this.nav.push(UserProfilesPage);
@@ -34,4 +34,12 @@ export class MainPage {
   goToTimelinesPage() {
     this.nav.push(TimelinesPage);
   }
+
+  goToTasksPage(event) {
+    this.nav.push(TasksPage);
+    }
+
+  goToCalentriesPage(event) {
+    this.nav.push(CalentriesPage);
+    }
 }

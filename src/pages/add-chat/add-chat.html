@@ -1,22 +1,13 @@
+ 
 <ion-header>
+
   <ion-navbar>
-    <ion-title>Start a Chat</ion-title>
-    <ion-buttons>
-      <button ion-button icon-only (click)="close()">
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-buttons>
+    <ion-title>Add Chat</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content> 
-<ion-list>
-  <ion-item *ngFor="let user of userProfiles"  (click)="startChat(user.id)" tappable>
-    {{ user.firstname }}  {{user.lastname}}
-    <ion-icon item-end name="arrow-forward"></ion-icon>
-  </ion-item>
-</ion-list>
 
-  
+<ion-content padding>
+
 </ion-content>
