@@ -13,8 +13,8 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class RestCalentriesProvider {
-  baseCalentryUrl:string = "http://localhost:3000/calentries";
-      //"https://shrouded-harbor-31805.herokuapp.com/calentries";  "http://localhost:3000/calentries";
+  // baseCalentryUrl:string = "http://localhost:3000/calentries";
+  baseCalentryUrl:string = "https://shrouded-harbor-31805.herokuapp.com/calentries";  
 
 
   constructor(public httpClient: HttpClient) {

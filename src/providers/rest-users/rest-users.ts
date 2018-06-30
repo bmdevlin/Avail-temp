@@ -17,8 +17,8 @@ export class UserCredentials {
 @Injectable()
 export class RestUsersProvider {
 
-  baseUsersUrl:string =  "http://localhost:3000/users"; //"https://shrouded-harbor-31805.herokuapp.com/users";  "http://localhost:3000/users";
-  baseRegUrl:string =   "http://localhost:3000/register" //"https://shrouded-harbor-31805.herokuapp.com/register";  "http://localhost:3000/register";
+  baseUsersUrl:string =   "https://shrouded-harbor-31805.herokuapp.com/users";  // "http://localhost:3000/users";
+  baseRegUrl:string =    "https://shrouded-harbor-31805.herokuapp.com/register";  // "http://localhost:3000/register";
 
   constructor(public httpClient: HttpClient) {
     console.log('Hello RestUsersProvider Provider');
