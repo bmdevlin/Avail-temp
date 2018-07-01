@@ -167,7 +167,7 @@ var CalentriesPage = /** @class */ (function () {
     };
     CalentriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calentries',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/'<!--\n  Generated template for the CalentriesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.    {{calentry.title }}\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>calentries</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-list>\n       <ion-item *ngFor="let calentry of calentries"  >\n           {{calentry.title }}\n           {{calentry.startDate }}\n           <button ion-button outline  (click)=" viewCalentry(calentry)"> Show </button>\n           <button ion-button  (click)="updateModalCalentry(calentry)">Update </button>\n           <button ion-button   (click)="deleteCalentry(calentry.id)">Delete </button>\n       </ion-item>\n    </ion-list>\n  \n  \n     <button ion-button color="primary" (click)="addCalentry()">New calentry </button>\n  \n  \n  \n  </ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/,
+            selector: 'page-calentries',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/'<!--\n  Generated template for the CalentriesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.    {{calentry.title }}\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>calentries</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-list>\n       <ion-item *ngFor="let calentry of calentries"  >\n           \n           {{calentry.date }}\n           {{calentry.title }}\n           <button ion-button outline  (click)=" viewCalentry(calentry)"> Show </button>\n           <button ion-button  (click)="updateModalCalentry(calentry)">Update </button>\n           <button ion-button   (click)="deleteCalentry(calentry.id)">Delete </button>\n       </ion-item>\n    </ion-list>\n  \n  \n     <button ion-button color="primary" (click)="addCalentry()">New calentry </button>\n  \n  \n  \n  </ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_3__providers_rest_calentries_rest_calentries__["b" /* RestCalentriesProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_token__["a" /* MySessionToken */]])
@@ -1116,23 +1116,8 @@ var TimelinesPage = /** @class */ (function () {
         this.newTimeline.videoid = 0;
         this.newTimeline.message = "";
     };
-    TimelinesPage.prototype.addPhotoURL = function () {
-        var _this = this;
-        this.restProvider.createTimeline(this.token, this.newTimeline)
-            .subscribe(function (timeline) { return _this.timelines.push(timeline); }, function (error) {
-            console.log('add timeline failed: ', _this.newTimeline);
-        });
-        this.resetNewTimeline();
-    };
-    TimelinesPage.prototype.addMessage = function () {
-        var _this = this;
-        this.restProvider.createTimeline(this.token, this.newTimeline)
-            .subscribe(function (timeline) { return _this.timelines.push(timeline); }, function (error) {
-            console.log('add timeline failed: ', _this.newTimeline);
-        });
-        this.resetNewTimeline();
-    };
-    TimelinesPage.prototype.addVideoid = function () {
+    // add an entry to the time line
+    TimelinesPage.prototype.addTimeline = function () {
         var _this = this;
         this.restProvider.createTimeline(this.token, this.newTimeline)
             .subscribe(function (timeline) { return _this.timelines.push(timeline); }, function (error) {

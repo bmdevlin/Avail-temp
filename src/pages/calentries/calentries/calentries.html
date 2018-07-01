@@ -18,8 +18,9 @@
 
     <ion-list>
        <ion-item *ngFor="let calentry of calentries"  >
+           
+           {{calentry.date }}
            {{calentry.title }}
-           {{calentry.startDate }}
            <button ion-button outline  (click)=" viewCalentry(calentry)"> Show </button>
            <button ion-button  (click)="updateModalCalentry(calentry)">Update </button>
            <button ion-button   (click)="deleteCalentry(calentry.id)">Delete </button>

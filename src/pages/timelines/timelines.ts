@@ -39,8 +39,8 @@ export class TimelinesPage {
     this.newTimeline.videoid = 0;
     this.newTimeline.message = "";
   }
-
-  addPhotoURL(){
+  // add an entry to the time line
+  addTimeline(){
     this.restProvider.createTimeline(this.token, this.newTimeline)
               .subscribe(timeline => this.timelines.push(timeline), 
               error => { console.log('add timeline failed: ', this.newTimeline);
@@ -48,22 +48,7 @@ export class TimelinesPage {
     this.resetNewTimeline();
   }
 
-  addMessage(){
-    this.restProvider.createTimeline(this.token, this.newTimeline)
-              .subscribe(timeline => this.timelines.push(timeline), 
-              error => { console.log('add timeline failed: ', this.newTimeline);
-          });
-    this.resetNewTimeline();
-  }
-
-
-  addVideoid(){
-    this.restProvider.createTimeline(this.token, this.newTimeline)
-              .subscribe(timeline => this.timelines.push(timeline), 
-              error => { console.log('add timeline failed: ', this.newTimeline);
-          });
-    this.resetNewTimeline();
-  }  
+  
 
  
 
