@@ -13,7 +13,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
 import { ChatPage } from '../pages/chat/chat';
-import { AddChatPage } from '../pages/add-chat/add-chat';
+//import { AddChatPage } from '../pages/add-chat/add-chat';
 import { MainPage } from '../pages/mainpage/mainpage';
 import { TasksPage } from '../pages/tasks/tasks/tasks';
 import { TaskDetailsPage } from '../pages/tasks/task-details/task-details';
@@ -65,7 +65,7 @@ import { RestCalentriesProvider } from '../providers/rest-calentries/rest-calent
     TimelinesPage,
     RegisterPage,
     ChatPage,
-    AddChatPage,
+    //AddChatPage,
     GroupsPage,
     UserProfilesPage,
     UserProfileDetailsPage,
@@ -85,7 +85,7 @@ import { RestCalentriesProvider } from '../providers/rest-calentries/rest-calent
     HomePage,
     RegisterPage,
     ChatPage,
-    AddChatPage,
+    //AddChatPage,
     GroupsPage,
     MainPage,
     TasksPage,

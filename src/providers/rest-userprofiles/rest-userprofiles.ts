@@ -4,15 +4,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { MySessionToken } from '../token';
 
 @Injectable()
 export class RestUserProfilesProvider {
 
-  baseUserProfileUrl:string =   "https://shrouded-harbor-31805.herokuapp.com/userinfos";  // "http://localhost:3000/userinfos";
+  private baseUserProfileUrl:string;
 
-
-  constructor(public httpClient: HttpClient) {
+  constructor(public httpClient: HttpClient, sessionToken: MySessionToken) {
     console.log('Hello RestUserProfilesProvider Provider');
+    this.baseUserProfileUrl = sessionToken.getBaseURL("userinfos");
   }
   /** GET tasks from the server */
   getUserProfiles (sToken: string): Observable<UserProfile[]> {
@@ -60,6 +61,7 @@ export class UserProfile {
   customer: number; 
   email: string; 
   cellphone: string; 
+  address: string; 
   firstname: string;
   lastname: string;
   birthday: string;

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { MySessionToken } from '../token';
 
 export class UserCredentials {
   name: string;
@@ -17,11 +18,13 @@ export class UserCredentials {
 @Injectable()
 export class RestUsersProvider {
 
-  baseUsersUrl:string =   "https://shrouded-harbor-31805.herokuapp.com/users";  // "http://localhost:3000/users";
-  baseRegUrl:string =    "https://shrouded-harbor-31805.herokuapp.com/register";  // "http://localhost:3000/register";
+  private baseUsersUrl:string ;  
+  private baseRegisterURL:string;
 
-  constructor(public httpClient: HttpClient) {
+  constructor(public httpClient: HttpClient, sessionToken: MySessionToken) {
     console.log('Hello RestUsersProvider Provider');
+    this.baseUsersUrl = sessionToken.getBaseURL("users");
+    this.baseRegisterURL = sessionToken.getBaseURL("register");
   }
 
   getAllUsers (sToken: string): Observable<any[]> {
@@ -31,7 +34,7 @@ export class RestUsersProvider {
   }
 
   createUser (userCreds: UserCredentials): Observable<any> {
-    return this.httpClient.post<any>(this.baseRegUrl, userCreds)
+    return this.httpClient.post<any>(this.baseRegisterURL, userCreds)
   }
 
 //   usersRef = this.db.list('users');

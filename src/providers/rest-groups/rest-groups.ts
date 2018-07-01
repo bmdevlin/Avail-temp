@@ -4,16 +4,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { MySessionToken } from '../token';
 
  
 @Injectable()
 export class RestGroupsProvider {
 
-  baseUrl:string =  "https://shrouded-harbor-31805.herokuapp.com/chats"; // "http://localhost:3000/chats";
+  private baseUrl:string;
 
-
-  constructor(public httpClient: HttpClient) {
+  constructor(public httpClient: HttpClient, sessionToken: MySessionToken) {
     console.log('Hello RestChatsProvider ');
+    this.baseUrl = sessionToken.getBaseURL("chats");
   }
   /** GET chats from the server */
   getChats (sToken: string): Observable<Chat[]> {

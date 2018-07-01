@@ -4,14 +4,16 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { MySessionToken } from '../token';
 
 @Injectable()
 export class RestTimelinesProvider {
 
-  baseTimelineUrl:string =    "https://shrouded-harbor-31805.herokuapp.com/timelines"; // "http://localhost:3000/timelines";
+  private baseTimelineUrl:string; 
 
-  constructor(public httpClient: HttpClient) {
+  constructor(public httpClient: HttpClient, sessionToken: MySessionToken) {
     console.log('Hello RestTimelinesProvider Provider');
+    this.baseTimelineUrl = sessionToken.getBaseURL("timelines");
   }
 
   getTimelines (sToken: string): Observable<Timeline[]> {

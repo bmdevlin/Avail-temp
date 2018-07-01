@@ -5,10 +5,10 @@ webpackJsonp([5],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimelinesPageModule", function() { return TimelinesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddUserProfilePageModule", function() { return AddUserProfilePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timelines__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_user_profile__ = __webpack_require__(126);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TimelinesPageModule = /** @class */ (function () {
-    function TimelinesPageModule() {
+var AddUserProfilePageModule = /** @class */ (function () {
+    function AddUserProfilePageModule() {
     }
-    TimelinesPageModule = __decorate([
+    AddUserProfilePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__timelines__["a" /* TimelinesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__add_user_profile__["a" /* AddUserProfilePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__timelines__["a" /* TimelinesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__add_user_profile__["a" /* AddUserProfilePage */]),
             ],
         })
-    ], TimelinesPageModule);
-    return TimelinesPageModule;
+    ], AddUserProfilePageModule);
+    return AddUserProfilePageModule;
 }());
 
-//# sourceMappingURL=timelines.module.js.map
+//# sourceMappingURL=add-user-profile.module.js.map
 
 /***/ })
 

@@ -14,7 +14,7 @@
      <ion-item *ngFor="let timeline of timelines"  >
         <ion-row>
             <ion-col   *ngIf="timeline.photoURL"> 
-              {{timeline.photoURL }}
+             <a href="{{timeline.photoURL }}">{{timeline.photoURL }}</a>
             </ion-col>
 
             <ion-col   *ngIf="timeline.message">  

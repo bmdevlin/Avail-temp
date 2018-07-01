@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { MySessionToken } from '../token';
 
 /*
   Generated class for the RestProvider provider.
@@ -16,14 +17,13 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class RestProvider {
-  //keztraAuthURL:string =  "http://localhost:3000/authenticate";  
-  keztraAuthURL:string =  "https://shrouded-harbor-31805.herokuapp.com/authenticate";   
-
- 
+  private keztraAuthURL:string;  
+  
   public myAuthToken: string;
 
-  constructor(private httpClient : HttpClient) {
+  constructor(private httpClient : HttpClient, sessionToken: MySessionToken) {
      this.myAuthToken = 'no value'
+     this.keztraAuthURL = sessionToken.getBaseURL("authenticate");
   }
 
 
@@ -38,6 +38,7 @@ export class RestProvider {
     };
     return this.httpClient.post<AuthToken>(this.keztraAuthURL, body, httpOptions);
   }
+ 
 
 
 

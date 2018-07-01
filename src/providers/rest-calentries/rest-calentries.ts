@@ -4,21 +4,17 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { MySessionToken } from '../token';
 
-/*
-  Generated class for the RestCalentriesProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+ 
 @Injectable()
 export class RestCalentriesProvider {
-  // baseCalentryUrl:string = "http://localhost:3000/calentries";
-  baseCalentryUrl:string = "https://shrouded-harbor-31805.herokuapp.com/calentries";  
+  private baseCalentryUrl:string; 
 
-
-  constructor(public httpClient: HttpClient) {
+  constructor(public httpClient: HttpClient, sessionToken: MySessionToken) {
     console.log('Hello RestCalentriesProvider Provider');
+    this.baseCalentryUrl = sessionToken.getBaseURL("calentries");
+  
   }
   /** GET calentries from the server */
   getCalentries (sToken: string): Observable<Calentry[]> {

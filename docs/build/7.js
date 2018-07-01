@@ -5,10 +5,10 @@ webpackJsonp([7],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TasksPageModule", function() { return TasksPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateTaskPageModule", function() { return UpdateTaskPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tasks__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__update_task__ = __webpack_require__(123);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TasksPageModule = /** @class */ (function () {
-    function TasksPageModule() {
+var UpdateTaskPageModule = /** @class */ (function () {
+    function UpdateTaskPageModule() {
     }
-    TasksPageModule = __decorate([
+    UpdateTaskPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tasks__["a" /* TasksPage */],
+                __WEBPACK_IMPORTED_MODULE_2__update_task__["a" /* UpdateTaskPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tasks__["a" /* TasksPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__update_task__["a" /* UpdateTaskPage */]),
             ],
         })
-    ], TasksPageModule);
-    return TasksPageModule;
+    ], UpdateTaskPageModule);
+    return UpdateTaskPageModule;
 }());
 
-//# sourceMappingURL=tasks.module.js.map
+//# sourceMappingURL=update-task.module.js.map
 
 /***/ })
 

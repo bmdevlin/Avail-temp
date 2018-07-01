@@ -18,5 +18,10 @@ export class MySessionToken {
     return this.storage.get('token');
   }
 
-
+   
+  getBaseURL(value: string): string {
+    //return "http://localhost:3000/" + value; 
+    return  "https://shrouded-harbor-31805.herokuapp.com/" + value;  
+ } 
 }
+ 
