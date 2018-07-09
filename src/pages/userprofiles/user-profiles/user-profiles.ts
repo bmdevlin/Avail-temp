@@ -66,8 +66,8 @@ export class UserProfilesPage {
       userProfile: userProfile, token: this.token
     });
   }
-
-  updateModalUserProfile(userProfile){
+  
+  updateModalUserProfile(userProfile:UserProfile){
     let addModal = this.modalCtrl.create(UpdateUserProfilePage,  {userProfile:userProfile});
     addModal.onDidDismiss((userProfile) => {
           if(userProfile){
@@ -79,6 +79,7 @@ export class UserProfilesPage {
     });
     addModal.present();
   }
+ 
 
   deleteUserProfile(id){
     this.restProvider.deleteUserProfile(this.token, id)

@@ -59,6 +59,7 @@ export class Timeline {
   id: number;
   customer: number;
   userid: number;
+  name: string;
   photoURL:string; 
   videoid: number;
   message: string;

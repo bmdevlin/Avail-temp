@@ -66,7 +66,7 @@ var AddChatPage = /** @class */ (function () {
     };
     AddChatPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-chat',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\add-chat\add-chat.html"*/' \n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Add Chat</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\add-chat\add-chat.html"*/,
+            selector: 'page-add-chat',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\add-chat\add-chat.html"*/' \n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Add Chat</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\add-chat\add-chat.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], AddChatPage);

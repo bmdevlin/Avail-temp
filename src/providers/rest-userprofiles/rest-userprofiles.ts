@@ -24,6 +24,14 @@ export class RestUserProfilesProvider {
 
   }
 
+  // Get the user profile of the logged-in user.
+  getUserProfile(sToken: string): Observable<UserProfile> {
+    let headers = new HttpHeaders().set('Authorization', sToken );
+    var taskUrl = `${this.baseUserProfileUrl}/999`;
+    return this.httpClient.get<UserProfile>(taskUrl, {headers: headers})
+
+  }
+
   // Sending a GET request to /tasks/:id
   getUserProfileById(sToken: string, userProfileId: number): Observable<UserProfile> {
     let headers = new HttpHeaders().set('Authorization', sToken );
@@ -65,6 +73,7 @@ export class UserProfile {
   firstname: string;
   lastname: string;
   birthday: string;
+  userid: number; 
   role: number;
   created_at: Date;
   updated_at: Date;

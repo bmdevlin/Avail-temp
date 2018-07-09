@@ -1,13 +1,13 @@
 webpackJsonp([19],{
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddCalentryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -57,7 +57,7 @@ var AddCalentryPage = /** @class */ (function () {
     };
     AddCalentryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-calentry',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\add-calentry\add-calentry.html"*/'<!--\n  Generated template for the AddCalentryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    <ion-toolbar color="secondary">\n      <ion-title>\n        Add Calendar Entry\n      </ion-title>\n        <ion-buttons end>\n          <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n        </ion-buttons>\n      </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <form [formGroup]="inCalentry" (ngsubmit)="saveCalentry()"  >\n      <ion-item>\n        <ion-label floating>Title</ion-label>\n        <ion-input type="text" formControlName="title"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Description</ion-label>\n        <ion-input type="text" formControlName="description"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Person</ion-label>\n        <ion-input type="text" formControlName="person"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Date</ion-label>\n        <ion-input type="text"  formControlName="date"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Time</ion-label>\n        <ion-input type="text"  formControlName="time"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Duration</ion-label>\n        <ion-input type="number" formControlName="duration"></ion-input>\n      </ion-item>\n    </form>\n  </ion-list>\n  <button full ion-button color="secondary" (click)="saveCalentry()">Save</button>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\add-calentry\add-calentry.html"*/,
+            selector: 'page-add-calentry',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\add-calentry\add-calentry.html"*/'<!--\n\n  Generated template for the AddCalentryPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <ion-toolbar color="secondary">\n\n      <ion-title>\n\n        Add Calendar Entry\n\n      </ion-title>\n\n        <ion-buttons end>\n\n          <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n\n        </ion-buttons>\n\n      </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <form [formGroup]="inCalentry" (ngsubmit)="saveCalentry()"  >\n\n      <ion-item>\n\n        <ion-label floating>Title</ion-label>\n\n        <ion-input type="text" formControlName="title"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Description</ion-label>\n\n        <ion-input type="text" formControlName="description"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Person</ion-label>\n\n        <ion-input type="text" formControlName="person"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Date</ion-label>\n\n        <ion-input type="text"  formControlName="date"></ion-input>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label floating>Time</ion-label>\n\n        <ion-input type="text"  formControlName="time"></ion-input>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label floating>Duration</ion-label>\n\n        <ion-input type="number" formControlName="duration"></ion-input>\n\n      </ion-item>\n\n    </form>\n\n  </ion-list>\n\n  <button full ion-button color="secondary" (click)="saveCalentry()">Save</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\add-calentry\add-calentry.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
     ], AddCalentryPage);
@@ -68,18 +68,66 @@ var AddCalentryPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalentryDetailsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__ = __webpack_require__(46);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the CalentryDetailsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var CalentryDetailsPage = /** @class */ (function () {
+    function CalentryDetailsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.calentry = new __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__["a" /* Calentry */]();
+    }
+    CalentryDetailsPage.prototype.ionViewDidLoad = function () {
+        this.calentry = this.navParams.get('calentry');
+    };
+    CalentryDetailsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-calentry-details',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentry-details\calentry-details.html"*/'<!--\n\n  Generated template for the CalentryDetailsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>calentry-details</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n    <ion-card>\n\n      <ion-card-content>\n\n        Title: {{calentry.title}}\n\n      </ion-card-content>\n\n      <ion-card-content>\n\n         Description:  {{calentry.description}}\n\n      </ion-card-content>\n\n      <ion-card-content>\n\n         Who:  {{calentry.person}}\n\n      </ion-card-content>\n\n      <ion-card-content>\n\n         Date:  {{calentry.date}}\n\n      </ion-card-content>\n\n      <ion-card-content>\n\n        Time:  {{calentry.time}}\n\n      </ion-card-content>\n\n    </ion-card>\n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentry-details\calentry-details.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+    ], CalentryDetailsPage);
+    return CalentryDetailsPage;
+}());
+
+//# sourceMappingURL=calentry-details.js.map
+
+/***/ }),
+
+/***/ 116:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalentriesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_calentries_rest_calentries__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_calentries_rest_calentries__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__calentry_details_calentry_details__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__add_calentry_add_calentry__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_calentry_update_calentry__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__add_calentry_add_calentry__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_calentry_update_calentry__ = __webpack_require__(117);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -167,7 +215,7 @@ var CalentriesPage = /** @class */ (function () {
     };
     CalentriesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calentries',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/'<!--\n  Generated template for the CalentriesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.    {{calentry.title }}\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>calentries</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-list>\n       <ion-item *ngFor="let calentry of calentries"  >\n           \n           {{calentry.date }}\n           {{calentry.title }}\n           <button ion-button outline  (click)=" viewCalentry(calentry)"> Show </button>\n           <button ion-button  (click)="updateModalCalentry(calentry)">Update </button>\n           <button ion-button   (click)="deleteCalentry(calentry.id)">Delete </button>\n       </ion-item>\n    </ion-list>\n  \n  \n     <button ion-button color="primary" (click)="addCalentry()">New calentry </button>\n  \n  \n  \n  </ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/,
+            selector: 'page-calentries',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/'<!--\n\n  Generated template for the CalentriesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.    {{calentry.title }}\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>calentries</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <ion-list>\n\n       <ion-item *ngFor="let calentry of calentries"  >\n\n           \n\n           {{calentry.date }}\n\n           {{calentry.title }}\n\n           <button ion-button outline  (click)=" viewCalentry(calentry)"> Show </button>\n\n           <button ion-button  (click)="updateModalCalentry(calentry)">Update </button>\n\n           <button ion-button   (click)="deleteCalentry(calentry.id)">Delete </button>\n\n       </ion-item>\n\n    </ion-list>\n\n  \n\n  \n\n     <button ion-button color="primary" (click)="addCalentry()">New calentry </button>\n\n  \n\n  \n\n  \n\n  </ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentries\calentries.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_3__providers_rest_calentries_rest_calentries__["b" /* RestCalentriesProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_token__["a" /* MySessionToken */]])
@@ -179,62 +227,14 @@ var CalentriesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 115:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CalentryDetailsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__ = __webpack_require__(45);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-/**
- * Generated class for the CalentryDetailsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var CalentryDetailsPage = /** @class */ (function () {
-    function CalentryDetailsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.calentry = new __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__["a" /* Calentry */]();
-    }
-    CalentryDetailsPage.prototype.ionViewDidLoad = function () {
-        this.calentry = this.navParams.get('calentry');
-    };
-    CalentryDetailsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-calentry-details',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentry-details\calentry-details.html"*/'<!--\n  Generated template for the CalentryDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>calentry-details</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n    <ion-card>\n      <ion-card-content>\n        Title: {{calentry.title}}\n      </ion-card-content>\n      <ion-card-content>\n         Description:  {{calentry.description}}\n      </ion-card-content>\n      <ion-card-content>\n         Who:  {{calentry.person}}\n      </ion-card-content>\n      <ion-card-content>\n         Date:  {{calentry.date}}\n      </ion-card-content>\n      <ion-card-content>\n        Time:  {{calentry.time}}\n      </ion-card-content>\n    </ion-card>\n  </ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\calentry-details\calentry-details.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], CalentryDetailsPage);
-    return CalentryDetailsPage;
-}());
-
-//# sourceMappingURL=calentry-details.js.map
-
-/***/ }),
-
-/***/ 116:
+/***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateCalentryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_calentries_rest_calentries__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -271,7 +271,7 @@ var UpdateCalentryPage = /** @class */ (function () {
     };
     UpdateCalentryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-update-calentry',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\update-calentry\update-calentry.html"*/'<!--\n  Generated template for the UpdateCalentryPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n    <ion-toolbar color="secondary">\n      <ion-title>\n        Update Calendar Entry\n      </ion-title>\n        <ion-buttons end>\n          <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n        </ion-buttons>\n      </ion-toolbar>\n  </ion-header>\n  \n  <ion-content>\n    <ion-list>\n  \n      <ion-item>\n        <ion-label floating>Title</ion-label>\n        <ion-input type="text" [(ngModel)]="newCalentry.title"></ion-input>\n      </ion-item>\n  \n      <ion-item>\n        <ion-label floating>Description</ion-label>\n        <ion-input type="text" [(ngModel)]="newCalentry.description"></ion-input>\n      </ion-item>\n  \n      <ion-item>\n        <ion-label floating>Person</ion-label>\n        <ion-input type="text" [(ngModel)]="newCalentry.person"></ion-input>\n      </ion-item>\n  \n      <ion-item>\n        <ion-label floating>Date</ion-label>\n        <ion-input type="text"  [(ngModel)]="newCalentry.date"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Time</ion-label>\n        <ion-input type="text" [(ngModel)]="newCalentry.time"></ion-input>\n      </ion-item>\n      <ion-item>  \n        <ion-label floating>Duration</ion-label>\n        <ion-input type="number" [(ngModel)]="newCalentry.duration"></ion-input>\n      </ion-item>\n  \n    </ion-list>\n  \n    <button full ion-button color="secondary" (click)="saveCalentry()">Save</button>\n  \n  </ion-content>\n  \n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\update-calentry\update-calentry.html"*/,
+            selector: 'page-update-calentry',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\update-calentry\update-calentry.html"*/'<!--\n\n  Generated template for the UpdateCalentryPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <ion-toolbar color="secondary">\n\n      <ion-title>\n\n        Update Calendar Entry\n\n      </ion-title>\n\n        <ion-buttons end>\n\n          <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n\n        </ion-buttons>\n\n      </ion-toolbar>\n\n  </ion-header>\n\n  \n\n  <ion-content>\n\n    <ion-list>\n\n  \n\n      <ion-item>\n\n        <ion-label floating>Title</ion-label>\n\n        <ion-input type="text" [(ngModel)]="newCalentry.title"></ion-input>\n\n      </ion-item>\n\n  \n\n      <ion-item>\n\n        <ion-label floating>Description</ion-label>\n\n        <ion-input type="text" [(ngModel)]="newCalentry.description"></ion-input>\n\n      </ion-item>\n\n  \n\n      <ion-item>\n\n        <ion-label floating>Person</ion-label>\n\n        <ion-input type="text" [(ngModel)]="newCalentry.person"></ion-input>\n\n      </ion-item>\n\n  \n\n      <ion-item>\n\n        <ion-label floating>Date</ion-label>\n\n        <ion-input type="text"  [(ngModel)]="newCalentry.date"></ion-input>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label floating>Time</ion-label>\n\n        <ion-input type="text" [(ngModel)]="newCalentry.time"></ion-input>\n\n      </ion-item>\n\n      <ion-item>  \n\n        <ion-label floating>Duration</ion-label>\n\n        <ion-input type="number" [(ngModel)]="newCalentry.duration"></ion-input>\n\n      </ion-item>\n\n  \n\n    </ion-list>\n\n  \n\n    <button full ion-button color="secondary" (click)="saveCalentry()">Save</button>\n\n  \n\n  </ion-content>\n\n  \n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\calentries\update-calentry\update-calentry.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
@@ -283,191 +283,21 @@ var UpdateCalentryPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 117:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_users_rest_users__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_chats_rest_chats__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_token__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var ChatPage = /** @class */ (function () {
-    function ChatPage(navCtrl, navParams, modalCtrl, chatsProvider, usersProvider, mySessionToken) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.modalCtrl = modalCtrl;
-        this.chatsProvider = chatsProvider;
-        this.usersProvider = usersProvider;
-        this.mySessionToken = mySessionToken;
-        this.messages = [];
-        this.message = '';
-        this.data = { type: '', name: '', text: '' };
-        //chatId = null;
-        //chatTitle = '';
-        this.currentUserId = 0;
-        this.chat = this.navParams.get('chat');
-        this.newPost = new __WEBPACK_IMPORTED_MODULE_3__providers_rest_chats_rest_chats__["a" /* Post */];
-        this.newPost.chatid = this.chat.id;
-        this.token = this.navParams.get('token');
-        this.chatsProvider.getPosts(this.chat.id, this.token).subscribe(function (posts) {
-            _this.messages = posts;
-        }, function (error) {
-            console.log('get posts failed: ');
-        });
-    }
-    ChatPage.prototype.sendMessage = function () {
-        var _this = this;
-        this.chatsProvider.createPost(this.token, this.newPost).subscribe(function (post) {
-            _this.messages.push(post);
-            _this.currentUserId = post.customer;
-            _this.newPost.message = '';
-            _this.content.scrollToBottom();
-        });
-    };
-    // temporary workaround to get the user nicknames
-    ChatPage.prototype.getUserName = function (userid) {
-        if (userid == 3) {
-            return "Tara";
-        }
-        ;
-        if (userid == 4) {
-            return "Barry";
-        }
-        ;
-        if (userid == 5) {
-            return "Mala";
-        }
-        ;
-        if (userid == 6) {
-            return "Fred";
-        }
-        ;
-        if (userid == 7) {
-            return "Joe";
-        }
-        ;
-    };
-    ChatPage.prototype.exitChat = function () {
-        var exitData = this.data;
-        exitData.type = 'exit';
-        //exitData.name = this.name;
-        this.message = ' has exited the conversation.';
-        // this.chatsProvider.addChatMessage(this.message, this.chatId).then(() => {
-        //   this.message = '';
-        // });
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('content'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */])
-    ], ChatPage.prototype, "content", void 0);
-    ChatPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-chat',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\chat\chat.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      {{ chat.description }}\n\n    </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content #content padding>\n\n  <ion-grid>\n\n    <!--<ion-row *ngFor="let message of messages | async">-->\n\n    <ion-row *ngFor="let message of messages">\n\n      <ion-col col-9 col-md-6 *ngIf="message.customer !== currentUserId" class="message other-message">\n\n        <span>{{ getUserName(message.customer) }}:</span>\n\n        <span>     {{ message.message }}</span>\n\n        <div class="time">{{ message.created_at| date:\'short\' }}</div>\n\n      </ion-col>\n\n\n\n      <ion-col offset-3 offset-md-6 col-9 col-md-6 *ngIf="message.customer === currentUserId" class="message my-message">\n\n        <span>{{ message.message }}</span>\n\n        <div class="time">{{ message.created_at | date:\'short\' }}</div>\n\n      </ion-col>\n\n\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n\n\n<!-- TODO: ADD EXITCHAT() call-->\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-row no-padding align-items-center>\n\n      <ion-col col-10>\n\n        <ion-item no-lines>\n\n          <ion-input type="text" placeholder="Message" [(ngModel)]="newPost.message"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2 text-center>\n\n        <button ion-button full icon-only clear color="primary" [disabled]="newPost.message === \'\'" class="msg-btn" (click)="sendMessage()">\n\n          <ion-icon name="ios-send"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\chat\chat.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_rest_chats_rest_chats__["b" /* RestChatsProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_rest_users_rest_users__["a" /* RestUsersProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_token__["a" /* MySessionToken */]])
-    ], ChatPage);
-    return ChatPage;
-}());
-
-//# sourceMappingURL=chat.js.map
-
-/***/ }),
-
 /***/ 118:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chat_chat__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_token__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_groups_rest_groups__ = __webpack_require__(183);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-//import { AddChatPage } from '../add-chat/add-chat';
-
-
-
-var GroupsPage = /** @class */ (function () {
-    function GroupsPage(navCtrl, modalCtrl, restProvider, mySessionToken) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.modalCtrl = modalCtrl;
-        this.restProvider = restProvider;
-        this.mySessionToken = mySessionToken;
-        this.chats = [];
-        this.mySessionToken.getMyAuthToken().then(function (stoken) {
-            _this.token = stoken;
-            _this.restProvider.getChats(_this.token).subscribe(function (chats) {
-                _this.chats = chats;
-            }, function (error) {
-                console.log('get chatgroups failed: ');
-            });
-        });
-    }
-    GroupsPage.prototype.addGroup = function () {
-        //this.navCtrl.push(AddChatPage, {token: this.token});
-    };
-    GroupsPage.prototype.joinGroup = function (chat) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__chat_chat__["a" /* ChatPage */], {
-            chat: chat, token: this.token
-        });
-    };
-    GroupsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-groups',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\groups\groups.html"*/'<!--\n\n  Generated template for the ChatPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Group Chats</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="addGroup()">\n\n        <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item *ngFor="let chat of chats">\n\n      {{chat.description}}\n\n      <ion-icon name="chatboxes" item-end (click)="joinGroup(chat)"></ion-icon>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\groups\groups.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_rest_groups_rest_groups__["a" /* RestGroupsProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_token__["a" /* MySessionToken */]])
-    ], GroupsPage);
-    return GroupsPage;
-}());
-
-//# sourceMappingURL=groups.js.map
-
-/***/ }),
-
-/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tasks_tasks_tasks__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__userprofiles_user_profiles_user_profiles__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__groups_groups__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__timelines_timelines__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__calentries_calentries_calentries__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tasks_tasks_tasks__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__userprofiles_user_profiles_user_profiles__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chat_chat__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__timelines_timelines__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__calentries_calentries_calentries__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__userprofiles_update_user_profile_update_user_profile__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -477,6 +307,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 
 
@@ -485,21 +318,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MainPage = /** @class */ (function () {
-    function MainPage(nav, navParams) {
+    function MainPage(nav, navParams, modalCtrl, restProvider, mySessionToken) {
+        var _this = this;
         this.nav = nav;
         this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
+        this.restProvider = restProvider;
+        this.mySessionToken = mySessionToken;
+        this.mySessionToken.getMyAuthToken().then(function (stoken) {
+            _this.token = stoken;
+            _this.restProvider.getUserProfile(_this.token).subscribe(function (userProfile) {
+                _this.userProfile = userProfile;
+            }, function (error) {
+                console.log('get userProfile failed: ');
+            });
+        });
     }
     MainPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad MainPage');
     };
+    MainPage.prototype.updateModalUserProfile = function (userProfile) {
+        var _this = this;
+        var addModal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_8__userprofiles_update_user_profile_update_user_profile__["a" /* UpdateUserProfilePage */], { userProfile: userProfile });
+        addModal.onDidDismiss(function (userProfile) {
+            if (userProfile) {
+                _this.restProvider.updateUserProfile(_this.token, userProfile)
+                    .subscribe(function (userProfile) { return _this.userProfile == userProfile; }, function (error) {
+                    console.log('update userProfile failed: ', userProfile);
+                });
+            }
+        });
+        addModal.present();
+    };
     MainPage.prototype.goToUserProfilesPage = function () {
         this.nav.push(__WEBPACK_IMPORTED_MODULE_3__userprofiles_user_profiles_user_profiles__["a" /* UserProfilesPage */]);
     };
-    MainPage.prototype.goToGroupsPage = function () {
-        this.nav.push(__WEBPACK_IMPORTED_MODULE_4__groups_groups__["a" /* GroupsPage */]);
+    MainPage.prototype.goToChatPage = function () {
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_4__chat_chat__["a" /* ChatPage */], {
+            userProfile: this.userProfile, token: this.token
+        });
     };
     MainPage.prototype.goToTimelinesPage = function () {
-        this.nav.push(__WEBPACK_IMPORTED_MODULE_5__timelines_timelines__["a" /* TimelinesPage */]);
+        this.nav.push(__WEBPACK_IMPORTED_MODULE_5__timelines_timelines__["a" /* TimelinesPage */], {
+            userProfile: this.userProfile, token: this.token
+        });
     };
     MainPage.prototype.goToTasksPage = function (event) {
         this.nav.push(__WEBPACK_IMPORTED_MODULE_2__tasks_tasks_tasks__["a" /* TasksPage */]);
@@ -509,9 +371,10 @@ var MainPage = /** @class */ (function () {
     };
     MainPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-mainpage',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\mainpage\mainpage.html"*/'<!--\n\n  Generated template for the MainPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>mainpage</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-card>\n\n        <ion-card-content>\n\n          <p>Main page for the Keztra Family Social Networking app </p>\n\n\n\n        </ion-card-content>\n\n\n\n      </ion-card>\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button (click)="goToUserProfilesPage()">Family Address Book</button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button (click)="goToTimelinesPage()">Family Timeline</button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button (click)="goToGroupsPage()">Chat Groups</button>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row> \n\n    <ion-col>\n\n      <button ion-button (click)="goToCalentriesPage()">Calendar</button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button (click)="goToTasksPage()">Tasks</button>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\mainpage\mainpage.html"*/,
+            selector: 'page-mainpage',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\mainpage\mainpage.html"*/'<!--\n\n  Generated template for the MainPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>mainpage</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-card>\n\n        <ion-card-content>\n\n          <p>Main page for the Keztra Family Social Networking app </p>\n\n\n\n        </ion-card-content>\n\n\n\n      </ion-card>\n\n  <ion-row>\n\n    <ion-col>\n\n      <button ion-button (click)="goToUserProfilesPage()">Family Address Book</button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button (click)="goToTimelinesPage()">Family Timeline</button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button (click)="goToChatPage()">Family Chat</button>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-row> \n\n    <ion-col>\n\n      <button ion-button (click)="goToCalentriesPage()">Calendar</button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button (click)="goToTasksPage()">Tasks</button>\n\n    </ion-col>\n\n    <ion-col>\n\n      <button ion-button (click)="updateModalUserProfile(this.userProfile)">Update My Profile</button>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\mainpage\mainpage.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_7__providers_rest_userprofiles_rest_userprofiles__["a" /* RestUserProfilesProvider */], __WEBPACK_IMPORTED_MODULE_9__providers_token__["a" /* MySessionToken */]])
     ], MainPage);
     return MainPage;
 }());
@@ -520,18 +383,18 @@ var MainPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 120:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TasksPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_tasks_rest_tasks__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__task_details_task_details__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__add_task_add_task__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_task_update_task__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_tasks_rest_tasks__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__task_details_task_details__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__add_task_add_task__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_task_update_task__ = __webpack_require__(122);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -613,7 +476,7 @@ var TasksPage = /** @class */ (function () {
     };
     TasksPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tasks',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\tasks\tasks.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Tasks</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-list>\n     <ion-item *ngFor="let task of tasks"  >\n        <ion-row>\n            <ion-col  col-2> \n                {{ task.person }}\n            </ion-col>\n            <ion-col  col-4> \n              {{ task.title }}\n            </ion-col>\n            <ion-col  col-2> \n              <button ion-button outline  (click)=" viewTask(task)"> Show </button>\n            </ion-col>\n            <ion-col col-2> \n              <button ion-button  (click)="updateModalTask(task)">Update </button>\n            </ion-col>\n            <ion-col col-2> \n              <button ion-button   (click)="deleteTask(task.id)">Delete </button>\n            </ion-col>\n        </ion-row>\n     </ion-item> \n  </ion-list>\n\n\n   <button ion-button color="primary" (click)="addTask()">New task </button>\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\tasks\tasks.html"*/,
+            selector: 'page-tasks',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\tasks\tasks.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Tasks</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-list>\n\n     <ion-item *ngFor="let task of tasks"  >\n\n        <ion-row>\n\n            <ion-col  col-2> \n\n                {{ task.person }}\n\n            </ion-col>\n\n            <ion-col  col-4> \n\n              {{ task.title }}\n\n            </ion-col>\n\n            <ion-col  col-2> \n\n              <button ion-button outline  (click)=" viewTask(task)"> Show </button>\n\n            </ion-col>\n\n            <ion-col col-2> \n\n              <button ion-button  (click)="updateModalTask(task)">Update </button>\n\n            </ion-col>\n\n            <ion-col col-2> \n\n              <button ion-button   (click)="deleteTask(task.id)">Delete </button>\n\n            </ion-col>\n\n        </ion-row>\n\n     </ion-item> \n\n  </ion-list>\n\n\n\n\n\n   <button ion-button color="primary" (click)="addTask()">New task </button>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\tasks\tasks.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_3__providers_rest_tasks_rest_tasks__["a" /* RestTasksProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_token__["a" /* MySessionToken */]])
@@ -625,14 +488,59 @@ var TasksPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 121:
+/***/ 12:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MySessionToken; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(180);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MySessionToken = /** @class */ (function () {
+    function MySessionToken(storage) {
+        this.storage = storage;
+        this.mySessionToken = "None";
+    }
+    MySessionToken.prototype.setMyAuthToken = function (value) {
+        this.mySessionToken = value;
+        return this.storage.set('token', value);
+    };
+    MySessionToken.prototype.getMyAuthToken = function () {
+        return this.storage.get('token');
+    };
+    MySessionToken.prototype.getBaseURL = function (value) {
+        //return "http://localhost:3000/" + value; 
+        return "https://shrouded-harbor-31805.herokuapp.com/" + value;
+    };
+    MySessionToken = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
+    ], MySessionToken);
+    return MySessionToken;
+}());
+
+//# sourceMappingURL=token.js.map
+
+/***/ }),
+
+/***/ 120:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TaskDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_tasks_rest_tasks__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_tasks_rest_tasks__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -665,7 +573,7 @@ var TaskDetailsPage = /** @class */ (function () {
     };
     TaskDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-task-details',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\task-details\task-details.html"*/'<!--\n  Generated template for the TaskDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Task Details</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n  <ion-card>\n    <ion-card-content>\n      Title: {{task.title}}\n    </ion-card-content>\n    <ion-card-content>\n       Description:  {{task.description}}\n    </ion-card-content>\n    <ion-card-content>\n       Who:  {{task.person}}\n    </ion-card-content>\n    <ion-card-content>\n       Tag:  {{task.tag}}\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\task-details\task-details.html"*/,
+            selector: 'page-task-details',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\task-details\task-details.html"*/'<!--\n\n  Generated template for the TaskDetailsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Task Details</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      Title: {{task.title}}\n\n    </ion-card-content>\n\n    <ion-card-content>\n\n       Description:  {{task.description}}\n\n    </ion-card-content>\n\n    <ion-card-content>\n\n       Who:  {{task.person}}\n\n    </ion-card-content>\n\n    <ion-card-content>\n\n       Tag:  {{task.tag}}\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\task-details\task-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */]])
     ], TaskDetailsPage);
@@ -676,14 +584,14 @@ var TaskDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 122:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddTaskPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_tasks_rest_tasks__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_tasks_rest_tasks__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -729,7 +637,7 @@ var AddTaskPage = /** @class */ (function () {
     };
     AddTaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-task',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\add-task\add-task.html"*/'<!--\n  Generated template for the AddTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar color="secondary">\n    <ion-title>\n      Add Task\n    </ion-title>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n      </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <form [formGroup]="inTask" (ngsubmit)="saveTask()"  >\n      <ion-item>\n        <ion-label floating>Title</ion-label>\n        <ion-input type="text" formControlName="title"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Description</ion-label>\n        <ion-input type="text" formControlName="description"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Person</ion-label>\n        <ion-input type="text" formControlName="person"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Tag</ion-label>\n        <ion-input type="text" formControlName="tag"></ion-input>\n      </ion-item>\n    </form>\n  </ion-list>\n  <button full ion-button color="secondary" (click)="saveTask()">Save</button>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\add-task\add-task.html"*/,
+            selector: 'page-add-task',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\add-task\add-task.html"*/'<!--\n\n  Generated template for the AddTaskPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar color="secondary">\n\n    <ion-title>\n\n      Add Task\n\n    </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n\n      </ion-buttons>\n\n    </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <form [formGroup]="inTask" (ngsubmit)="saveTask()"  >\n\n      <ion-item>\n\n        <ion-label floating>Title</ion-label>\n\n        <ion-input type="text" formControlName="title"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Description</ion-label>\n\n        <ion-input type="text" formControlName="description"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Person</ion-label>\n\n        <ion-input type="text" formControlName="person"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Tag</ion-label>\n\n        <ion-input type="text" formControlName="tag"></ion-input>\n\n      </ion-item>\n\n    </form>\n\n  </ion-list>\n\n  <button full ion-button color="secondary" (click)="saveTask()">Save</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\add-task\add-task.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
     ], AddTaskPage);
@@ -740,14 +648,14 @@ var AddTaskPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 123:
+/***/ 122:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateTaskPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_tasks_rest_tasks__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_tasks_rest_tasks__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -784,7 +692,7 @@ var UpdateTaskPage = /** @class */ (function () {
     };
     UpdateTaskPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-update-task',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\update-task\update-task.html"*/'<!--\n  Generated template for the UpdateTaskPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar color="secondary">\n    <ion-title>\n      Update Task\n    </ion-title>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n      </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n\n    <ion-item>\n      <ion-label floating>Title</ion-label>\n      <ion-input type="text" [(ngModel)]="newTask.title"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Description</ion-label>\n      <ion-input type="text" [(ngModel)]="newTask.description"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Person</ion-label>\n      <ion-input type="text" [(ngModel)]="newTask.person"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Tag</ion-label>\n      <ion-input type="text" [(ngModel)]="newTask.tag"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button full ion-button color="secondary" (click)="saveTask()">Save</button>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\update-task\update-task.html"*/,
+            selector: 'page-update-task',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\update-task\update-task.html"*/'<!--\n\n  Generated template for the UpdateTaskPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar color="secondary">\n\n    <ion-title>\n\n      Update Task\n\n    </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n\n      </ion-buttons>\n\n    </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Title</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newTask.title"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Description</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newTask.description"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Person</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newTask.person"></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n      <ion-label floating>Tag</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newTask.tag"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button full ion-button color="secondary" (click)="saveTask()">Save</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\tasks\update-task\update-task.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
@@ -796,18 +704,18 @@ var UpdateTaskPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 124:
+/***/ 123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfilesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_profile_details_user_profile_details__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__add_user_profile_add_user_profile__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_user_profile_update_user_profile__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__user_profile_details_user_profile_details__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__add_user_profile_add_user_profile__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__update_user_profile_update_user_profile__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -900,7 +808,7 @@ var UserProfilesPage = /** @class */ (function () {
     };
     UserProfilesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-user-profiles',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profiles\user-profiles.html"*/'<!--\n  Generated template for the UserProfilesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Family Address Book</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-list>\n     <ion-item *ngFor="let userProfile of userProfiles"  >\n        <ion-row>\n            <ion-col  col-3>\n              {{userProfile.firstname }}\n            </ion-col>\n            <ion-col  col-3>\n              {{userProfile.cellphone }}\n            </ion-col>\n            <ion-col  col-2>\n              <button ion-button outline  (click)=" viewUserProfile(userProfile)"> Show </button>\n            </ion-col>\n            <ion-col col-2>\n              <button ion-button  (click)="updateModalUserProfile(userProfile)">Update </button>\n            </ion-col>\n            <ion-col col-2>\n              <button ion-button   (click)="deleteUserProfile(userProfile.id)">Delete </button>\n            </ion-col>\n        </ion-row>\n     </ion-item>\n  </ion-list>\n\n\n   <button ion-button color="primary" (click)="addUserProfile()">New User Profile </button>\n\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profiles\user-profiles.html"*/,
+            selector: 'page-user-profiles',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profiles\user-profiles.html"*/'<!--\n\n  Generated template for the UserProfilesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Family Address Book</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n  <ion-list>\n\n     <ion-item *ngFor="let userProfile of userProfiles"  >\n\n        <ion-row>\n\n            <ion-col  col-4>\n\n              {{userProfile.firstname }}\n\n            </ion-col>\n\n            <ion-col  col-4>\n\n              {{userProfile.cellphone }}\n\n            </ion-col>\n\n            <ion-col  col-2>\n\n              <button ion-button outline  (click)=" viewUserProfile(userProfile)"> Show </button>\n\n            </ion-col>\n\n            <ion-col  col-2>\n\n              <button ion-button outline  (click)=" updateModalUserProfile(userProfile)"> Update </button>\n\n            </ion-col>\n\n \n\n        </ion-row>\n\n     </ion-item>\n\n  </ion-list>\n\n\n\n\n\n   <button ion-button color="primary" (click)="addUserProfile()">New User Profile </button>\n\n\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profiles\user-profiles.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_3__providers_rest_userprofiles_rest_userprofiles__["a" /* RestUserProfilesProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_token__["a" /* MySessionToken */]])
@@ -912,14 +820,14 @@ var UserProfilesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 125:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfileDetailsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__ = __webpack_require__(55);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -946,7 +854,7 @@ var UserProfileDetailsPage = /** @class */ (function () {
     };
     UserProfileDetailsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-user-profile-details',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profile-details\user-profile-details.html"*/'<!--\n  Generated template for the UserProfileDetailsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Details</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n  <ion-card>\n    <ion-card-content>\n      First Name: {{userProfile.firstname}}\n    </ion-card-content>\n    <ion-card-content>\n       Last Name:  {{userProfile.lastname}}\n    </ion-card-content>\n    <ion-card-content>\n       Cell Phone:  {{userProfile.cellphone}}\n    </ion-card-content>\n	   <ion-card-content>\n       Email:  {{userProfile.email}}\n    </ion-card-content>\n    <ion-card-content>\n       Birthday:  {{userProfile.birthday}}\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profile-details\user-profile-details.html"*/,
+            selector: 'page-user-profile-details',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profile-details\user-profile-details.html"*/'<!--\n\n  Generated template for the UserProfileDetailsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Details</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      First Name: {{userProfile.firstname}}\n\n    </ion-card-content>\n\n    <ion-card-content>\n\n       Last Name:  {{userProfile.lastname}}\n\n    </ion-card-content>\n\n    <ion-card-content>\n\n       Cell Phone:  {{userProfile.cellphone}}\n\n    </ion-card-content>\n\n	   <ion-card-content>\n\n       Email:  {{userProfile.email}}\n\n    </ion-card-content>\n\n    <ion-card-content>\n\n       Birthday:  {{userProfile.birthday}}\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\user-profile-details\user-profile-details.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_rest_rest__["a" /* RestProvider */]])
     ], UserProfileDetailsPage);
@@ -957,14 +865,14 @@ var UserProfileDetailsPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 126:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddUserProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1006,7 +914,7 @@ var AddUserProfilePage = /** @class */ (function () {
     };
     AddUserProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-user-profile',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\add-user-profile\add-user-profile.html"*/'<!--\n  Generated template for the AddUserProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-toolbar color="secondary">\n    <ion-title>\n      Add Family Address Book entry\n    </ion-title>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n      </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <form [formGroup]="inUserProfile" (ngsubmit)="saveUserProfile()"  >\n      <ion-item>\n        <ion-label floating>First Name</ion-label>\n        <ion-input type="text" formControlName="firstname"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Last Name</ion-label>\n        <ion-input type="text" formControlName="lastname"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label floating>Cell Number</ion-label>\n        <ion-input type="text" formControlName="cellphone"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Email</ion-label>\n        <ion-input type="text" formControlName="email"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-label floating>Birthday</ion-label>\n        <ion-input type="text" formControlName="birthday"></ion-input>\n      </ion-item>\n    </form>\n  </ion-list>\n  <button full ion-button color="secondary" (click)="saveUserProfile()">Save</button>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\add-user-profile\add-user-profile.html"*/,
+            selector: 'page-add-user-profile',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\add-user-profile\add-user-profile.html"*/'<!--\n\n  Generated template for the AddUserProfilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-toolbar color="secondary">\n\n    <ion-title>\n\n      Add Family Address Book entry\n\n    </ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n\n      </ion-buttons>\n\n    </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <form [formGroup]="inUserProfile" (ngsubmit)="saveUserProfile()"  >\n\n      <ion-item>\n\n        <ion-label floating>First Name</ion-label>\n\n        <ion-input type="text" formControlName="firstname"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Last Name</ion-label>\n\n        <ion-input type="text" formControlName="lastname"></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Cell Number</ion-label>\n\n        <ion-input type="text" formControlName="cellphone"></ion-input>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label floating>Email</ion-label>\n\n        <ion-input type="text" formControlName="email"></ion-input>\n\n      </ion-item>\n\n      <ion-item>\n\n        <ion-label floating>Birthday</ion-label>\n\n        <ion-input type="text" formControlName="birthday"></ion-input>\n\n      </ion-item>\n\n    </form>\n\n  </ion-list>\n\n  <button full ion-button color="secondary" (click)="saveUserProfile()">Save</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\add-user-profile\add-user-profile.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
     ], AddUserProfilePage);
@@ -1017,65 +925,15 @@ var AddUserProfilePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 127:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateUserProfilePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(47);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var UpdateUserProfilePage = /** @class */ (function () {
-    function UpdateUserProfilePage(navCtrl, navParams, view) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.view = view;
-        this.newUserProfile = new __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__["b" /* UserProfile */]();
-    }
-    UpdateUserProfilePage.prototype.ionViewDidLoad = function () {
-        this.newUserProfile = this.navParams.get('userProfile');
-    };
-    UpdateUserProfilePage.prototype.saveUserProfile = function () {
-        this.view.dismiss(this.newUserProfile);
-    };
-    UpdateUserProfilePage.prototype.close = function () {
-        this.view.dismiss();
-    };
-    UpdateUserProfilePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-update-user-profile',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\update-user-profile\update-user-profile.html"*/'<ion-header>\n  <ion-toolbar color="secondary">\n    <ion-title>\n      Update Family Address Book\n    </ion-title>\n      <ion-buttons end>\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n      </ion-buttons>\n    </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n\n    <ion-item>\n      <ion-label floating>First Name</ion-label>\n      <ion-input type="text" [(ngModel)]="newUserProfile.firstname"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Last Name</ion-label>\n      <ion-input type="text" [(ngModel)]="newUserProfile.lastname"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Cell Number</ion-label>\n      <ion-input type="text" [(ngModel)]="newUserProfile.cellphone"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label floating>Email</ion-label>\n      <ion-input type="text" [(ngModel)]="newUserProfile.email"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label floating>Birthday</ion-label>\n      <ion-input type="text" [(ngModel)]="newUserProfile.birthday"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button full ion-button color="secondary" (click)="saveUserProfile()">Save</button>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\update-user-profile\update-user-profile.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
-    ], UpdateUserProfilePage);
-    return UpdateUserProfilePage;
-}());
-
-//# sourceMappingURL=update-user-profile.js.map
-
-/***/ }),
-
-/***/ 128:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelinesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_timelines_rest_timelines__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_token__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_rest_timelines_rest_timelines__ = __webpack_require__(90);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1100,13 +958,13 @@ var TimelinesPage = /** @class */ (function () {
         this.mySessionToken = mySessionToken;
         this.timelines = [];
         this.newTimeline = new __WEBPACK_IMPORTED_MODULE_3__providers_rest_timelines_rest_timelines__["b" /* Timeline */];
-        this.mySessionToken.getMyAuthToken().then(function (stoken) {
-            _this.token = stoken;
-            _this.restProvider.getTimelines(_this.token).subscribe(function (timelines) {
-                _this.timelines = timelines;
-            }, function (error) {
-                console.log('get timelines failed: ');
-            });
+        this.userProfile = this.navParams.get('userProfile');
+        this.token = this.navParams.get('token');
+        this.newTimeline.name = this.userProfile.firstname;
+        this.restProvider.getTimelines(this.token).subscribe(function (timelines) {
+            _this.timelines = timelines;
+        }, function (error) {
+            console.log('get timelines failed: ');
         });
     }
     TimelinesPage.prototype.ionViewDidLoad = function () {
@@ -1127,7 +985,7 @@ var TimelinesPage = /** @class */ (function () {
     };
     TimelinesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-timelines',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\timelines\timelines.html"*/' \n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Your Family Timeline</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n     <ion-item *ngFor="let timeline of timelines"  >\n        <ion-row>\n            <ion-col   *ngIf="timeline.photoURL"> \n             <a href="{{timeline.photoURL }}" target="blank">{{timeline.photoURL }}</a>\n            </ion-col>\n\n            <ion-col   *ngIf="timeline.message">  \n                {{timeline.message }}\n            </ion-col>\n\n            <ion-col   *ngIf="timeline.videoid"> \n                {{timeline.videoid }}\n            </ion-col>\n        </ion-row>\n     </ion-item> \n  </ion-list>\n     \n\n  <ion-card>\n      <ion-card-header>\n          Enter a text comment, add a photo album URL, or a video ID\n      </ion-card-header>\n      <ion-card-content>\n          <ion-list>\n              <ion-item>\n                <ion-label floating>Photo Album</ion-label>\n                <ion-input type="text" [(ngModel)]="newTimeline.photoURL"></ion-input>\n                <button ion-button color="primary" (click)="addPhotoURL()">Add a Photo URL</button>\n          \n              </ion-item>\n          \n              <ion-item>\n                <ion-label floating>Comment</ion-label>\n                <ion-input type="text" [(ngModel)]="newTimeline.message"></ion-input>\n                <button ion-button color="primary" (click)="addMessage()">Add a comment </button>\n              </ion-item>\n          \n              <ion-item>\n                <ion-label floating>Video Id</ion-label>\n                <ion-input type="text" [(ngModel)]="newTimeline.videoid">Add a video </ion-input>\n              </ion-item>\n            </ion-list>\n      </ion-card-content>\n    </ion-card>\n    \n    <button ion-button color="primary" (click)="addTimeline()">Add entry </button>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\timelines\timelines.html"*/,
+            selector: 'page-timelines',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\timelines\timelines.html"*/' \n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Your Family Timeline</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-list>\n\n     <ion-item *ngFor="let timeline of timelines"  >\n\n        <ion-row>\n\n            <ion-col   *ngIf="timeline.photoURL"> \n\n                {{timeline.name }} has added:\n\n             <a href="{{timeline.photoURL }}" target="blank">{{timeline.photoURL }}</a>\n\n            </ion-col>\n\n\n\n            <ion-col   *ngIf="timeline.message">  \n\n                {{timeline.name }} has added:\n\n                {{timeline.message }}\n\n            </ion-col>\n\n\n\n            <ion-col   *ngIf="timeline.videoid"> \n\n                {{timeline.name }} has added:\n\n                {{timeline.videoid }}\n\n            </ion-col>\n\n        </ion-row>\n\n     </ion-item> \n\n  </ion-list>\n\n     \n\n\n\n  <ion-card>\n\n      <ion-card-header>\n\n          Enter a text comment, add a photo album URL, or a video ID\n\n      </ion-card-header>\n\n      <ion-card-content>\n\n          <ion-list>\n\n              <ion-item>\n\n                <ion-label floating>Photo Album</ion-label>\n\n                <ion-input type="text" [(ngModel)]="newTimeline.photoURL"></ion-input>\n\n                <button ion-button color="primary" (click)="addPhotoURL()">Add a Photo URL</button>\n\n          \n\n              </ion-item>\n\n          \n\n              <ion-item>\n\n                <ion-label floating>Comment</ion-label>\n\n                <ion-input type="text" [(ngModel)]="newTimeline.message"></ion-input>\n\n                <button ion-button color="primary" (click)="addMessage()">Add a comment </button>\n\n              </ion-item>\n\n          \n\n              <ion-item>\n\n                <ion-label floating>Video Id</ion-label>\n\n                <ion-input type="text" [(ngModel)]="newTimeline.videoid">Add a video </ion-input>\n\n              </ion-item>\n\n            </ion-list>\n\n      </ion-card-content>\n\n    </ion-card>\n\n    \n\n    <button ion-button color="primary" (click)="addTimeline()">Add entry </button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\timelines\timelines.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_3__providers_rest_timelines_rest_timelines__["a" /* RestTimelinesProvider */], __WEBPACK_IMPORTED_MODULE_2__providers_token__["a" /* MySessionToken */]])
@@ -1139,14 +997,14 @@ var TimelinesPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 129:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_users_rest_users__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_users_rest_users__ = __webpack_require__(182);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1214,52 +1072,7 @@ var RegisterPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 13:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MySessionToken; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ionic_storage__ = __webpack_require__(182);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var MySessionToken = /** @class */ (function () {
-    function MySessionToken(storage) {
-        this.storage = storage;
-        this.mySessionToken = "None";
-    }
-    MySessionToken.prototype.setMyAuthToken = function (value) {
-        this.mySessionToken = value;
-        return this.storage.set('token', value);
-    };
-    MySessionToken.prototype.getMyAuthToken = function () {
-        return this.storage.get('token');
-    };
-    MySessionToken.prototype.getBaseURL = function (value) {
-        //return "http://localhost:3000/" + value; 
-        return "https://shrouded-harbor-31805.herokuapp.com/" + value;
-    };
-    MySessionToken = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ionic_storage__["b" /* Storage */]])
-    ], MySessionToken);
-    return MySessionToken;
-}());
-
-//# sourceMappingURL=token.js.map
-
-/***/ }),
-
-/***/ 140:
+/***/ 138:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -1272,11 +1085,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 140;
+webpackEmptyAsyncContext.id = 138;
 
 /***/ }),
 
-/***/ 181:
+/***/ 179:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -1293,11 +1106,11 @@ var map = {
 		18
 	],
 	"../pages/calentries/calentries/calentries.module": [
-		313,
+		314,
 		17
 	],
 	"../pages/calentries/calentry-details/calentry-details.module": [
-		314,
+		313,
 		16
 	],
 	"../pages/calentries/update-calentry/update-calentry.module": [
@@ -1337,11 +1150,11 @@ var map = {
 		7
 	],
 	"../pages/timelines/timelines.module": [
-		324,
+		325,
 		6
 	],
 	"../pages/userprofiles/add-user-profile/add-user-profile.module": [
-		325,
+		324,
 		5
 	],
 	"../pages/userprofiles/update-user-profile/update-user-profile.module": [
@@ -1368,12 +1181,12 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 181;
+webpackAsyncContext.id = 179;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 183:
+/***/ 181:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1385,7 +1198,7 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1451,17 +1264,77 @@ var Chat = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 227:
+/***/ 182:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserCredentials; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestUsersProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var UserCredentials = /** @class */ (function () {
+    function UserCredentials() {
+    }
+    return UserCredentials;
+}());
+
+var RestUsersProvider = /** @class */ (function () {
+    function RestUsersProvider(httpClient, sessionToken) {
+        this.httpClient = httpClient;
+        console.log('Hello RestUsersProvider Provider');
+        this.baseUsersUrl = sessionToken.getBaseURL("users");
+        this.baseRegisterURL = sessionToken.getBaseURL("register");
+    }
+    RestUsersProvider.prototype.getAllUsers = function (sToken) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
+        var getUrl = "" + this.baseUsersUrl;
+        return this.httpClient.get(getUrl, { headers: headers });
+    };
+    RestUsersProvider.prototype.createUser = function (userCreds) {
+        return this.httpClient.post(this.baseRegisterURL, userCreds);
+    };
+    RestUsersProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__token__["a" /* MySessionToken */]])
+    ], RestUsersProvider);
+    return RestUsersProvider;
+}());
+
+//# sourceMappingURL=rest-users.js.map
+
+/***/ }),
+
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mainpage_mainpage__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mainpage_mainpage__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__register_register__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_rest__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_token__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_token__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(14);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1528,6 +1401,70 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 227:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GroupsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chat_chat__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_token__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_rest_groups_rest_groups__ = __webpack_require__(181);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+//import { AddChatPage } from '../add-chat/add-chat';
+
+
+
+var GroupsPage = /** @class */ (function () {
+    function GroupsPage(navCtrl, modalCtrl, restProvider, mySessionToken) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.modalCtrl = modalCtrl;
+        this.restProvider = restProvider;
+        this.mySessionToken = mySessionToken;
+        this.chats = [];
+        this.mySessionToken.getMyAuthToken().then(function (stoken) {
+            _this.token = stoken;
+            _this.restProvider.getChats(_this.token).subscribe(function (chats) {
+                _this.chats = chats;
+            }, function (error) {
+                console.log('get chatgroups failed: ');
+            });
+        });
+    }
+    GroupsPage.prototype.addGroup = function () {
+        //this.navCtrl.push(AddChatPage, {token: this.token});
+    };
+    GroupsPage.prototype.joinGroup = function (chat) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__chat_chat__["a" /* ChatPage */], {
+            chat: chat, token: this.token
+        });
+    };
+    GroupsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-groups',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\groups\groups.html"*/'<!--\n\n  Generated template for the ChatPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Group Chats</ion-title>\n\n    <ion-buttons end>\n\n      <button ion-button icon-only (click)="addGroup()">\n\n        <ion-icon name="add-circle"></ion-icon>\n\n      </button>\n\n    </ion-buttons>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-list>\n\n    <ion-item *ngFor="let chat of chats">\n\n      {{chat.description}}\n\n      <ion-icon name="chatboxes" item-end (click)="joinGroup(chat)"></ion-icon>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\groups\groups.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_rest_groups_rest_groups__["a" /* RestGroupsProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_token__["a" /* MySessionToken */]])
+    ], GroupsPage);
+    return GroupsPage;
+}());
+
+//# sourceMappingURL=groups.js.map
+
+/***/ }),
+
 /***/ 228:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1550,40 +1487,40 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_common_http__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_storage__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_forms__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_onesignal__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_onesignal__ = __webpack_require__(225);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(227);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_register_register__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_chat_chat__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_mainpage_mainpage__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tasks_tasks_tasks__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tasks_task_details_task_details__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tasks_add_task_add_task__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tasks_update_task_update_task__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_userprofiles_user_profiles_user_profiles__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_userprofiles_user_profile_details_user_profile_details__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_userprofiles_add_user_profile_add_user_profile__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_userprofiles_update_user_profile_update_user_profile__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_timelines_timelines__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_calentries_calentries_calentries__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_home__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_register_register__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_chat_chat__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_mainpage_mainpage__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_tasks_tasks_tasks__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tasks_task_details_task_details__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_tasks_add_task_add_task__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_tasks_update_task_update_task__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_userprofiles_user_profiles_user_profiles__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_userprofiles_user_profile_details_user_profile_details__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_userprofiles_add_user_profile_add_user_profile__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_userprofiles_update_user_profile_update_user_profile__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_timelines_timelines__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_calentries_calentries_calentries__ = __webpack_require__(116);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__pages_calentries_calentry_details_calentry_details__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_calentries_add_calentry_add_calentry__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_calentries_update_calentry_update_calentry__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__pages_calentries_add_calentry_add_calentry__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pages_calentries_update_calentry_update_calentry__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__providers_rest_rest__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_token__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_rest_tasks_rest_tasks__ = __webpack_require__(46);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_groups_groups__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_rest_chats_rest_chats__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_rest_groups_rest_groups__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_rest_users_rest_users__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_rest_timelines_rest_timelines__ = __webpack_require__(89);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_rest_calentries_rest_calentries__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__providers_token__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__providers_rest_tasks_rest_tasks__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__pages_groups_groups__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__providers_rest_chats_rest_chats__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__providers_rest_groups_rest_groups__ = __webpack_require__(181);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__providers_rest_users_rest_users__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__providers_rest_timelines_rest_timelines__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_rest_calentries_rest_calentries__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1671,8 +1608,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/add-chat/add-chat.module#AddChatPageModule', name: 'AddChatPage', segment: 'add-chat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/add-timeline/add-timeline.module#AddTimelinePageModule', name: 'AddTimelinePage', segment: 'add-timeline', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/calentries/add-calentry/add-calentry.module#AddCalentryPageModule', name: 'AddCalentryPage', segment: 'add-calentry', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/calentries/calentries/calentries.module#CalentriesPageModule', name: 'CalentriesPage', segment: 'calentries', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/calentries/calentry-details/calentry-details.module#CalentryDetailsPageModule', name: 'CalentryDetailsPage', segment: 'calentry-details', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/calentries/calentries/calentries.module#CalentriesPageModule', name: 'CalentriesPage', segment: 'calentries', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/calentries/update-calentry/update-calentry.module#UpdateCalentryPageModule', name: 'UpdateCalentryPage', segment: 'update-calentry', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/chat/chat.module#ChatPageModule', name: 'ChatPage', segment: 'chat', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/groups/groups.module#ChatPageModule', name: 'GroupsPage', segment: 'groups', priority: 'low', defaultHistory: [] },
@@ -1682,8 +1619,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/tasks/task-details/task-details.module#TaskDetailsPageModule', name: 'TaskDetailsPage', segment: 'task-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tasks/tasks/tasks.module#TasksPageModule', name: 'TasksPage', segment: 'tasks', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tasks/update-task/update-task.module#UpdateTaskPageModule', name: 'UpdateTaskPage', segment: 'update-task', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/timelines/timelines.module#TimelinesPageModule', name: 'TimelinesPage', segment: 'timelines', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/userprofiles/add-user-profile/add-user-profile.module#AddUserProfilePageModule', name: 'AddUserProfilePage', segment: 'add-user-profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/timelines/timelines.module#TimelinesPageModule', name: 'TimelinesPage', segment: 'timelines', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/userprofiles/update-user-profile/update-user-profile.module#UpdateUserProfilePageModule', name: 'UpdateUserProfilePage', segment: 'update-user-profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/userprofiles/user-profile-details/user-profile-details.module#UserProfileDetailsPageModule', name: 'UserProfileDetailsPage', segment: 'user-profile-details', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/userprofiles/user-profiles/user-profiles.module#UserProfilesPageModule', name: 'UserProfilesPage', segment: 'user-profiles', priority: 'low', defaultHistory: [] }
@@ -1745,10 +1682,10 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__ = __webpack_require__(226);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(226);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1806,7 +1743,7 @@ var MyApp = /** @class */ (function () {
         this.onesignal.endInit();
     };
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_onesignal__["a" /* OneSignal */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -1818,7 +1755,91 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 45:
+/***/ 37:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestUserProfilesProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserProfile; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var RestUserProfilesProvider = /** @class */ (function () {
+    function RestUserProfilesProvider(httpClient, sessionToken) {
+        this.httpClient = httpClient;
+        console.log('Hello RestUserProfilesProvider Provider');
+        this.baseUserProfileUrl = sessionToken.getBaseURL("userinfos");
+    }
+    /** GET tasks from the server */
+    RestUserProfilesProvider.prototype.getUserProfiles = function (sToken) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
+        return this.httpClient.get(this.baseUserProfileUrl, { headers: headers });
+    };
+    // Get the user profile of the logged-in user.
+    RestUserProfilesProvider.prototype.getUserProfile = function (sToken) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
+        var taskUrl = this.baseUserProfileUrl + "/999";
+        return this.httpClient.get(taskUrl, { headers: headers });
+    };
+    // Sending a GET request to /tasks/:id
+    RestUserProfilesProvider.prototype.getUserProfileById = function (sToken, userProfileId) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
+        var taskUrl = this.baseUserProfileUrl + "/" + userProfileId;
+        return this.httpClient.get(taskUrl, { headers: headers });
+    };
+    RestUserProfilesProvider.prototype.createUserProfile = function (sToken, userProfile) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
+        return this.httpClient.post(this.baseUserProfileUrl, userProfile, { headers: headers });
+    };
+    // Sending a PUT request to /tasks/:id
+    RestUserProfilesProvider.prototype.updateUserProfile = function (sToken, userProfile) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
+        var taskUrl = this.baseUserProfileUrl + "/" + userProfile.id;
+        return this.httpClient.put(taskUrl, userProfile, { headers: headers });
+    };
+    /** DELETE: delete the task from the server */
+    RestUserProfilesProvider.prototype.deleteUserProfile = function (sToken, id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
+        var delurl = this.baseUserProfileUrl + "/" + id;
+        return this.httpClient.delete(delurl, { headers: headers });
+    };
+    RestUserProfilesProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__token__["a" /* MySessionToken */]])
+    ], RestUserProfilesProvider);
+    return RestUserProfilesProvider;
+}());
+
+var UserProfile = /** @class */ (function () {
+    function UserProfile() {
+    }
+    return UserProfile;
+}());
+
+//# sourceMappingURL=rest-userprofiles.js.map
+
+/***/ }),
+
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1830,7 +1851,7 @@ var MyApp = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1896,7 +1917,7 @@ var Calentry = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1908,7 +1929,7 @@ var Calentry = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1974,84 +1995,6 @@ var Task = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 47:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestUserProfilesProvider; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserProfile; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var RestUserProfilesProvider = /** @class */ (function () {
-    function RestUserProfilesProvider(httpClient, sessionToken) {
-        this.httpClient = httpClient;
-        console.log('Hello RestUserProfilesProvider Provider');
-        this.baseUserProfileUrl = sessionToken.getBaseURL("userinfos");
-    }
-    /** GET tasks from the server */
-    RestUserProfilesProvider.prototype.getUserProfiles = function (sToken) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
-        return this.httpClient.get(this.baseUserProfileUrl, { headers: headers });
-    };
-    // Sending a GET request to /tasks/:id
-    RestUserProfilesProvider.prototype.getUserProfileById = function (sToken, userProfileId) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
-        var taskUrl = this.baseUserProfileUrl + "/" + userProfileId;
-        return this.httpClient.get(taskUrl, { headers: headers });
-    };
-    RestUserProfilesProvider.prototype.createUserProfile = function (sToken, userProfile) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
-        return this.httpClient.post(this.baseUserProfileUrl, userProfile, { headers: headers });
-    };
-    // Sending a PUT request to /tasks/:id
-    RestUserProfilesProvider.prototype.updateUserProfile = function (sToken, userProfile) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
-        var taskUrl = this.baseUserProfileUrl + "/" + userProfile.id;
-        return this.httpClient.put(taskUrl, userProfile, { headers: headers });
-    };
-    /** DELETE: delete the task from the server */
-    RestUserProfilesProvider.prototype.deleteUserProfile = function (sToken, id) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
-        var delurl = this.baseUserProfileUrl + "/" + id;
-        return this.httpClient.delete(delurl, { headers: headers });
-    };
-    RestUserProfilesProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__token__["a" /* MySessionToken */]])
-    ], RestUserProfilesProvider);
-    return RestUserProfilesProvider;
-}());
-
-var UserProfile = /** @class */ (function () {
-    function UserProfile() {
-    }
-    return UserProfile;
-}());
-
-//# sourceMappingURL=rest-userprofiles.js.map
-
-/***/ }),
-
 /***/ 55:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2064,7 +2007,7 @@ var UserProfile = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2122,19 +2065,15 @@ var AuthToken = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 87:
+/***/ 60:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return UserCredentials; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RestUsersProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_chats_rest_chats__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2149,40 +2088,104 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-var UserCredentials = /** @class */ (function () {
-    function UserCredentials() {
+var ChatPage = /** @class */ (function () {
+    function ChatPage(navCtrl, navParams, modalCtrl, chatsProvider, mySessionToken) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.modalCtrl = modalCtrl;
+        this.chatsProvider = chatsProvider;
+        this.mySessionToken = mySessionToken;
+        this.messages = [];
+        this.userProfile = this.navParams.get('userProfile');
+        this.token = this.navParams.get('token');
+        this.newPost = new __WEBPACK_IMPORTED_MODULE_2__providers_rest_chats_rest_chats__["a" /* Post */];
+        this.newPost.customer = this.userProfile.customer;
+        this.newPost.userid = this.userProfile.id;
+        this.newPost.name = this.userProfile.firstname;
+        this.chatsProvider.getPosts(this.userProfile.customer, this.token).subscribe(function (posts) {
+            _this.messages = posts;
+        }, function (error) {
+            console.log('get posts failed: ');
+        });
     }
-    return UserCredentials;
+    ChatPage.prototype.sendMessage = function () {
+        var _this = this;
+        this.chatsProvider.createPost(this.token, this.newPost).subscribe(function (post) {
+            _this.messages.push(post);
+            _this.newPost.message = '';
+            // this.content.scrollToBottom();
+        });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('content'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* Content */])
+    ], ChatPage.prototype, "content", void 0);
+    ChatPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-chat',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\chat\chat.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title> Family Chat</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n \n\n<ion-content #content padding>\n\n  <ion-grid>\n\n    <!--<ion-row *ngFor="let message of messages | async">-->\n\n    <ion-row *ngFor="let message of messages">\n\n      <ion-col col-9 col-md-6 *ngIf="message.customer !== currentUserId" class="message other-message">\n\n        <span> {{ message.name }}:</span>\n\n        <span>  {{ message.message }}</span>\n\n        <div class="time">{{ message.created_at| date:\'short\' }}</div>\n\n      </ion-col>\n\n\n\n      <ion-col offset-3 offset-md-6 col-9 col-md-6 *ngIf="message.customer === currentUserId" class="message my-message">\n\n        <span>{{  message.name }}:</span>\n\n        <span>{{ message.message }}</span>\n\n        <div class="time">{{ message.created_at | date:\'short\' }}</div>\n\n      </ion-col>\n\n\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n\n\n<!-- TODO: ADD EXITCHAT() call-->\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <ion-row no-padding align-items-center>\n\n      <ion-col col-10>\n\n        <ion-item no-lines>\n\n          <ion-input type="text" placeholder="Message" [(ngModel)]="newPost.message"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-2 text-center>\n\n        <button ion-button full icon-only clear color="primary" [disabled]="newPost.message === \'\'" class="msg-btn" (click)="sendMessage()">\n\n          <ion-icon name="ios-send"></ion-icon>\n\n        </button>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\chat\chat.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_rest_chats_rest_chats__["b" /* RestChatsProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_token__["a" /* MySessionToken */]])
+    ], ChatPage);
+    return ChatPage;
 }());
 
-var RestUsersProvider = /** @class */ (function () {
-    function RestUsersProvider(httpClient, sessionToken) {
-        this.httpClient = httpClient;
-        console.log('Hello RestUsersProvider Provider');
-        this.baseUsersUrl = sessionToken.getBaseURL("users");
-        this.baseRegisterURL = sessionToken.getBaseURL("register");
-    }
-    RestUsersProvider.prototype.getAllUsers = function (sToken) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
-        var getUrl = "" + this.baseUsersUrl;
-        return this.httpClient.get(getUrl, { headers: headers });
-    };
-    RestUsersProvider.prototype.createUser = function (userCreds) {
-        return this.httpClient.post(this.baseRegisterURL, userCreds);
-    };
-    RestUsersProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */], __WEBPACK_IMPORTED_MODULE_4__token__["a" /* MySessionToken */]])
-    ], RestUsersProvider);
-    return RestUsersProvider;
-}());
-
-//# sourceMappingURL=rest-users.js.map
+//# sourceMappingURL=chat.js.map
 
 /***/ }),
 
-/***/ 88:
+/***/ 61:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UpdateUserProfilePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__ = __webpack_require__(37);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UpdateUserProfilePage = /** @class */ (function () {
+    function UpdateUserProfilePage(navCtrl, navParams, view) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.view = view;
+        this.newUserProfile = new __WEBPACK_IMPORTED_MODULE_2__providers_rest_userprofiles_rest_userprofiles__["b" /* UserProfile */]();
+    }
+    UpdateUserProfilePage.prototype.ionViewDidLoad = function () {
+        this.newUserProfile = this.navParams.get('userProfile');
+    };
+    UpdateUserProfilePage.prototype.saveUserProfile = function () {
+        this.view.dismiss(this.newUserProfile);
+    };
+    UpdateUserProfilePage.prototype.close = function () {
+        this.view.dismiss();
+    };
+    UpdateUserProfilePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-update-user-profile',template:/*ion-inline-start:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\update-user-profile\update-user-profile.html"*/'<ion-header>\n\n  <ion-toolbar color="secondary">\n\n    <ion-title> Update User Profile</ion-title>\n\n      <ion-buttons end>\n\n        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>\n\n      </ion-buttons>\n\n    </ion-toolbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-list>\n\n    <ion-item>\n\n      <ion-label floating>First Name</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.firstname"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Last Name</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.lastname"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Address</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.address"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Cell Number</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.cellphone"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Email</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.email"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>Birthday</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.birthday"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>userid</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.userid"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label floating>customer</ion-label>\n\n      <ion-input type="text" [(ngModel)]="newUserProfile.customer"></ion-input>\n\n    </ion-item>\n\n\n\n  </ion-list>\n\n\n\n  <button full ion-button color="secondary" (click)="saveUserProfile()">Save</button>\n\n\n\n</ion-content>\n\n\n\n '/*ion-inline-end:"C:\Users\Barry\Documents\ionicProjects\SocialApp\src\pages\userprofiles\update-user-profile\update-user-profile.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* ViewController */]])
+    ], UpdateUserProfilePage);
+    return UpdateUserProfilePage;
+}());
+
+//# sourceMappingURL=update-user-profile.js.map
+
+/***/ }),
+
+/***/ 89:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2194,7 +2197,7 @@ var RestUsersProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2214,7 +2217,7 @@ var RestChatsProvider = /** @class */ (function () {
     function RestChatsProvider(httpClient, sessionToken) {
         this.httpClient = httpClient;
         console.log('Hello RestChatsProvider Provider');
-        this.baseChatUrl = sessionToken.getBaseURL("chats");
+        this.baseChatUrl = sessionToken.getBaseURL("posts");
     }
     RestChatsProvider.prototype.getPosts = function (chatId, sToken) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_common_http__["c" /* HttpHeaders */]().set('Authorization', sToken);
@@ -2251,7 +2254,7 @@ var Post = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 89:
+/***/ 90:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2263,7 +2266,7 @@ var Post = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_catch__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__token__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

@@ -17,21 +17,19 @@
   <ion-list>
      <ion-item *ngFor="let userProfile of userProfiles"  >
         <ion-row>
-            <ion-col  col-3>
+            <ion-col  col-4>
               {{userProfile.firstname }}
             </ion-col>
-            <ion-col  col-3>
+            <ion-col  col-4>
               {{userProfile.cellphone }}
             </ion-col>
             <ion-col  col-2>
               <button ion-button outline  (click)=" viewUserProfile(userProfile)"> Show </button>
             </ion-col>
-            <ion-col col-2>
-              <button ion-button  (click)="updateModalUserProfile(userProfile)">Update </button>
+            <ion-col  col-2>
+              <button ion-button outline  (click)=" updateModalUserProfile(userProfile)"> Update </button>
             </ion-col>
-            <ion-col col-2>
-              <button ion-button   (click)="deleteUserProfile(userProfile.id)">Delete </button>
-            </ion-col>
+ 
         </ion-row>
      </ion-item>
   </ion-list>

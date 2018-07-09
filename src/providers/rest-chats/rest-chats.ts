@@ -13,7 +13,7 @@ export class RestChatsProvider {
  
   constructor(public httpClient: HttpClient, sessionToken: MySessionToken) {
     console.log('Hello RestChatsProvider Provider');
-    this.baseChatUrl = sessionToken.getBaseURL("chats");
+    this.baseChatUrl = sessionToken.getBaseURL("posts");
   }
 
   getPosts (chatId:number, sToken: string): Observable<Post[]> {
@@ -91,6 +91,7 @@ export class Post {
   userid: number;
   contentid: number;
   message: string;
+  name: string; 
   created_at: string;
   updated_at: string;
 }
