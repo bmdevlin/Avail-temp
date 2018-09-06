@@ -1,0 +1,55 @@
+ 
+
+
+<div class="container">
+    <p> Session token is:  {{sessToken}}</p>
+
+    <button (click)="openFormModal()">Login </button>
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Why Should you try Cirquelo">
+      <ng-template ngbPanelContent>
+      <h4>Privacy and Security</h4>
+       Our default setting is to keep your personal information absolutely private and secure. 
+       This is the exact opposite of FaceBook and Google! 
+        
+       <h4>Adios, trolls!</h4>
+       <p>Our user groups are closed. Nobody outside your family or group can see any of the posts, comments, or photos that your family shares.
+       Nobody outside of the group can contribute any kind of post to the group. Adios, trolls!   </p>
+       <h4>No Garbage!</h4>
+       <p>We do not inundate you with a constant stream of fake news and cheesey ads from shady companies.</p>
+       <p>In fact, your family or group timeline contains exactly zero percent of this garbage.  </p>
+      <h4>Your family is worth it</h4>
+      <ul>
+          <li>You want pedophiles poring over your family vacation photos? </li> 
+          <li>You want your family to be exposed to hate speech and extremist propaganda? </li>
+          <li>You want cyber-bullies posting their hateful lies to your children?</li> 
+          <li>You want sexual predators or ISIS recruiters "friending" your children?</li>
+      </ul>
+      <p> These scenarios play out every day on FaceBook.  </p>
+          <p>If you value truth and decency, and the privacy and safety of your family, you need to switch to Cirquelo. </p>
+      
+      <p> Your Family is worth it. </p>
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel>
+      <ng-template ngbPanelTitle>
+        <span>&#9733; Why you can trust us  &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+          <p>Keeping your personal data private and secure is the foundation of our business. </p>
+          <p> This is the opposite of FaceBook and Google.  </p>
+          <p> Leveraging revenue from your personal data is their business model.    </p>
+         
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Why you should not use FaceBook" [disabled]="false">
+      <ng-template ngbPanelContent>
+          <p> FaceBook will state that they do not sell your data, which is technically not a lie.  </p>
+          <p> However, what they do is compile a dossier on YOU (and every other user) with up to 99 data points of personal information.  </p>
+          <p> They use this personal information to provide "micro-targeting" services to their advertisers. This is a very lucrative business for FaceBook. </p>
+          <p> Each user in the USA is worth about $100 to FaceBook.  </p>
+        <p> In other words, you are giving $100 of value to FaceBook every year for the privildge of using their app.    </p>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  </div>

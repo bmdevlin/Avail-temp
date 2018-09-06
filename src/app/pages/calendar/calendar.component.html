@@ -1,0 +1,28 @@
+
+<h1>  My Calendar </h1>
+<p> Session token is:  {{sessToken}}</p>
+  <div>
+  <table  style="width:100%">
+  <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Title</th>
+      <th> </th>
+      <th> </th>
+      <th> </th>
+  </tr>
+  <div  *ngFor="let calentry of calentries"  >
+    <tr>
+        <td> {{calentry.date }}</td>  
+        <td> {{calentry.time }}</td>
+        <td> {{calentry.title }}</td>
+        <td><button    (click)=" viewCalentry(calentry)"> Show </button></td>
+        <td> <button   (click)="updateCalentry(calentry)">Update </button></td>
+        <td> <button     (click)="deleteCalentry(calentry.id)">Delete </button></td>
+    </tr>
+  </div>
+  </table>
+
+ 
+  <button (click)="openFormModal()">Add Calendar Entry </button>
+  </div>
