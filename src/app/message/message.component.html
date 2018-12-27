@@ -1,0 +1,32 @@
+
+<mat-card class="messageContainer"
+    [ngClass]="{'isOwnMessageContainer':isOwnMessage}">
+ 
+    <div class="messageContent"
+        [ngClass]="{'isOwnMessageContent':isOwnMessage}">
+        <span class="sender"
+            [ngClass]="{'isOwnSender':isOwnMessage}">
+            {{ userName }}
+            <span class="timestamp" 
+           [ngClass] = "{'isOwnTimestamp':isOwnMessage}">
+           {{ timeStamp  }} <hr/>
+       </span>
+        </span>
+        
+        <span> 
+            {{ messageContent }}
+        </span>
+        <span  *ngIf="url!==''">
+           <br/><br/> <a href="https://{{ url }}" target="_blank">Link to photos</a> 
+        </span>
+        <span  *ngIf="filename">
+            <br/>  <br/> 
+            <mat-card class="example-card"> 
+                <img mat-card-image src="{{ filename }}"  >
+            </mat-card>      
+
+         </span>
+
+    </div>
+ 
+</mat-card> 

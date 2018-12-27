@@ -1,37 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterComponent } from './pages/register/register.component';
-import { CalendarComponent } from './pages/calendar/calendar.component';
-import { AddcalentryComponent } from './pages/addcalentry/addcalentry.component';
-import { TimelineComponent } from './pages/timeline/timeline.component';
-import { LandingComponent } from './pages/landing/landing.component';
+
+import { WelcomeComponent } from './welcome/welcome.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
+import { ManageGroupsComponent } from './manage-groups/manage-groups.component'
+import { AuthGuard } from './auth/auth.guard';
+
 
 const routes: Routes = [
-  { path:  '', redirectTo:  'accounts', pathMatch:  'full' },
-  {
-    path:  'land',
-    component:  LandingComponent
-  },
-  {
-      path:  'register',
-      component:  RegisterComponent
-  },
-  {
-    path:  'timeline',
-    component:  TimelineComponent
-  },
-  {
-    path:  'calendar',
-    component:  CalendarComponent
-  },
-  {
-    path:  'addcalentry',
-    component:  AddcalentryComponent
-  }
+  { path: '', component: WelcomeComponent },
+  { path: 'welcome', component: WelcomeComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'chat', component: ChatroomComponent  },
+  { path: 'groups', component: ManageGroupsComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

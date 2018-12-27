@@ -1,57 +1,72 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from  './app-routing.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { MaterialModule } from './material.module';
 
-import { map } from 'rxjs/operators';
-
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './pages/login/login-form.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { CalendarComponent } from './pages/calendar/calendar.component'
-import { AddcalentryComponent } from './pages/addcalentry/addcalentry.component';
-import { TimelineComponent } from './pages/timeline/timeline.component';
-import { TimelineFormModalComponent } from './pages/timeline-form-modal/timeline-form-modal.component';
-import { LandingComponent } from './pages/landing/landing.component';
+import { ChatFormComponent } from './chat-form/chat-form.component';
+import { ChatroomComponent } from './chatroom/chatroom.component';
+import { FeedComponent } from './feed/feed.component';
+import { MessageComponent } from './message/message.component';
+import { GroupComponent } from './group/group.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserItemComponent } from './user-item/user-item.component';
+import { UserGroupsComponent } from './user-groups/user-groups.component';
+import { ManageGroupsComponent } from './manage-groups/manage-groups.component'
+import { UploaderComponent } from './uploader/uploader.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { AuthService } from './auth/auth.service';
+import { ChatService } from './services/chat.service';
+import { GroupService } from './services/group.service';
+import { UserService } from './services/user.service';
 
-import { AuthProvider } from './providers/authProvider';
-import { MySessionToken } from './providers/token';
-import { CalentryProvider } from './providers/calentryProvider';
-import { TimelineProvider } from'./providers/timelineProvider';
-
-
+ 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent,
-    RegisterComponent,
-    CalendarComponent,
-    AddcalentryComponent,
-    TimelineComponent,
-    TimelineFormModalComponent,
-    LandingComponent
+    ChatFormComponent,
+    ChatroomComponent,
+    FeedComponent,
+    MessageComponent,
+    GroupComponent,
+    UserListComponent,
+    UserItemComponent,
+    UserGroupsComponent,
+    ManageGroupsComponent,
+    UploaderComponent,
+    SignupComponent,
+    LoginComponent,
+    WelcomeComponent,
+    HeaderComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     AppRoutingModule,
-    HttpClientModule,
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule.forRoot()
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule// imports firebase/storage only needed for storage features
   ],
-  providers: [MySessionToken,
-              AuthProvider,
-              CalentryProvider,
-              TimelineProvider
-            ],
+  providers: [AuthService, ChatService, GroupService, UserService],
   bootstrap: [AppComponent],
-  entryComponents: [
-    AddcalentryComponent,
-    TimelineFormModalComponent,
-    LoginFormComponent
-  ]
+  entryComponents: []
 })
 export class AppModule { }

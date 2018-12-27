@@ -1,0 +1,38 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { ChatService } from '../services/chat.service';
+import { AuthService } from '../auth/auth.service';
+import { ChatMessage } from '../models/chat-message.model';
+
+@Component({
+  selector: 'app-message',
+  templateUrl: './message.component.html',
+  styleUrls: ['./message.component.css']
+})
+export class MessageComponent implements OnInit {
+
+  @Input() chatMessage: ChatMessage;
+  userEmail: string;
+  userName: string;
+  messageContent: string;
+  timeStamp: number// Date = new Date();
+  isOwnMessage: boolean;
+  ownEmail: string;
+  url: string;
+  filename: string;
+
+  constructor(private authService: AuthService) {
+    this.ownEmail = authService.myEmail;
+  }
+
+  ngOnInit(chatMessage = this.chatMessage) {
+
+    this.messageContent = chatMessage.message;
+    this.timeStamp = chatMessage.timeSent;
+    this.userEmail = chatMessage.email;
+    this.userName = chatMessage.userName;
+    this.filename = chatMessage.filename;
+    this.url = chatMessage.url;
+
+    this.isOwnMessage = this.ownEmail === this.userEmail;
+  }
+}

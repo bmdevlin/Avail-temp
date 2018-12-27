@@ -1,0 +1,32 @@
+
+<h1> Uploader </h1>
+
+
+<label for="file">File:</label>
+
+<input type="file" (change)="upload($event)" accept=".png,.jpg" /> 
+
+<input type="text" value={{filename}}  >
+ <hr/>
+
+ <section>
+    <form
+      [formGroup]="imageForm"
+      (ngSubmit)="download()">
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Your image name"
+          formControlName="image">
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Submit</button>
+    </form>
+  </section>
+
+  
+ 
+<p> Image </p>
+
+<img src={{downloadURL}} /> 
+
+ 
