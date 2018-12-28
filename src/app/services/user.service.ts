@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 //import * as firebase from 'firebase/app';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { Subject } from 'rxjs';
@@ -12,12 +12,16 @@ import { User } from '../auth/user.model';
 export class UserService {
 
   usersChanged = new Subject<User[]>();
-  private myuser:   User;
+
   userName: string;
   myEmail: string;
+  myStartGroup: string;
 
   usersCol:  AngularFirestoreCollection<User>;
   users: User[];
+
+  private userDoc: AngularFirestoreDocument<User>;
+  private myuser:   User;
 
   private fbSubs: Subscription[] = [];
 
@@ -27,10 +31,10 @@ export class UserService {
     private afs: AngularFirestore
     ){
       this.userName = "BarryHC";
-      this.fetchMyEmail();
+      this.fetchMyEmailId();    
     }
 
-  fetchUsers() {
+  fetchUsers(groupName: string) {
       
       this.usersCol = this.afs.collection('users');
       this.fbSubs.push(
@@ -42,14 +46,24 @@ export class UserService {
           }))
         )
         .subscribe((users: User[]) => {
-          this.users = users;   
-          this.usersChanged.next([...this.users]);
-          this.setUserDisplayName (this.myEmail);
+          this.users = [];
+          users.forEach(user => {
+            user.groups.forEach (group => {
+              if (group == groupName) {
+                this.users.push(user);
+              }
+            })
+          
+          })
+
+         // this.users = users;   
+         this.usersChanged.next([...this.users]);
+          
         })
     );
   }
 
-  fetchMyEmail(){
+  fetchMyEmailId(){
     this.fbSubs.push(
       this.afAuth.authState.subscribe(user => {
         if (user) {
@@ -65,15 +79,17 @@ export class UserService {
     return this.users;
   }
 
-  setUserDisplayName (myEmail: string) {
+
+  getUserProfile (myEmail: string) {
     this.myuser  = this.users.find(
       ex => ex.email === myEmail
     );
     //console.log("User service: current auth user: " + myEmail); 
     
     if (this.myuser)
-       {this.userName = this.myuser.displayName;}
-    console.log("User service: current user: " + this.userName); 
+       {this.userName = this.myuser.displayName;
+        this.myStartGroup = this.myuser.activeGroup;}
+    console.log("User service: active group: " + this.myStartGroup); 
   }
 
   cancelSubscriptions() {

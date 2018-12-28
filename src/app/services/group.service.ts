@@ -7,6 +7,7 @@ import { Subscription, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { UserService } from '../services/user.service';
 import { Group } from '../models/group.model';
+import { GroupMember } from '../models/groupMember.model';
 
 
 @Injectable()
@@ -19,6 +20,10 @@ export class GroupService {
 
   private activeGroup: Group;
   activeGroupChanged = new Subject<Group>();
+
+  private activeGroupMembers: GroupMember[];
+  activeGroupMembersChanged = new Subject<GroupMember[]>();
+  myActiveMemberInfo: GroupMember;
 
   private myEmail: string;
   private fbSubs: Subscription[] = [];
@@ -88,6 +93,34 @@ export class GroupService {
     );
     this.activeGroupChanged.next({ ...this.activeGroup });
     console.log('Group Service - active group: ' + this.activeGroup.id);
+
+    this.fbSubs.push(this.afs
+      .collection('groups').doc(this.activeGroup.id).collection('groupMembers')
+      .snapshotChanges()
+      .pipe(map(docArray => {
+        return docArray.map(doc => {
+            return {
+              id: doc.payload.doc.id,
+              ...doc.payload.doc.data()
+            }
+        })
+      }))
+      .subscribe((members: GroupMember[]) => {
+          this.activeGroupMembers = members;
+          this.activeGroupMembersChanged.next([...this.activeGroupMembers]);
+          console.log('Group service: ' + this.activeGroupMembers);
+          this.myActiveMemberInfo = this.activeGroupMembers.find(
+            ex => ex.memberId === this.userService.myEmail
+          );
+      }  )
+    );
+  }
+
+  setMyGroupInfo(){
+    if (this.activeGroupMembers)
+    {this.myActiveMemberInfo = this.activeGroupMembers.find(
+      ex => ex.memberId === this.userService.myEmail
+    );}
   }
 
   getActiveGroup(){ 

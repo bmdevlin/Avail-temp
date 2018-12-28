@@ -33,7 +33,7 @@ export class ChatService {
     private userService: UserService,
     private groupService: GroupService
     ) {      
-      this.messagesCol = this.afs.collection('groups').doc('aBxB9b41ZzRFyKEKeDlx')
+     this.messagesCol = this.afs.collection('groups').doc('dummy')
       .collection('groupChat');
       this.messagesCol
         .snapshotChanges()
@@ -56,17 +56,28 @@ export class ChatService {
  
   sendMessage(msg: string, url: string, filename: string) {
     const timestamp = this.getTimeStamp();
+    const group = this.groupService.getActiveGroup();
+    var userName;
+    var email;
+
+    // if valid, use my name and email id from the groupMember collection. Otherwise, use the default values
+    if (this.groupService.myActiveMemberInfo){
+      userName = this.groupService.myActiveMemberInfo.memberName;
+      email =  this.groupService.myActiveMemberInfo.memberId;
+    }
+    else{
+      userName = this.userService.userName;
+      email =  this.userService.myEmail;
+    }
    
-    this.afs.collection('messages').add(
+    this.afs.collection('groups').doc(group.id).collection('groupChat').add(
       { 'message': msg, 
       'url': url, 
       'filename': filename,
       'timeSent': timestamp, 
-      'userName': this.userService.userName, 
-      'email': this.userService.myEmail});
+      'userName': userName, 
+      'email': email});
   }
-
-  // db.collection('rooms').doc('roomA').collection('messages').doc('message1');
 
   getMessages()  {
     this.groupSubscription = this.groupService.activeGroupChanged.subscribe(group => {
@@ -87,6 +98,7 @@ export class ChatService {
                 this.chatMessages = messages;
                 this.chatMessagesChanged.next([...this.chatMessages]);
                 console.log('Chat Service getmessages: ' + this.chatMessages);
+                this.groupService.setMyGroupInfo();
             });   
     });
   }

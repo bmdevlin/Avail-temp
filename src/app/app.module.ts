@@ -31,6 +31,7 @@ import { AuthService } from './auth/auth.service';
 import { ChatService } from './services/chat.service';
 import { GroupService } from './services/group.service';
 import { UserService } from './services/user.service';
+import { UserProfileService } from './services/userProfile.service';
 
  
 @NgModule({
@@ -65,7 +66,8 @@ import { UserService } from './services/user.service';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule// imports firebase/storage only needed for storage features
   ],
-  providers: [AuthService, ChatService, GroupService, UserService],
+  providers: [AuthService, ChatService, GroupService, 
+                  UserService, UserProfileService],
   bootstrap: [AppComponent],
   entryComponents: []
 })
