@@ -98,7 +98,7 @@ export class ChatService {
                 this.chatMessages = messages;
                 this.chatMessagesChanged.next([...this.chatMessages]);
                 console.log('Chat Service getmessages: ' + this.chatMessages);
-                this.groupService.setMyGroupInfo();
+                //this.groupService.setMyGroupInfo();
             });   
     });
   }

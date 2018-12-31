@@ -28,11 +28,11 @@ export class AuthService {
         this.myEmail = user.email;
         this.isAuthenticated = true;
         this.authChange.next(true);
-        this.router.navigate(['/chat']);
+        this.router.navigate(['/home']);//navigate(['/chat']);
       } else {
         this.chatService.cancelSubscriptions();
         this.authChange.next(false);
-        this.router.navigate(['/welcome']);
+        this.router.navigate(['/home']);//.navigate(['/welcome']);
         this.isAuthenticated = false;
       }
     });

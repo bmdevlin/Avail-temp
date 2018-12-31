@@ -22,6 +22,9 @@
         <a routerLink="/groups">Groups</a>
       </li>
       <li *ngIf="isAuth">
+        <a routerLink="/calendar">Calendar</a>
+      </li>
+      <li *ngIf="isAuth">
         <a style="cursor: pointer" (click)="onLogout()">Logout</a>
       </li>
     </ul>

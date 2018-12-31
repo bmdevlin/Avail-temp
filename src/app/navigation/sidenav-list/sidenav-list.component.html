@@ -15,6 +15,10 @@
     <mat-icon>input</mat-icon>
     <span class="nav-caption">Groups</span>
   </a>
+  <a mat-list-item routerLink="/calendar" (click)="onClose()"  *ngIf="isAuth">
+    <mat-icon>input</mat-icon>
+    <span class="nav-caption">Calendar</span>
+  </a>
   <mat-list-item>
     <button mat-icon-button (click)="onLogout()" *ngIf="isAuth">
       <mat-icon>eject</mat-icon>

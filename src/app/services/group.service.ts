@@ -68,6 +68,8 @@ export class GroupService {
        });
   }
  
+  // currently, this gets all groups.
+
   getMyGroups()  {
     this.fbSubs.push(this.afs
       .collection('groups')
@@ -114,13 +116,6 @@ export class GroupService {
           );
       }  )
     );
-  }
-
-  setMyGroupInfo(){
-    if (this.activeGroupMembers)
-    {this.myActiveMemberInfo = this.activeGroupMembers.find(
-      ex => ex.memberId === this.userService.myEmail
-    );}
   }
 
   getActiveGroup(){ 

@@ -9,9 +9,11 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { MaterialModule } from './material.module';
+import { FullCalendarModule } from 'ng-fullcalendar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MyCalendarComponent, DialogOverviewExampleDialog } from './calendar/calendar.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
@@ -32,11 +34,14 @@ import { ChatService } from './services/chat.service';
 import { GroupService } from './services/group.service';
 import { UserService } from './services/user.service';
 import { UserProfileService } from './services/userProfile.service';
+import { EventService } from './services/event.service';
 
+import { EventDialogComponent } from './event-dialog/event-dialog.component';
  
 @NgModule({
   declarations: [
     AppComponent,
+    MyCalendarComponent,
     ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
@@ -51,11 +56,14 @@ import { UserProfileService } from './services/userProfile.service';
     LoginComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    EventDialogComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FullCalendarModule,
     MaterialModule,
     AppRoutingModule,
     FlexLayoutModule,
@@ -67,8 +75,8 @@ import { UserProfileService } from './services/userProfile.service';
     AngularFireStorageModule// imports firebase/storage only needed for storage features
   ],
   providers: [AuthService, ChatService, GroupService, 
-                  UserService, UserProfileService],
+                  UserService, UserProfileService, EventService],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [EventDialogComponent, DialogOverviewExampleDialog]
 })
 export class AppModule { }

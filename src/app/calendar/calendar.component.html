@@ -1,0 +1,26 @@
+ 
+ <button (click)="loadevents()"> loadevents</button>
+ <ol>
+    <li>
+      <mat-form-field>
+        <input matInput [(ngModel)]="name" placeholder="What's your name?">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Pick one</button>
+    </li>
+    <li *ngIf="animal">
+      You chose: <i>{{animal}}</i>
+    </li>
+  </ol>
+
+  <p>Display event : {{displayEvent | json}}</p>
+  <div *ngIf="calendarOptions">
+  <ng-fullcalendar #ucCalendar [options]="calendarOptions" 
+  (eventClick)="eventClick($event.detail)" 
+  (eventDrop)="updateEvent($event.detail)"
+  (eventResize)="updateEvent($event.detail)"
+   (dayClick)="dayClick($event.detail)"
+    (clickButton)="clickButton($event.detail)"
+     [(eventsModel)]="events"></ng-fullcalendar>
+  </div>
