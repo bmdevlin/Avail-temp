@@ -20,6 +20,7 @@ export class GroupService {
 
   private activeGroup: Group;
   activeGroupChanged = new Subject<Group>();
+  myActiveGroupId: string;
 
   private activeGroupMembers: GroupMember[];
   activeGroupMembersChanged = new Subject<GroupMember[]>();
@@ -34,9 +35,13 @@ export class GroupService {
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth,
     private userService: UserService
-    ) 
-    { }
-
+    )
+    {
+        this.setInitialGroup('0B3KhEc2f6pen190tm41')
+    }
+  setInitialGroup(groupid: string){
+      this.myActiveGroupId = groupid;
+  }
   getMyOwnedGroups()  {
     this.myEmail =  this.userService.myEmail;
     if (!this.myEmail){this.myEmail='dummy1'}
@@ -59,15 +64,15 @@ export class GroupService {
       })
     );
   }
- 
+
   createGroup(groupName: string, groupOwner: string) {
-   
+
     this.afs.collection('groups').add(
-      { 'groupName': groupName, 
+      { 'groupName': groupName,
         'groupOwner': groupOwner
        });
   }
- 
+
   // currently, this gets all groups.
 
   getMyGroups()  {
@@ -93,6 +98,7 @@ export class GroupService {
     this.activeGroup = this.myGroups.find(
       ex => ex.id === selectedGroupId
     );
+    this.myActiveGroupId = selectedGroupId;
     this.activeGroupChanged.next({ ...this.activeGroup });
     console.log('Group Service - active group: ' + this.activeGroup.id);
 
@@ -118,9 +124,9 @@ export class GroupService {
     );
   }
 
-  getActiveGroup(){ 
+  getActiveGroup(){
     return { ...this.activeGroup };
-  }  
+  }
 
   cancelSubscriptions() {
     this.fbSubs.forEach(sub => sub.unsubscribe());

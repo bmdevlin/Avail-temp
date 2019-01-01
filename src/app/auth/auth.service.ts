@@ -19,7 +19,7 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private chatService: ChatService,
     private userService: UserService
-  ) {} 
+  ) {}
 
   initAuthListener() {
     this.afAuth.authState.subscribe(user => {
@@ -28,11 +28,11 @@ export class AuthService {
         this.myEmail = user.email;
         this.isAuthenticated = true;
         this.authChange.next(true);
-        this.router.navigate(['/home']);//navigate(['/chat']);
+        this.router.navigate(['/chat']);
       } else {
         this.chatService.cancelSubscriptions();
         this.authChange.next(false);
-        this.router.navigate(['/home']);//.navigate(['/welcome']);
+        this.router.navigate(['/welcome']);
         this.isAuthenticated = false;
       }
     });
@@ -75,6 +75,6 @@ export class AuthService {
   isAuth() {
     return this.isAuthenticated;
   }
- 
- 
+
+
 }

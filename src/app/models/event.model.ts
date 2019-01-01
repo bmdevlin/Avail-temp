@@ -1,9 +1,8 @@
 export class Event {
-    id: string;
+    id?: string;
     title: string;
     owner?: string
-    start: number; 
-    end: number;  
+    start: number;
+    end: number;
     allday: boolean;
-    duration: number;
 }

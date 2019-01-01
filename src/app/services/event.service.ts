@@ -16,10 +16,10 @@ export class EventService {
     events: Event[];
     eventsChanged= new Subject<Event[]>();
     event: Event;
-  
+
     private group: Group;
     private groupSubscription: Subscription;
-  
+
     private fbSubs: Subscription[] = [];
 
     constructor(
@@ -27,16 +27,31 @@ export class EventService {
         private afs: AngularFirestore,
         private userService: UserService,
         private groupService: GroupService
-        ) {      
-           
+        ) {
+
     }
-    
-    createEvent(title: string, start: string, end: string, allday: boolean, 
-                  duration: number) {
+
+    createEvent(title: string, start: string, end: string, allday: boolean) {
         const timestamp = this.getTimeStamp();
-        const group = this.groupService.getActiveGroup();
+        const groupId = this.groupService.myActiveGroupId;
         var userName;
-    
+
+        userName = this.userService.userName;
+
+        this.afs.collection('groups').doc(groupId).collection('events').add(
+            {'title': title,
+            'start': start,
+            'end': end,
+            'allday': allday
+            //'owner': userName
+            });
+    }
+
+    updateEvent(event: Event) {
+        const timestamp = this.getTimeStamp();
+        const groupId = this.groupService.myActiveGroupId;
+        var userName;
+
         // if valid, use my name and email id from the groupMember collection. Otherwise, use the default values
         if (this.groupService.myActiveMemberInfo){
             userName = this.groupService.myActiveMemberInfo.memberName;
@@ -44,24 +59,26 @@ export class EventService {
         else{
             userName = this.userService.userName;
         }
-        
-        this.afs.collection('groups').doc(group.id).collection('events').add(
-            {'title': title, 
-            'start': start, 
-            'end': end,
-            'allday': allday, 
-            'duration': duration,
-            'owner': userName
-            });
+        //this.afs.collection('groups').doc(group.id).collection('groupChat').add(
+        this.afs.collection('groups').doc(groupId).collection('events')
+        .doc('events/' + event.id).update(event);
+
+        //    data =>
+        //    { data = {'title': title,
+        //    'start': start,
+        //    'end': end,
+        //    'allday': allday
+        //    }});
     }
 
     getEvents()  {
         console.log('Event Service getEvents');
-    
-        this.group = this.groupService.getActiveGroup();
-        console.log('Event Service - current group' + this.group.id);
-        this.afs.collection('groups').doc(this.group.id)
-                .collection('events') 
+
+        //this.group = this.groupService.getActiveGroup();
+        console.log('Event Service - current group' + this.groupService.myActiveGroupId);
+        this.afs.collection('groups')
+                .doc(this.groupService.myActiveGroupId)
+                .collection('events')
                 .snapshotChanges()
                 .pipe(map(docArray => {
                 return docArray.map(doc => {
@@ -75,10 +92,10 @@ export class EventService {
                 this.events = events;
                 this.eventsChanged.next([...this.events]);
                 console.log('Event Service getEvents: ' + this.events);
-        });   
-     
+        });
+
         }
-    
+
     cancelSubscriptions() {
     this.fbSubs.forEach(sub => sub.unsubscribe());
     }
@@ -90,7 +107,7 @@ export class EventService {
 
     if (dayInMonth < 10){
         dayString = '0' + dayInMonth;
-    } 
+    }
     else{
         dayString = dayInMonth.toString();
     };

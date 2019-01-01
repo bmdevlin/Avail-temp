@@ -8,11 +8,6 @@ import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar/index' ;
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
-
 @Component({
   selector: 'dialog-overview-example-dialog',
   templateUrl: 'dialog-overview-example-dialog.html',
@@ -21,7 +16,7 @@ export class DialogOverviewExampleDialog {
 
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: Event) {}
 
   onNoClick(): void {
     this.dialogRef.close();
@@ -36,11 +31,10 @@ export class DialogOverviewExampleDialog {
 })
 export class MyCalendarComponent implements OnInit {
 
-  animal: string;
-  name: string;
+  myEvent: Event;
 
   calendarOptions: Options;
-  displayEvent: any;  
+  displayEvent: any;
   events: Event[] = null;
   @ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
 
@@ -66,59 +60,72 @@ export class MyCalendarComponent implements OnInit {
     this.eventService.getEvents();
     //this.eventService.createStarterEvents();
   }
+
   loadevents() {
     console.log("CREATE starter events");
     this.eventService.createStarterEvents();
   }
-  openDialog(): void {
+
+  openDialog(event: Event): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal}
+      width: '350px',
+      data: {id:  event.id,
+          title:  event.title,
+          start:  event.start,
+          end:    event.end,
+          allday: event.allday}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
+      console.log('dialogRef afterClosed');
+      if (result)
+          {this.myEvent = {
+            id: result.id,
+            start: result.start.format(),
+            end: result.end.format(),
+            title: result.title,
+            allday: result.allday
+            };
+            // start and end are converted to Moments https://momentjs.com/docs/#/get-set/
+          //console.log('The dialog result',  result);
+          this.displayEvent =  JSON.stringify(this.myEvent);
+          this.eventService.updateEvent(this.myEvent)
+          }
     });
   }
 
 
   clickButton(model: any) {
     this.displayEvent = model;
+    //this.openDialog (model)
   }
 
   dayClick(model: any) {
     console.log(model);
   }
+
   eventClick(model: any) {
-    model = {
-      event: {
+    this.myEvent = {
+      id: model.event.id,
+      start: model.event.start,
+      end: model.event.end,
+      title: model.event.title,
+      allday: model.event.allday
+    }
+    this.displayEvent = model;
+    this.openDialog(this.myEvent);
+  }
+  updateEventFields(){
+      console.log('updateEventFields');
+  }
+  updateEvent(model: any) {
+      this.myEvent = {
         id: model.event.id,
         start: model.event.start,
         end: model.event.end,
         title: model.event.title,
-        allDay: model.event.allDay
-        // other params
-      },
-      duration: {}
-    }
-    this.displayEvent = model;
-  }
-  updateEvent(model: any) {
-    model = {
-      event: {
-        id: model.event.id,
-        start: model.event.start,
-        end: model.event.end,
-        title: model.event.title
-        // other params
-      },
-      duration: {
-        _data: model.duration._data
+        allday: model.event.allday
       }
-    }
-    this.displayEvent = model;
+      this.displayEvent = JSON.stringify(this.myEvent);
   }
 }
-
- 

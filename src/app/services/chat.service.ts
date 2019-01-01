@@ -32,28 +32,28 @@ export class ChatService {
     private afs: AngularFirestore,
     private userService: UserService,
     private groupService: GroupService
-    ) {      
-     this.messagesCol = this.afs.collection('groups').doc('dummy')
-      .collection('groupChat');
-      this.messagesCol
-        .snapshotChanges()
-        .pipe(map(docArray => {
-          return docArray.map(doc => {
-              return {
-                id: doc.payload.doc.id,
-                ...doc.payload.doc.data()
-              }
-          })
-          }))
-        .subscribe((messages: ChatMessage[]) => {
-          this.chatMessages = messages;
-          this.chatMessagesChanged.next([...this.chatMessages]);
-          console.log('Chat Service constructor: ' + this.chatMessages);
-      });   
+    ) {
+         this.messagesCol = this.afs.collection('groups').doc('0B3KhEc2f6pen190tm41')
+          .collection('groupChat');
+          this.messagesCol
+            .snapshotChanges()
+            .pipe(map(docArray => {
+              return docArray.map(doc => {
+                  return {
+                    id: doc.payload.doc.id,
+                    ...doc.payload.doc.data()
+                  }
+              })
+              }))
+            .subscribe((messages: ChatMessage[]) => {
+              this.chatMessages = messages;
+              this.chatMessagesChanged.next([...this.chatMessages]);
+              console.log('Chat Service constructor: ' + this.chatMessages);
+          });
     }
 
     //db.collection('rooms').doc('roomA').collection('messages').doc('message1');
- 
+
   sendMessage(msg: string, url: string, filename: string) {
     const timestamp = this.getTimeStamp();
     const group = this.groupService.getActiveGroup();
@@ -69,13 +69,13 @@ export class ChatService {
       userName = this.userService.userName;
       email =  this.userService.myEmail;
     }
-   
+
     this.afs.collection('groups').doc(group.id).collection('groupChat').add(
-      { 'message': msg, 
-      'url': url, 
+      { 'message': msg,
+      'url': url,
       'filename': filename,
-      'timeSent': timestamp, 
-      'userName': userName, 
+      'timeSent': timestamp,
+      'userName': userName,
       'email': email});
   }
 
@@ -84,7 +84,7 @@ export class ChatService {
       this.group = group;
       //console.log('Chat Service - current group' + this.group.id)
       this.afs.collection('groups').doc(this.group.id)
-               .collection('groupChat', ref => ref.orderBy('timeSent', "desc")) 
+               .collection('groupChat', ref => ref.orderBy('timeSent', "desc"))
                .snapshotChanges()
                .pipe(map(docArray => {
                 return docArray.map(doc => {
@@ -99,7 +99,7 @@ export class ChatService {
                 this.chatMessagesChanged.next([...this.chatMessages]);
                 console.log('Chat Service getmessages: ' + this.chatMessages);
                 //this.groupService.setMyGroupInfo();
-            });   
+            });
     });
   }
 
@@ -114,7 +114,7 @@ export class ChatService {
 
     if (dayInMonth < 10){
       dayString = '0' + dayInMonth;
-    } 
+    }
     else{
       dayString = dayInMonth.toString();
     };
