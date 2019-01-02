@@ -1,6 +1,7 @@
 
- <button (click)="loadevents()"> loadevents</button>
+ <button (click)="loadevents()"> Load Events</button>
 
+  <button (click)="openAddEventDialog()"> New Event</button>
   <p>Display event : {{ displayEvent }}</p>
   <div *ngIf="calendarOptions">
   <ng-fullcalendar #ucCalendar [options]="calendarOptions"

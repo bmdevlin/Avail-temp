@@ -31,7 +31,7 @@ export class EventService {
 
     }
 
-    createEvent(title: string, start: string, end: string, allday: boolean) {
+    createEvent(newEvent: Event) {
         const timestamp = this.getTimeStamp();
         const groupId = this.groupService.myActiveGroupId;
         var userName;
@@ -39,10 +39,10 @@ export class EventService {
         userName = this.userService.userName;
 
         this.afs.collection('groups').doc(groupId).collection('events').add(
-            {'title': title,
-            'start': start,
-            'end': end,
-            'allday': allday
+            {'title': newEvent.title,
+            'start': newEvent.start,
+            'end': newEvent.end,
+            'allday': newEvent.allday
             //'owner': userName
             });
     }

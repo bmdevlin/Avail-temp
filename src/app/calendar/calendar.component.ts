@@ -1,21 +1,21 @@
 import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { EventService } from '../services/event.service';
-import { Event } from '../models/event.model'
-import { EventDialogComponent } from '../event-dialog/event-dialog.component';
-
+import { Event } from '../models/event.model';
+import { AddEventDialogComponent } from '../event-dialog/add-event-dialog.component';
+import { EventFormComponent } from '../event-form/event-form.component';
 import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar/index' ;
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
-  selector: 'dialog-overview-example-dialog',
-  templateUrl: 'dialog-overview-example-dialog.html',
+  selector: 'show-event-dialog',
+  templateUrl: 'show-event-dialog.html',
 })
-export class DialogOverviewExampleDialog {
+export class ShowEventDialog {
 
   constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    public dialogRef: MatDialogRef<ShowEventDialog>,
     @Inject(MAT_DIALOG_DATA) public data: Event) {}
 
   onNoClick(): void {
@@ -66,8 +66,30 @@ export class MyCalendarComponent implements OnInit {
     this.eventService.createStarterEvents();
   }
 
-  openDialog(event: Event): void {
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+  openAddEventDialog(): void {
+    const dialogRef = this.dialog.open(AddEventDialogComponent,
+      {width: '350px'} );
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Add Event dialog afterClosed');
+      if (result)
+          {this.myEvent = {
+            id: result.id,
+            start: result.start,
+            end: result.end,
+            title: result.title,
+            allday: result.allday
+            };
+            // start and end are converted to Moments https://momentjs.com/docs/#/get-set/
+          //console.log('The dialog result',  result);
+          this.displayEvent =  JSON.stringify(this.myEvent);
+          this.eventService.createEvent(this.myEvent)
+          }
+    });
+  }
+
+  openShowDialog(event: Event): void {
+    const dialogRef = this.dialog.open(ShowEventDialog, {
       width: '350px',
       data: {id:  event.id,
           title:  event.title,
@@ -93,8 +115,6 @@ export class MyCalendarComponent implements OnInit {
           }
     });
   }
-
-
   clickButton(model: any) {
     this.displayEvent = model;
     //this.openDialog (model)
@@ -113,7 +133,7 @@ export class MyCalendarComponent implements OnInit {
       allday: model.event.allday
     }
     this.displayEvent = model;
-    this.openDialog(this.myEvent);
+    this.openShowDialog(this.myEvent);
   }
   updateEventFields(){
       console.log('updateEventFields');

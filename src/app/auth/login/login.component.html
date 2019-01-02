@@ -1,5 +1,5 @@
 <section>
-  <form
+  <form 
     fxLayout="column"
     fxLayoutAlign="center center"
     fxLayoutGap="10px"
@@ -23,9 +23,9 @@
       <mat-hint>Please enter your password.</mat-hint>
       <mat-error>Missing password.</mat-error>
     </mat-form-field>
-    <br/><br/> 
+    <br/><br/>
     <span  *ngIf="!validLogin">
-      <p color="red">Login not valid. Please try again</p> 
+      <p color="red">Login not valid. Please try again</p>
     </span>
     <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Submit</button>
   </form>

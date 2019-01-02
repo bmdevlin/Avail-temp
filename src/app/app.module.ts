@@ -13,7 +13,8 @@ import { FullCalendarModule } from 'ng-fullcalendar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyCalendarComponent, DialogOverviewExampleDialog } from './calendar/calendar.component';
+import { MyCalendarComponent, ShowEventDialog } from './calendar/calendar.component';
+import { EventFormComponent } from './event-form/event-form.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
 import { FeedComponent } from './feed/feed.component';
@@ -36,12 +37,13 @@ import { UserService } from './services/user.service';
 import { UserProfileService } from './services/userProfile.service';
 import { EventService } from './services/event.service';
 
-import { EventDialogComponent } from './event-dialog/event-dialog.component';
- 
+import { AddEventDialogComponent } from './event-dialog/add-event-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MyCalendarComponent,
+    EventFormComponent,
     ChatFormComponent,
     ChatroomComponent,
     FeedComponent,
@@ -57,8 +59,8 @@ import { EventDialogComponent } from './event-dialog/event-dialog.component';
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
-    EventDialogComponent,
-    DialogOverviewExampleDialog
+    AddEventDialogComponent,
+    ShowEventDialog
   ],
   imports: [
     BrowserModule,
@@ -74,9 +76,9 @@ import { EventDialogComponent } from './event-dialog/event-dialog.component';
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule// imports firebase/storage only needed for storage features
   ],
-  providers: [AuthService, ChatService, GroupService, 
+  providers: [AuthService, ChatService, GroupService,
                   UserService, UserProfileService, EventService],
   bootstrap: [AppComponent],
-  entryComponents: [EventDialogComponent, DialogOverviewExampleDialog]
+  entryComponents: [AddEventDialogComponent, ShowEventDialog]
 })
 export class AppModule { }
