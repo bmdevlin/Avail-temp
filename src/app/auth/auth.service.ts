@@ -24,11 +24,11 @@ export class AuthService {
   initAuthListener() {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        //console.log(user);
+        console.log("initAuthListener: user email is set");
         this.myEmail = user.email;
         this.isAuthenticated = true;
         this.authChange.next(true);
-        this.router.navigate(['/chat']);
+        this.router.navigate(['/home']);
       } else {
         this.chatService.cancelSubscriptions();
         this.authChange.next(false);

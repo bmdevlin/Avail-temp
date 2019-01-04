@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { MaterialModule } from './material.module';
 import { FullCalendarModule } from 'ng-fullcalendar';
 
+import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyCalendarComponent, ShowEventDialog } from './calendar/calendar.component';
@@ -22,6 +23,7 @@ import { MessageComponent } from './message/message.component';
 import { GroupComponent } from './group/group.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserItemComponent } from './user-item/user-item.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserGroupsComponent } from './user-groups/user-groups.component';
 import { ManageGroupsComponent } from './manage-groups/manage-groups.component'
 import { UploaderComponent } from './uploader/uploader.component';
@@ -52,11 +54,13 @@ import { AddEventDialogComponent } from './event-dialog/add-event-dialog.compone
     UserListComponent,
     UserItemComponent,
     UserGroupsComponent,
+    UserProfileComponent,
     ManageGroupsComponent,
     UploaderComponent,
     SignupComponent,
     LoginComponent,
     WelcomeComponent,
+    HomeComponent,
     HeaderComponent,
     SidenavListComponent,
     AddEventDialogComponent,
