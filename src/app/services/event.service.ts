@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { Subject } from 'rxjs';
 
-import { UserService } from '../services/user.service';
+import { UserProfileService } from '../services/userProfile.service';
 import { GroupService } from '../services/group.service';
 import { Group } from '../models/group.model';
 import { Event } from '../models/event.model';
@@ -25,10 +25,11 @@ export class EventService {
     constructor(
         //private db: AngularFireDatabase,
         private afs: AngularFirestore,
-        private userService: UserService,
+        private userProfileService: UserProfileService,
         private groupService: GroupService
-        ) {
-
+        )
+         {
+            console.log('Event Service constructor');
     }
 
     createEvent(newEvent: Event) {
@@ -36,8 +37,8 @@ export class EventService {
         const groupId = this.groupService.myActiveGroupId;
         var userName;
 
-        userName = this.userService.userName;
-
+        userName = this.userProfileService.getUserName();
+        console.log('createEvent event: ' + newEvent.title)
         this.afs.collection('groups').doc(groupId).collection('events').add(
             {'title': newEvent.title,
             'start': newEvent.start,
@@ -57,9 +58,9 @@ export class EventService {
             userName = this.groupService.myActiveMemberInfo.memberName;
         }
         else{
-            userName = this.userService.userName;
+            userName = this.userProfileService.getUserName;
         }
-        //this.afs.collection('groups').doc(group.id).collection('groupChat').add(
+ 
         this.afs.collection('groups').doc(groupId).collection('events')
         .doc('events/' + event.id).update(event);
 
@@ -76,15 +77,22 @@ export class EventService {
 
         //this.group = this.groupService.getActiveGroup();
         console.log('Event Service - current group' + this.groupService.myActiveGroupId);
-        this.afs.collection('groups')
-                .doc(this.groupService.myActiveGroupId)
+        //this.afs.collection('groups')
+        //        .doc(this.groupService.myActiveGroupId)
+
+        this.afs.doc('groups/' + this.groupService.myActiveGroupId)
                 .collection('events')
                 .snapshotChanges()
                 .pipe(map(docArray => {
                 return docArray.map(doc => {
                     return {
                         id: doc.payload.doc.id,
-                        ...doc.payload.doc.data()
+                        title: doc.payload.doc.data().title,
+                        owner: doc.payload.doc.data().owner,
+                        start: doc.payload.doc.data().start,
+                        end: doc.payload.doc.data().end,
+                        allday: doc.payload.doc.data().allday
+                       // ...doc.payload.doc.data()
                     }
                 })
                 }))

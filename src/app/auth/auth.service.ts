@@ -3,14 +3,16 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 
-import { User } from './user.model';
 import { AuthData } from './auth-data.model';
 import { ChatService } from '../services/chat.service';
 import { UserService } from '../services/user.service';
+import { UserProfileService } from '../services/userProfile.service';
 
 @Injectable()
 export class AuthService {
   authChange = new Subject<boolean>();
+  myEmailId = new Subject<string>();
+
   private isAuthenticated = false;
   myEmail: string = '';
 
@@ -18,7 +20,9 @@ export class AuthService {
     private router: Router,
     private afAuth: AngularFireAuth,
     private chatService: ChatService,
-    private userService: UserService
+    private userService: UserService,
+    private userProfileService: UserProfileService
+
   ) {}
 
   initAuthListener() {
@@ -26,10 +30,15 @@ export class AuthService {
       if (user) {
         console.log("initAuthListener: user email is set");
         this.myEmail = user.email;
+        this.myEmailId.next(this.myEmail);
         this.isAuthenticated = true;
         this.authChange.next(true);
+        this.userProfileService.fetchUserProfile(user.email);
         this.router.navigate(['/home']);
       } else {
+        this.myEmail = '';
+        this.myEmailId.next(this.myEmail);
+        this.userProfileService.resetUserProfile();
         this.chatService.cancelSubscriptions();
         this.authChange.next(false);
         this.router.navigate(['/welcome']);

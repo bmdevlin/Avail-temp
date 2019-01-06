@@ -6,15 +6,16 @@ import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { Subject } from 'rxjs';
 import { UserProfile } from '../models/user-profile.model';
+//import { AuthService } from '../auth/auth.service';
 
 @Injectable()
 export class UserProfileService {
 
   private userProfileDoc: AngularFirestoreDocument<UserProfile>;
-  user: Observable<UserProfile>;
-
-  userChanged = new Subject<UserProfile>();
-  private myuser: UserProfile;
+  userProfileObs: Observable<UserProfile>;
+  private userProfileSub: Subscription;
+  userProfileChanged = new Subject<UserProfile>();
+  myUserProfile: UserProfile;
   userName: string;
   myEmail: string;
   myStartGroup: string;
@@ -22,34 +23,53 @@ export class UserProfileService {
   private fbSubs: Subscription[] = [];
 
   constructor(
-    private afs: AngularFirestore,
-    private afAuth: AngularFireAuth
+    private afs: AngularFirestore //,
     ){
-
+      this.resetUserProfile();
     }
 
     updateUserProfile(item: UserProfile) {
         this.userProfileDoc.update(item);
     }
 
-    getUserProfile() {
-        this.fbSubs.push(
-          this.afAuth.authState.subscribe(user => {
-            if (user) {
-              this.myEmail = user.email;
-              console.log('userProfile constructor - email set');
+    getUserProfile(){
+      return this.myUserProfile;
+    }
 
-              this.userProfileDoc = this.afs.doc<UserProfile>('userProfiles/' + this.myEmail);
-              this.user = this.userProfileDoc.valueChanges();
+    getUserName(){
+      return this.myUserProfile.displayName;
+    }
 
-            } else {
-              this.myEmail = ' ';
-            }
-          })
-        );
+    getEmailId(){
+      return this.myUserProfile.email;
+    }
+
+    fetchUserProfile(email: string) {
+      this.myEmail = email;
+      console.log('userProfile fetchUserProfile - email:' + this.myEmail);
+
+      this.userProfileDoc = this.afs.doc<UserProfile>('userProfiles/' + this.myEmail);
+      this.userProfileObs = this.userProfileDoc.valueChanges();
+      this.userProfileSub = this.userProfileObs.subscribe((profile: UserProfile) => {
+        this.myUserProfile = profile;
+        this.userProfileChanged.next(this.myUserProfile);
+
+        console.log('userProfile fetchUserProfile name:' + profile.displayName);
+
+      });
+
+    }
+
+    resetUserProfile(){
+      this.myUserProfile = {
+        defaultGroup:'none', 
+        email:'none', 
+        displayName: 'none'
+      };
+
     }
 
     cancelSubscriptions() {
-      this.fbSubs.forEach(sub => sub.unsubscribe());
+      this.userProfileSub.unsubscribe();
     }
 }

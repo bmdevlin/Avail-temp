@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Subscription, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UserService } from '../services/user.service';
+import { UserProfileService } from '../services/userProfile.service';
 import { Group } from '../models/group.model';
 import { GroupMember } from '../models/groupMember.model';
 
@@ -34,17 +34,18 @@ export class GroupService {
     //private db: AngularFireDatabase,
     private afs: AngularFirestore,
     private afAuth: AngularFireAuth,
-    private userService: UserService
+    private userProfileService: UserProfileService
     )
     {
-        this.setInitialGroup('0B3KhEc2f6pen190tm41')
+      console.log('Group Service constructor: ' );
+        this.setInitialGroup('0B3KhEc2f6pen190tm41');
     }
   setInitialGroup(groupid: string){
       this.myActiveGroupId = groupid;
   }
   getMyOwnedGroups()  {
-    this.myEmail =  this.userService.myEmail;
-    if (!this.myEmail){this.myEmail='dummy1'}
+    this.myEmail = this.userProfileService.getEmailId();   
+
     console.log("Group service: current user email: " + this.myEmail);
     this.fbSubs.push(this.afs
       .collection('groups', ref => ref.where("groupOwner", "==", this.myEmail))
@@ -118,7 +119,7 @@ export class GroupService {
           this.activeGroupMembersChanged.next([...this.activeGroupMembers]);
           console.log('Group service: ' + this.activeGroupMembers);
           this.myActiveMemberInfo = this.activeGroupMembers.find(
-            ex => ex.memberId === this.userService.myEmail
+            ex => ex.memberId === this.userProfileService.getEmailId()
           );
       }  )
     );

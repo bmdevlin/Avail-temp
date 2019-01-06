@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { UserProfileService } from '../services/userProfile.service';
@@ -9,22 +9,24 @@ import { UserProfile } from '../models/user-profile.model';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
-export class UserProfileComponent implements OnInit, OnChanges {
+export class UserProfileComponent implements OnInit, OnDestroy {
   userProfileSubscription: Subscription;
   myUserProfile: UserProfile;
 
-  constructor(private userProfileService: UserProfileService) { }
+  constructor(private userProfileService: UserProfileService) {
+    }
 
   ngOnInit() {
-    this.userProfileSubscription= this.userProfileService.user.subscribe((userProfile: UserProfile) => {
-      this.myUserProfile = userProfile;
-      console.log('UserProfile component: ' + this.myUserProfile)
+   this.myUserProfile = this.userProfileService.getUserProfile();
+   this.userProfileSubscription = this.userProfileService.userProfileChanged.subscribe((userProfile: UserProfile) => {
+                this.myUserProfile = userProfile;
+             console.log('UserProfile component subscribe: ' + this.myUserProfile.email);
     }  );
-    this.userProfileService.getUserProfile();
+   
   }
 
-  ngOnChanges() {
-
+  ngOnDestroy() {
+    this.userProfileSubscription.unsubscribe();
   }
 
 }

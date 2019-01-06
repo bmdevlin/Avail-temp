@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
-//import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
-//import * as firebase from 'firebase/app';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
 import { Subject } from 'rxjs';
 
-import { UserService } from '../services/user.service';
+import { UserProfileService } from '../services/userProfile.service';
 import { GroupService } from '../services/group.service';
 import { Group } from '../models/group.model';
 import { ChatMessage } from '../models/chat-message.model';
@@ -30,7 +27,7 @@ export class ChatService {
   constructor(
     //private db: AngularFireDatabase,
     private afs: AngularFirestore,
-    private userService: UserService,
+    private userProfileService: UserProfileService,
     private groupService: GroupService
     ) {
          this.messagesCol = this.afs.collection('groups').doc('0B3KhEc2f6pen190tm41')
@@ -52,8 +49,6 @@ export class ChatService {
           });
     }
 
-    //db.collection('rooms').doc('roomA').collection('messages').doc('message1');
-
   sendMessage(msg: string, url: string, filename: string) {
     const timestamp = this.getTimeStamp();
     const group = this.groupService.getActiveGroup();
@@ -66,8 +61,8 @@ export class ChatService {
       email =  this.groupService.myActiveMemberInfo.memberId;
     }
     else{
-      userName = this.userService.userName;
-      email =  this.userService.myEmail;
+      userName = this.userProfileService.getUserName;
+      email =  this.userProfileService.getEmailId();
     }
 
     this.afs.collection('groups').doc(group.id).collection('groupChat').add(

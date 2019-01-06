@@ -116,12 +116,13 @@ export class MyCalendarComponent implements OnInit {
     });
   }
   clickButton(model: any) {
-    this.displayEvent = model;
+    //this.displayEvent = model;
     //this.openDialog (model)
   }
 
   dayClick(model: any) {
     console.log(model);
+    alert('a day has been clicked!');
   }
 
   eventClick(model: any) {
