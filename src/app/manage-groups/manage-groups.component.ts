@@ -22,6 +22,9 @@ export class ManageGroupsComponent implements OnInit, OnChanges, OnDestroy {
     this.groupService.getMyOwnedGroups();
   }
 
+  // **TO DO**  add capability to create a new group, 
+  //  add subscribers to my groups, remove subscribers
+
   ngOnChanges() {
     //this.myOwnedGroups = this.groupService.getMyOwnedGroups();
  

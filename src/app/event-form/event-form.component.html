@@ -1,5 +1,5 @@
 
-<mat-grid-list cols="1" rowHeight="fit">
+
 <mat-card>
 <mat-card-content>
 <form
@@ -18,17 +18,29 @@
       <mat-datepicker #startpicker></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-      <input matInput placeholder="End date" [matDatepicker]="endpicker" [max]="maxDate" formControlName="end">
-      <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
-      <mat-datepicker #endpicker></mat-datepicker>
+        <input matInput placeholder="Optional: set an end date" [matDatepicker]="endpicker" [max]="maxDate" formControlName="end">
+        <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+        <mat-datepicker #endpicker></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-    <input
-        matInput placeholder="Is this an all-day event?" formControlName="allday">
+        <select matNativeControl required placeholder="Is this an all-day event?" formControlName="allday">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
     </mat-form-field>
+    <mat-form-field>
+        <textarea matInput placeholder="Start time (eg. 10:00 AM)"  formControlName="startTime"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+            <textarea matInput placeholder="End time (eg. 11:00 AM)"  formControlName="endTime"></textarea>
+        </mat-form-field>
+ 
     <button type="submit" mat-raised-button color="primary" >Add</button>
 </form>
+ 
+
+<button (click)="showModal()"> Enter time</button>
 </mat-card-content>
 
 </mat-card>
-</mat-grid-list>
+

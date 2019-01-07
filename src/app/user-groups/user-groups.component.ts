@@ -13,23 +13,29 @@ import { Group } from '../models/group.model';
 export class UserGroupsComponent implements OnInit, OnDestroy {
   myGroups: Group[];
   myGroupsSubscription: Subscription;
+  activeGroup: Group;
   activeGroupName: string;
 
-  constructor(private userService: UserService,
+  constructor( 
     private groupService: GroupService) { }
 
   ngOnInit() {
+    console.log('UserGroupsComponent init: ' );
     this.myGroupsSubscription = this.groupService.myGroupsChanged.subscribe(
       groups => (this.myGroups = groups)
     );
-    this.groupService.getMyGroups();
+
+    // **TO DO**  subscribe to the active group, to trigger the following actions
+    this.activeGroup = this.groupService.getActiveGroup();
+    this.activeGroupName = this.activeGroup.groupName;
+    console.log('UserGroupsComponent init: ' + this.activeGroupName );
+    this.groupService.getMyGroupsAndSetActive(this.activeGroup.id); 
   }
 
   onSelectGroup(form: NgForm) {
     //console.log('User Group  - select  group: ' + form.value.group)
     this.groupService.setActiveGroup(form.value.group);
-    this.activeGroupName = this.groupService.getActiveGroup().groupName;
-    this.userService.fetchUsers(this.activeGroupName);
+    this.activeGroupName = this.groupService.getActiveGroupName();
   }
 
   ngOnDestroy() {

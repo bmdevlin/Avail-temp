@@ -3,26 +3,11 @@ import { Subscription } from 'rxjs';
 import { EventService } from '../services/event.service';
 import { Event } from '../models/event.model';
 import { AddEventDialogComponent } from '../event-dialog/add-event-dialog.component';
-import { EventFormComponent } from '../event-form/event-form.component';
+import { EventDialogComponent } from '../event-dialog/event-dialog.component';
 import { CalendarComponent } from 'ng-fullcalendar';
 import { Options } from 'fullcalendar/index' ;
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-
-@Component({
-  selector: 'show-event-dialog',
-  templateUrl: 'show-event-dialog.html',
-})
-export class ShowEventDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<ShowEventDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: Event) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-}
+//import { Moment } from 'fullcalendar/src/moment-ext'
 
 @Component({
   selector: 'app-calendar',
@@ -64,11 +49,12 @@ export class MyCalendarComponent implements OnInit {
   loadevents() {
     console.log("CREATE starter events");
     this.eventService.createStarterEvents();
+    // add this to the form: <button (click)="loadevents()"> Load Events</button>
   }
 
   openAddEventDialog(): void {
     const dialogRef = this.dialog.open(AddEventDialogComponent,
-      {width: '350px'} );
+      {width: '450px'} );
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Add Event dialog afterClosed');
@@ -88,9 +74,9 @@ export class MyCalendarComponent implements OnInit {
     });
   }
 
-  openShowDialog(event: Event): void {
-    const dialogRef = this.dialog.open(ShowEventDialog, {
-      width: '350px',
+  openUpdateEventDialog(event: Event): void {
+    const dialogRef = this.dialog.open(EventDialogComponent, {
+      width: '450px',
       data: {id:  event.id,
           title:  event.title,
           start:  event.start,
@@ -98,18 +84,25 @@ export class MyCalendarComponent implements OnInit {
           allday: event.allday}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    //  result = {id: "gPbsMckzptqz0ZObIXQc", 
+    //title: "new event2", start: Moment, 
+    //end: "Tue Jan 08 2019 11:20:00 GMT+0000", allday: false}
+
+     dialogRef.afterClosed().subscribe(result => {
       console.log('dialogRef afterClosed');
       if (result)
-          {this.myEvent = {
+          { 
+            //const startTime: Moment = result.start;
+           // const endTime: Moment = result.end;
+            this.myEvent = {
             id: result.id,
-            start: result.start.format(),
-            end: result.end.format(),
+            start: result.start,//startTime.format(),
+            end:  result.end, //endTime.format(),
             title: result.title,
             allday: result.allday
-            };
+          };
             // start and end are converted to Moments https://momentjs.com/docs/#/get-set/
-          //console.log('The dialog result',  result);
+          //console.log('The dialog result',  result); 
           this.displayEvent =  JSON.stringify(this.myEvent);
           this.eventService.updateEvent(this.myEvent)
           }
@@ -134,7 +127,7 @@ export class MyCalendarComponent implements OnInit {
       allday: model.event.allday
     }
     this.displayEvent = model;
-    this.openShowDialog(this.myEvent);
+    this.openUpdateEventDialog(this.myEvent);
   }
   updateEventFields(){
       console.log('updateEventFields');

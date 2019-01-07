@@ -25,6 +25,9 @@ export class UserProfileComponent implements OnInit, OnDestroy {
    
   }
 
+  // **TO DO**  need modal form to update my profile. 
+  // **TO DO**  Does user need to set default group? or defaults to the family group?
+
   ngOnDestroy() {
     this.userProfileSubscription.unsubscribe();
   }

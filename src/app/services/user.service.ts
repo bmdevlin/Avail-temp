@@ -9,6 +9,8 @@ import { User } from '../auth/user.model';
 @Injectable()
 export class UserService {
 
+  // currently not using this table. We have userProfile instead, and groups have group members.
+
   usersChanged = new Subject<User[]>();
 
   usersCol:  AngularFirestoreCollection<User>;
@@ -23,7 +25,9 @@ export class UserService {
     ){ }
 
   fetchUsers(groupName: string) {
-      
+
+      console.log('******* Warning:  FetchUsers not implemented')
+      /*
       this.usersCol = this.afs.collection('users');
       this.fbSubs.push(
         this.usersCol.snapshotChanges().pipe(
@@ -47,6 +51,7 @@ export class UserService {
           
         })
     );
+    */
   }
 
 

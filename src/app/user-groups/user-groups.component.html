@@ -3,7 +3,7 @@
 
 <form (ngSubmit)="onSelectGroup(f)" #f="ngForm">
     <mat-card fxFlex.xs="100%" fxFlex="400px">
-        <mat-card-title fxLayoutAlign="center">Open a group chat</mat-card-title>
+        <mat-card-title fxLayoutAlign="center">Select a new active group</mat-card-title>
         <mat-card-content fxLayoutAlign="center">
            
             <mat-form-field>
@@ -19,4 +19,4 @@
         </mat-card-actions>
     </mat-card>
 </form>
-<h4>Current group:  {{ activeGroupName }} </h4>
+<h4>Active group:  {{ activeGroupName }} </h4>

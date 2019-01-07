@@ -62,7 +62,7 @@ export class EventService {
         }
  
         this.afs.collection('groups').doc(groupId).collection('events')
-        .doc('events/' + event.id).update(event);
+        .doc(event.id).update(event);
 
         //    data =>
         //    { data = {'title': title,
@@ -134,8 +134,13 @@ export class EventService {
         const dateObj = new Date();
         const yearMonth = dateObj.getUTCFullYear() + '-' + (dateObj.getUTCMonth() + 1);
 
-    //    this.createEvent('Doctor appointment', yearMonth+'-24T14:00:00', yearMonth+'-24T16:00:00', false,  60);
-    //    this.createEvent('Meeting', yearMonth+'-14T10:30:00', yearMonth+'-14T11:30:00', false,  30);
+     /*   this.createEvent(
+            {title: 'Doctor appointment', start: yearMonth + '-24T14:00:00', end: yearMonth+'-14T16:00:00', allday: false}
+            );
+         this.createEvent(
+            {title: 'Meeting', start: yearMonth + '-14T10:30:00', end: yearMonth + '-14T16:00:00', allday: false}
+            );
+       */
     }
 
     public getSeedEvents(): Observable<any> {

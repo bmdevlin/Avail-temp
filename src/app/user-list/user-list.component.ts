@@ -14,25 +14,18 @@ import { GroupService } from '../services/group.service';
 export class UserListComponent implements OnInit, OnDestroy {
   users: GroupMember[];
   usersSubscription: Subscription;
-  activeGroupName: string;
+  //  not required:  activeGroupName: string;
 
 
-  constructor(private userService: UserService,
+  constructor(
     private groupService: GroupService) {}
 
   ngOnInit() {  
     this.usersSubscription =  this.groupService.activeGroupMembersChanged.subscribe(
       users => {(this.users = users);
-      console.log("User-list: current users list: " +  this.users);}
+      console.log("User-list: current group members: " +  this.users);}
     );
-    this.activeGroupName = this.groupService.getActiveGroup().groupName;
-
-    //this.usersSubscription =  this.userService.usersChanged.subscribe(
-    //  users => {(this.users = users);
-    //  console.log("User-list: current users list: " +  this.users);}
-    //);
-    //this.activeGroupName = this.groupService.getActiveGroup().groupName;
-    //this.userService.fetchUsers(this.activeGroupName);
+    // this.activeGroupName = this.groupService.getActiveGroup().groupName;
   }
 
   ngOnDestroy() {

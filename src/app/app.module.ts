@@ -10,11 +10,12 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { MaterialModule } from './material.module';
 import { FullCalendarModule } from 'ng-fullcalendar';
+import { NgClockPickerLibModule } from 'ng-clock-picker-lib';
 
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MyCalendarComponent, ShowEventDialog } from './calendar/calendar.component';
+import { MyCalendarComponent } from './calendar/calendar.component';
 import { EventFormComponent } from './event-form/event-form.component';
 import { ChatFormComponent } from './chat-form/chat-form.component';
 import { ChatroomComponent } from './chatroom/chatroom.component';
@@ -38,8 +39,8 @@ import { GroupService } from './services/group.service';
 import { UserService } from './services/user.service';
 import { UserProfileService } from './services/userProfile.service';
 import { EventService } from './services/event.service';
-
 import { AddEventDialogComponent } from './event-dialog/add-event-dialog.component';
+import { EventDialogComponent } from './event-dialog/event-dialog.component';
 
 @NgModule({
   declarations: [
@@ -64,9 +65,10 @@ import { AddEventDialogComponent } from './event-dialog/add-event-dialog.compone
     HeaderComponent,
     SidenavListComponent,
     AddEventDialogComponent,
-    ShowEventDialog
+    EventDialogComponent
   ],
   imports: [
+    NgClockPickerLibModule,
     BrowserModule,
     BrowserAnimationsModule,
     FullCalendarModule,
@@ -83,6 +85,6 @@ import { AddEventDialogComponent } from './event-dialog/add-event-dialog.compone
   providers: [AuthService, ChatService, GroupService,
                   UserService, UserProfileService, EventService],
   bootstrap: [AppComponent],
-  entryComponents: [AddEventDialogComponent, ShowEventDialog]
+  entryComponents: [AddEventDialogComponent, EventDialogComponent]
 })
 export class AppModule { }
